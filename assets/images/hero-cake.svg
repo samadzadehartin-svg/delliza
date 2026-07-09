@@ -1,0 +1,19 @@
+<svg width="700" height="560" viewBox="0 0 700 560" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">باکس شیرینی دلیزا</title>
+  <desc id="desc">تصویر تزئینی کیک، کوکی و دونات برای دموی فروشگاه دلیزا</desc>
+  <rect x="84" y="396" width="532" height="50" rx="25" fill="#2A060B" opacity="0.18"/>
+  <path d="M170 260C170 213.056 208.056 175 255 175H445C491.944 175 530 213.056 530 260V414H170V260Z" fill="#6B1E2D"/>
+  <path d="M170 255C170 211 205 184 250 184H450C496 184 530 211 530 255V290H170V255Z" fill="#F5E6C9"/>
+  <path d="M194 291H508V414H194V291Z" fill="#FFF8E9"/>
+  <path d="M206 318C247 350 295 280 336 315C375 348 420 294 494 324" stroke="#D8B976" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="270" cy="244" r="54" fill="#7D1826"/>
+  <circle cx="270" cy="244" r="25" fill="#FFF8E9"/>
+  <path d="M422 188C453.48 188 479 213.52 479 245C479 276.48 453.48 302 422 302C390.52 302 365 276.48 365 245C365 213.52 390.52 188 422 188Z" fill="#D8B976"/>
+  <path d="M421 224C433.15 224 443 233.85 443 246C443 258.15 433.15 268 421 268C408.85 268 399 258.15 399 246C399 233.85 408.85 224 421 224Z" fill="#6B1E2D"/>
+  <rect x="292" y="120" width="116" height="86" rx="42" fill="#FFF8E9" stroke="#D8B976" stroke-width="8"/>
+  <path d="M316 166C337 142 369 142 389 166" stroke="#7D1826" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="182" cy="390" r="34" fill="#D8B976"/>
+  <circle cx="518" cy="394" r="35" fill="#7D1826"/>
+  <circle cx="518" cy="394" r="15" fill="#FFF8E9"/>
+  <path d="M122 414H578" stroke="#C99C43" stroke-width="8" stroke-linecap="round"/>
+</svg>

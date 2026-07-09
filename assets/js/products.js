@@ -7,7 +7,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 144,
     "badge": "پرفروش",
     "weight": "یک عدد",
-    "image": "assets/images/menu-photos/ouchkelman.jpg",
+    "image": "assets/images/fresh-products/layered-cake.png",
     "description": "آرد، تخم‌مرغ، خامه، شکر، شکلات، کرم میانی",
     "tags": [
       "کیک و چیزکیک",
@@ -27,7 +27,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 161,
     "badge": "ویژه",
     "weight": "یک عدد",
-    "image": "assets/images/menu-photos/mousse-cake.jpg",
+    "image": "assets/images/fresh-products/mousse-cake.png",
     "description": "آرد، تخم‌مرغ، خامه، شکلات، پودر کاکائو، ژلاتین",
     "tags": [
       "کیک و چیزکیک",
@@ -47,7 +47,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 85,
     "badge": "خانگی",
     "weight": "یک عدد",
-    "image": "assets/images/menu-photos/pear-cake.jpg",
+    "image": "assets/images/fresh-products/pear-cake.png",
     "description": "آرد، تخم‌مرغ، کره، شکر، گلابی، دارچین",
     "tags": [
       "کیک و چیزکیک",
@@ -67,7 +67,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 129,
     "badge": "محبوب",
     "weight": "یک عدد",
-    "image": "assets/images/menu-photos/lotus-cheesecake.jpg",
+    "image": "assets/images/fresh-products/lotus-cheesecake.png",
     "description": "بیسکویت، کره، پنیر خامه‌ای، خامه، لوتوس",
     "tags": [
       "کیک و چیزکیک",
@@ -87,7 +87,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 75,
     "badge": "شکلاتی",
     "weight": "یک عدد",
-    "image": "assets/images/menu-photos/mousse-cake.jpg",
+    "image": "assets/images/fresh-products/mousse-cake.png",
     "description": "آرد، تخم‌مرغ، کره، شکر، شکلات، پودر کاکائو",
     "tags": [
       "کیک و چیزکیک",
@@ -107,7 +107,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 78,
     "badge": "زعفرانی",
     "weight": "یک عدد",
-    "image": "assets/images/menu-photos/ouchkelman.jpg",
+    "image": "assets/images/fresh-products/layered-cake.png",
     "description": "آرد، تخم‌مرغ، شیر، کره، شکر، زعفران",
     "tags": [
       "کیک و چیزکیک",
@@ -127,7 +127,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 66,
     "badge": "دارچینی",
     "weight": "یک عدد",
-    "image": "assets/images/menu-photos/lotus-cheesecake.jpg",
+    "image": "assets/images/fresh-products/lotus-cheesecake.png",
     "description": "آرد، تخم‌مرغ، کره، شکر، سیب، دارچین",
     "tags": [
       "کیک و چیزکیک",
@@ -147,7 +147,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 71,
     "badge": "شکلاتی",
     "weight": "یک عدد",
-    "image": "assets/images/menu-photos/pear-cake.jpg",
+    "image": "assets/images/fresh-products/pear-cake.png",
     "description": "آرد، تخم‌مرغ، شیر، شکر، شکلات، پودر کاکائو",
     "tags": [
       "کیک و چیزکیک",
@@ -167,7 +167,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 52,
     "badge": "کاراملی",
     "weight": "یک عدد",
-    "image": "assets/images/menu-photos/mousse-cake.jpg",
+    "image": "assets/images/fresh-products/mousse-cake.png",
     "description": "آرد، تخم‌مرغ، کره، شکلات، کارامل، بادام‌زمینی",
     "tags": [
       "کیک و چیزکیک",
@@ -187,7 +187,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 56,
     "badge": "کلاسیک",
     "weight": "یک عدد",
-    "image": "assets/images/menu-photos/ouchkelman.jpg",
+    "image": "assets/images/fresh-products/layered-cake.png",
     "description": "آرد، تخم‌مرغ، شکر، روغن، هویج، گردو، دارچین",
     "tags": [
       "کیک و چیزکیک",
@@ -207,7 +207,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 39,
     "badge": "خرمایی",
     "weight": "یک عدد",
-    "image": "assets/images/menu-photos/lotus-cheesecake.jpg",
+    "image": "assets/images/fresh-products/lotus-cheesecake.png",
     "description": "آرد، تخم‌مرغ، کره، خرما، گردو، دارچین",
     "tags": [
       "کیک و چیزکیک",
@@ -227,7 +227,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 52,
     "badge": "عسلی",
     "weight": "یک عدد",
-    "image": "assets/images/menu-photos/pear-cake.jpg",
+    "image": "assets/images/fresh-products/pear-cake.png",
     "description": "آرد، تخم‌مرغ، کره، عسل، خامه، پرتقال",
     "tags": [
       "کیک و چیزکیک",
@@ -247,7 +247,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 34,
     "badge": "موزی",
     "weight": "یک عدد",
-    "image": "assets/images/menu-photos/mousse-cake.jpg",
+    "image": "assets/images/fresh-products/mousse-cake.png",
     "description": "آرد، تخم‌مرغ، خامه، شکر، موز، شکلات",
     "tags": [
       "کیک و چیزکیک",
@@ -267,7 +267,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 38,
     "badge": "ردولوت",
     "weight": "یک عدد",
-    "image": "assets/images/menu-photos/ouchkelman.jpg",
+    "image": "assets/images/fresh-products/layered-cake.png",
     "description": "آرد، تخم‌مرغ، شکر، کره، پودر کاکائو، پنیر خامه‌ای، رنگ طبیعی",
     "tags": [
       "کیک و چیزکیک",
@@ -287,7 +287,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 32,
     "badge": "روزانه",
     "weight": "یک عدد",
-    "image": "assets/images/menu-photos/lotus-cheesecake.jpg",
+    "image": "assets/images/fresh-products/lotus-cheesecake.png",
     "description": "آرد، تخم‌مرغ، شیر، کره، شکر، پودر نارگیل",
     "tags": [
       "کیک و چیزکیک",
@@ -307,7 +307,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 33,
     "badge": "قهوه‌ای",
     "weight": "یک عدد",
-    "image": "assets/images/menu-photos/pear-cake.jpg",
+    "image": "assets/images/fresh-products/pear-cake.png",
     "description": "آرد، تخم‌مرغ، شیر، شکر، قهوه، شکلات",
     "tags": [
       "کیک و چیزکیک",
@@ -327,7 +327,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 32,
     "badge": "قهوه‌ای",
     "weight": "یک عدد",
-    "image": "assets/images/menu-photos/mousse-cake.jpg",
+    "image": "assets/images/fresh-products/mousse-cake.png",
     "description": "آرد، تخم‌مرغ، شیر، خامه، شکر، نسکافه",
     "tags": [
       "کیک و چیزکیک",
@@ -347,7 +347,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 405,
     "badge": "سینی ۱ کیلویی",
     "weight": "۱ کیلوگرم",
-    "image": "assets/images/product-halva.svg",
+    "image": "assets/images/fresh-products/halva.png",
     "description": "آرد، کره، شکر، گلاب، شیر",
     "tags": [
       "حلوا سینی",
@@ -367,7 +367,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 585,
     "badge": "سینی ۱ کیلویی",
     "weight": "۱ کیلوگرم",
-    "image": "assets/images/product-halva.svg",
+    "image": "assets/images/fresh-products/halva.png",
     "description": "آرد، روغن، شکر، زعفران، پسته",
     "tags": [
       "حلوا سینی",
@@ -387,7 +387,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 385,
     "badge": "سینی ۱ کیلویی",
     "weight": "۱ کیلوگرم",
-    "image": "assets/images/product-halva.svg",
+    "image": "assets/images/fresh-products/halva.png",
     "description": "آرد، روغن، شکر، شیر خشک، هل",
     "tags": [
       "حلوا سینی",
@@ -407,7 +407,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 395,
     "badge": "سینی ۱ کیلویی",
     "weight": "۱ کیلوگرم",
-    "image": "assets/images/product-halva.svg",
+    "image": "assets/images/fresh-products/halva.png",
     "description": "آرد، کره، خرما، گردو، دارچین",
     "tags": [
       "حلوا سینی",
@@ -427,7 +427,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 275,
     "badge": "سینی ۱ کیلویی",
     "weight": "۱ کیلوگرم",
-    "image": "assets/images/product-halva.svg",
+    "image": "assets/images/fresh-products/halva.png",
     "description": "آرد، روغن، شکر، گلاب، زعفران",
     "tags": [
       "حلوا سینی",
@@ -447,7 +447,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 335,
     "badge": "سینی ۱ کیلویی",
     "weight": "۱ کیلوگرم",
-    "image": "assets/images/product-halva.svg",
+    "image": "assets/images/fresh-products/halva.png",
     "description": "آرد سفید، آرد برنج، آرد نخودچی، روغن، شکر، شربت",
     "tags": [
       "حلوا سینی",
@@ -467,7 +467,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 275,
     "badge": "سینی ۱ کیلویی",
     "weight": "۱ کیلوگرم",
-    "image": "assets/images/product-halva.svg",
+    "image": "assets/images/fresh-products/halva.png",
     "description": "آرد، روغن، شکر، گلاب، هویج",
     "tags": [
       "حلوا سینی",
@@ -487,7 +487,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 275,
     "badge": "سینی ۱ کیلویی",
     "weight": "۱ کیلوگرم",
-    "image": "assets/images/product-halva.svg",
+    "image": "assets/images/fresh-products/halva.png",
     "description": "آرد، روغن، شکر، هل، زنجبیل",
     "tags": [
       "حلوا سینی",
@@ -507,7 +507,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 16,
     "badge": "تک‌نفره",
     "weight": "یک عدد",
-    "image": "assets/images/product-halva-single.svg",
+    "image": "assets/images/fresh-products/halva.png",
     "description": "آرد، کره، شکر، گلاب، شیر",
     "tags": [
       "حلوا تک‌نفره",
@@ -527,7 +527,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 18,
     "badge": "تک‌نفره",
     "weight": "یک عدد",
-    "image": "assets/images/product-halva-single.svg",
+    "image": "assets/images/fresh-products/halva.png",
     "description": "آرد، روغن، شکر، زعفران، پسته",
     "tags": [
       "حلوا تک‌نفره",
@@ -547,7 +547,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 15,
     "badge": "تک‌نفره",
     "weight": "یک عدد",
-    "image": "assets/images/product-halva-single.svg",
+    "image": "assets/images/fresh-products/halva.png",
     "description": "آرد، کره، خرما، گردو، دارچین",
     "tags": [
       "حلوا تک‌نفره",
@@ -567,7 +567,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 16,
     "badge": "تک‌نفره",
     "weight": "یک عدد",
-    "image": "assets/images/product-halva-single.svg",
+    "image": "assets/images/fresh-products/halva.png",
     "description": "آرد، روغن، شکر، ارده، کنجد",
     "tags": [
       "حلوا تک‌نفره",
@@ -587,7 +587,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 14,
     "badge": "تک‌نفره",
     "weight": "یک عدد",
-    "image": "assets/images/product-halva-single.svg",
+    "image": "assets/images/fresh-products/halva.png",
     "description": "آرد، روغن، شکر، گلاب، زعفران",
     "tags": [
       "حلوا تک‌نفره",
@@ -607,7 +607,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 15,
     "badge": "تک‌نفره",
     "weight": "یک عدد",
-    "image": "assets/images/product-halva-single.svg",
+    "image": "assets/images/fresh-products/halva.png",
     "description": "آرد، روغن، شکر، شیر خشک، هل",
     "tags": [
       "حلوا تک‌نفره",
@@ -627,7 +627,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 14,
     "badge": "تک‌نفره",
     "weight": "یک عدد",
-    "image": "assets/images/product-halva-single.svg",
+    "image": "assets/images/fresh-products/halva.png",
     "description": "آرد سفید، آرد برنج، آرد نخودچی، روغن، شکر، شربت",
     "tags": [
       "حلوا تک‌نفره",
@@ -647,7 +647,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 14,
     "badge": "تک‌نفره",
     "weight": "یک عدد",
-    "image": "assets/images/product-halva-single.svg",
+    "image": "assets/images/fresh-products/halva.png",
     "description": "آرد، روغن، شکر، هل، زنجبیل",
     "tags": [
       "حلوا تک‌نفره",
@@ -667,7 +667,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 14,
     "badge": "تک‌نفره",
     "weight": "یک عدد",
-    "image": "assets/images/product-halva-single.svg",
+    "image": "assets/images/fresh-products/halva.png",
     "description": "آرد، روغن، شکر، گلاب، هویج",
     "tags": [
       "حلوا تک‌نفره",
@@ -687,7 +687,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 90,
     "badge": "کلاسیک",
     "weight": "یک عدد",
-    "image": "assets/images/menu-photos/croissant.jpg",
+    "image": "assets/images/fresh-products/croissant.png",
     "description": "آرد، کره، شیر، تخم‌مرغ، خمیرمایه",
     "tags": [
       "کلاسیک",
@@ -707,7 +707,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 780,
     "badge": "سفارشی",
     "weight": "هر کیلوگرم",
-    "image": "assets/images/menu-photos/mousse-cake.jpg",
+    "image": "assets/images/fresh-products/mousse-cake.png",
     "description": "کیک اسفنجی، خامه، فیلینگ، میوه یا شکلات",
     "tags": [
       "کلاسیک",
@@ -727,7 +727,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 4,
     "badge": "مینی",
     "weight": "یک عدد",
-    "image": "assets/images/menu-photos/donut-bites.jpg",
+    "image": "assets/images/fresh-products/donut.png",
     "description": "آرد، شیر، تخم‌مرغ، شکر، خمیرمایه",
     "tags": [
       "کلاسیک",
@@ -747,7 +747,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 80,
     "badge": "روزانه",
     "weight": "یک عدد",
-    "image": "assets/images/menu-photos/donut.jpg",
+    "image": "assets/images/fresh-products/donut.png",
     "description": "آرد، شیر، تخم‌مرغ، شکر، خمیرمایه",
     "tags": [
       "کلاسیک",
@@ -767,7 +767,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 420,
     "badge": "کیلویی",
     "weight": "هر کیلوگرم",
-    "image": "assets/images/product-sweets.svg",
+    "image": "assets/images/fresh-products/cookies.png",
     "description": "آرد نخودچی، روغن، پودر قند، هل",
     "tags": [
       "شیرینی و کوکی",
@@ -787,7 +787,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 450,
     "badge": "کیلویی",
     "weight": "هر کیلوگرم",
-    "image": "assets/images/product-sweets.svg",
+    "image": "assets/images/fresh-products/cookies.png",
     "description": "آرد نخودچی، کره، پودر قند، هل",
     "tags": [
       "شیرینی و کوکی",
@@ -807,7 +807,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 350,
     "badge": "کیلویی",
     "weight": "هر کیلوگرم",
-    "image": "assets/images/product-sweets.svg",
+    "image": "assets/images/fresh-products/cookies.png",
     "description": "آرد برنج، روغن، پودر قند، هل، گلاب",
     "tags": [
       "شیرینی و کوکی",
@@ -827,7 +827,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 390,
     "badge": "کیلویی",
     "weight": "هر کیلوگرم",
-    "image": "assets/images/product-sweets.svg",
+    "image": "assets/images/fresh-products/cookies.png",
     "description": "زرده تخم‌مرغ، پودر قند، وانیل",
     "tags": [
       "شیرینی و کوکی",
@@ -847,7 +847,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 320,
     "badge": "کیلویی",
     "weight": "هر کیلوگرم",
-    "image": "assets/images/product-cookie.svg",
+    "image": "assets/images/fresh-products/cookies.png",
     "description": "آرد، تخم‌مرغ، کره، شکر قهوه‌ای، شکلات",
     "tags": [
       "شیرینی و کوکی",
@@ -867,7 +867,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 320,
     "badge": "کیلویی",
     "weight": "هر کیلوگرم",
-    "image": "assets/images/product-sweets.svg",
+    "image": "assets/images/fresh-products/cookies.png",
     "description": "آرد، سفیده تخم‌مرغ، شکر، نارگیل",
     "tags": [
       "شیرینی و کوکی",
@@ -887,7 +887,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 250,
     "badge": "کیلویی",
     "weight": "هر کیلوگرم",
-    "image": "assets/images/product-sweets.svg",
+    "image": "assets/images/fresh-products/cookies.png",
     "description": "جو دوسر، عسل، مغزها، میوه خشک",
     "tags": [
       "شیرینی و کوکی",
@@ -907,7 +907,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 310,
     "badge": "کیلویی",
     "weight": "هر کیلوگرم",
-    "image": "assets/images/product-sweets.svg",
+    "image": "assets/images/fresh-products/cookies.png",
     "description": "خمیر، کره، پنیر، ادویه",
     "tags": [
       "شیرینی و کوکی",
@@ -927,7 +927,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 180,
     "badge": "کیلویی",
     "weight": "هر کیلوگرم",
-    "image": "assets/images/product-sweets.svg",
+    "image": "assets/images/fresh-products/cookies.png",
     "description": "آرد، تخم‌مرغ، کره، شکر، وانیل",
     "tags": [
       "شیرینی و کوکی",
@@ -947,7 +947,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 180,
     "badge": "کیلویی",
     "weight": "هر کیلوگرم",
-    "image": "assets/images/product-sweets.svg",
+    "image": "assets/images/fresh-products/cookies.png",
     "description": "بیسکویت، کره، پودر کاکائو، مغز",
     "tags": [
       "شیرینی و کوکی",
@@ -967,7 +967,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 175,
     "badge": "کیلویی",
     "weight": "هر کیلوگرم",
-    "image": "assets/images/product-sweets.svg",
+    "image": "assets/images/fresh-products/cookies.png",
     "description": "سفیده تخم‌مرغ، پودر قند، وانیل",
     "tags": [
       "شیرینی و کوکی",
@@ -987,7 +987,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 180,
     "badge": "کیلویی",
     "weight": "هر کیلوگرم",
-    "image": "assets/images/product-sweets.svg",
+    "image": "assets/images/fresh-products/cookies.png",
     "description": "آرد، کره، پودر قند، وانیل، مغز",
     "tags": [
       "شیرینی و کوکی",
@@ -1007,7 +1007,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 150,
     "badge": "کیلویی",
     "weight": "هر کیلوگرم",
-    "image": "assets/images/product-sweets.svg",
+    "image": "assets/images/fresh-products/cookies.png",
     "description": "کره، شکر، عسل، بادام",
     "tags": [
       "شیرینی و کوکی",
@@ -1027,7 +1027,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 25,
     "badge": "دسر",
     "weight": "یک عدد",
-    "image": "assets/images/menu-photos/mochi.jpg",
+    "image": "assets/images/fresh-products/mochi.png",
     "description": "آرد برنج، نشاسته، شکر، کارامل، شکلات، بادام‌زمینی",
     "tags": [
       "دسر",
@@ -1047,7 +1047,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 25,
     "badge": "دسر",
     "weight": "یک عدد",
-    "image": "assets/images/menu-photos/fruit-mousse.jpg",
+    "image": "assets/images/fresh-products/fruit-mousse.png",
     "description": "خامه، شکر، ژلاتین، پوره میوه",
     "tags": [
       "دسر",
@@ -1067,7 +1067,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 20,
     "badge": "دسر",
     "weight": "یک عدد",
-    "image": "assets/images/menu-photos/mochi.jpg",
+    "image": "assets/images/fresh-products/mochi.png",
     "description": "آرد برنج، نشاسته، شکر، کرم",
     "tags": [
       "دسر",

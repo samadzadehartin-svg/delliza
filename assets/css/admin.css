@@ -368,3 +368,39 @@ body.admin-page {
     border-radius: 22px;
   }
 }
+
+.inline-price {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 180px;
+  padding: 6px 8px;
+  border: 1px solid rgba(107, 30, 45, 0.12);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.inline-price input {
+  width: 90px;
+  min-height: 36px;
+  padding: 0 10px;
+  border: 1px solid rgba(107, 30, 45, 0.14);
+  border-radius: 10px;
+  background: #fffdf8;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 900;
+  outline: none;
+}
+
+.inline-price input:focus {
+  border-color: rgba(107, 30, 45, 0.46);
+  box-shadow: 0 0 0 3px rgba(107, 30, 45, 0.08);
+}
+
+.inline-price span {
+  white-space: nowrap;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+}

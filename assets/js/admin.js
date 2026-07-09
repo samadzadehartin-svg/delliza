@@ -122,6 +122,11 @@
     els.draftStatus.textContent = getDraft() ? "پیش‌نمایش مرورگر فعال است" : "بدون پیش‌نویس مرورگر";
   };
 
+  const autoSaveDraft = () => {
+    localStorage.setItem(DRAFT_KEY, JSON.stringify(products));
+    renderStatus();
+  };
+
   const filteredProducts = () => {
     const query = normalize(els.search.value);
     if (!query) return products.map((product, index) => ({ product, index }));
@@ -147,7 +152,12 @@
             </div>
           </td>
           <td>${product.category || "-"}</td>
-          <td>${toPersianDigits(product.price || 0)} هزار تومان</td>
+          <td>
+            <label class="inline-price" aria-label="قیمت ${product.title}">
+              <input type="number" min="0" step="1" value="${product.price || 0}" data-inline-price="${index}" />
+              <span>هزار تومان</span>
+            </label>
+          </td>
           <td>${product.image ? "دارد" : "ندارد"}</td>
           <td>
             <div class="row-actions">
@@ -241,11 +251,12 @@
     if (currentIndex >= 0 && products[currentIndex]) {
       product.createdAt = products[currentIndex].createdAt || product.createdAt;
       products[currentIndex] = product;
-      toast("محصول ویرایش شد.");
+      toast("محصول ویرایش شد و در پیش‌نمایش ذخیره شد.");
     } else {
       products.unshift(product);
-      toast("محصول جدید اضافه شد.");
+      toast("محصول جدید اضافه شد و در پیش‌نمایش ذخیره شد.");
     }
+    autoSaveDraft();
     renderTable();
     fillForm(products.findIndex((item) => item.id === product.id));
   };
@@ -259,6 +270,7 @@
     copy.title = `${source.title || "محصول"} کپی`;
     copy.createdAt = new Date().toISOString().slice(0, 10);
     products.unshift(copy);
+    autoSaveDraft();
     renderTable();
     fillForm(0);
     toast("کپی محصول ساخته شد.");
@@ -271,15 +283,28 @@
     const ok = window.confirm(`محصول «${title}» حذف شود؟`);
     if (!ok) return;
     products.splice(index, 1);
+    autoSaveDraft();
     clearForm();
     renderTable();
     toast("محصول حذف شد.");
   };
 
+  const applyTableEdits = () => {
+    document.querySelectorAll("[data-inline-price]").forEach((input) => {
+      const index = Number(input.dataset.inlinePrice);
+      if (!products[index]) return;
+      const value = Number(input.value || 0);
+      products[index].price = Number.isFinite(value) && value >= 0 ? value : 0;
+    });
+    autoSaveDraft();
+    renderTable();
+    toast("قیمت‌های جدول ذخیره شد. برای انتشار روی GitHub خروجی products.js بگیر.");
+  };
+
   const saveDraft = () => {
     localStorage.setItem(DRAFT_KEY, JSON.stringify(products));
     renderStatus();
-    toast("پیش‌نمایش ذخیره شد. سایت را refresh کن تا همین محصولات را ببینی.");
+    toast("پیش‌نمایش ذخیره شد. سایت را refresh کن یا دکمه دیدن سایت را بزن.");
   };
 
   const clearDraft = () => {
@@ -319,6 +344,7 @@
       "new-product": clearForm,
       "duplicate-product": duplicateCurrent,
       "delete-product": deleteCurrent,
+      "apply-table-edits": applyTableEdits,
       "save-draft": saveDraft,
       "clear-draft": clearDraft,
       "copy-js": copyJs,
@@ -337,10 +363,23 @@
     }
   };
 
+  const handleInlineTableChange = (event) => {
+    const input = event.target.closest("[data-inline-price]");
+    if (!input) return;
+    const index = Number(input.dataset.inlinePrice);
+    if (!products[index]) return;
+    const value = Number(input.value || 0);
+    products[index].price = Number.isFinite(value) && value >= 0 ? value : 0;
+    autoSaveDraft();
+    renderOutput();
+    toast("قیمت در پنل ذخیره شد.");
+  };
+
   els.form.addEventListener("submit", saveProduct);
   els.search.addEventListener("input", renderTable);
   document.addEventListener("click", handleAction);
   els.table.addEventListener("click", handleTable);
+  els.table.addEventListener("change", handleInlineTableChange);
   els.title.addEventListener("input", () => {
     if (!els.id.value || els.id.dataset.auto === "true") {
       els.id.value = slugify(els.title.value);

@@ -23,6 +23,7 @@
         </a>
         <div class="admin-nav-actions">
           <a class="admin-link" href="index.html">مشاهده سایت</a>
+          <button class="btn btn-ghost" type="button" data-action="save-draft">ذخیره پیش‌نمایش</button>
           <button class="btn btn-primary" type="button" data-action="download-js">دانلود products.js</button>
         </div>
       </div>
@@ -33,7 +34,7 @@
         <div>
           <p class="eyebrow">Static Admin Panel</p>
           <h1>پنل مدیریت محصولات دلیزا</h1>
-          <p>این پنل برای GitHub ساخته شده: محصول را اینجا ویرایش کن، خروجی <code>products.js</code> بگیر و همان فایل را در مسیر <code>assets/js/products.js</code> ریپازیتوری GitHub جایگزین کن.</p>
+          <p>قیمت‌ها و محصولات را همین‌جا از داخل پنل اصلاح کن. برای تست فوری، دکمه «ذخیره پیش‌نمایش» را بزن و سایت را ببین. برای انتشار روی GitHub، خروجی <code>products.js</code> را بگیر و در مسیر <code>assets/js/products.js</code> جایگزین کن.</p>
         </div>
         <div class="admin-status" aria-live="polite">
           <strong id="product-count">۰ محصول</strong>
@@ -43,7 +44,7 @@
 
       <section class="admin-warning">
         <strong>مهم:</strong>
-        <span>این پنل دیتابیس ندارد و تغییرات را روی هاست ذخیره نمی‌کند. برای انتشار عمومی باید خروجی را در GitHub commit کنی. رمز فرانت‌اندی هم امنیت واقعی ندارد، پس عمداً رمز فیک گذاشته نشده.</span>
+        <span>ویرایش‌ها داخل همین پنل انجام می‌شوند. «ذخیره پیش‌نمایش» فقط روی مرورگر خودت ذخیره می‌کند. برای انتشار عمومی باید فایل خروجی را در GitHub commit کنی.</span>
       </section>
 
       <section class="admin-grid">
@@ -117,7 +118,7 @@
           </div>
 
           <div class="admin-form-actions">
-            <button class="btn btn-primary" type="submit">ذخیره محصول</button>
+            <button class="btn btn-primary" type="submit">ذخیره در پنل</button>
             <button class="btn btn-ghost" type="button" data-action="duplicate-product">کپی از محصول فعلی</button>
             <button class="danger-button" type="button" data-action="delete-product">حذف</button>
           </div>
@@ -133,7 +134,9 @@
           </div>
 
           <div class="admin-list-actions">
-            <button class="btn btn-small btn-dark" type="button" data-action="save-draft">ذخیره پیش‌نمایش در مرورگر</button>
+            <button class="btn btn-small btn-dark" type="button" data-action="apply-table-edits">اعمال قیمت‌های جدول</button>
+            <button class="btn btn-small btn-light" type="button" data-action="save-draft">ذخیره پیش‌نمایش</button>
+            <a class="btn btn-small btn-light" href="index.html" target="_blank" rel="noopener">دیدن سایت</a>
             <button class="btn btn-small btn-light" type="button" data-action="clear-draft">پاک کردن پیش‌نمایش</button>
             <button class="btn btn-small btn-light" type="button" data-action="copy-js">کپی products.js</button>
           </div>
@@ -144,7 +147,7 @@
                 <tr>
                   <th>محصول</th>
                   <th>دسته</th>
-                  <th>قیمت</th>
+                  <th>قیمت / ویرایش سریع</th>
                   <th>عکس</th>
                   <th>عملیات</th>
                 </tr>
@@ -163,7 +166,7 @@
           </div>
           <button class="btn btn-primary" type="button" data-action="download-js">دانلود products.js</button>
         </div>
-        <p>بعد از دانلود، فایل را در GitHub داخل مسیر <code>assets/js/products.js</code> آپلود/جایگزین کن و commit بزن. اگر GitHub Pages فعال باشد، سایت بعد از چند ثانیه با محصولات جدید بالا می‌آید.</p>
+        <p>برای انتشار روی GitHub، بعد از اینکه قیمت‌ها را در پنل اصلاح کردی، این خروجی را دانلود کن. فایل دانلودشده را داخل مسیر <code>assets/js/products.js</code> جایگزین کن و commit بزن.</p>
         <textarea id="export-output" readonly rows="12" spellcheck="false"></textarea>
       </section>
     </main>

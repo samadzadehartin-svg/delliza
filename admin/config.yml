@@ -1,7 +1,5 @@
 backend:
   name: github
-  # این خط را بعد از آپلود در GitHub عوض کن:
-  # مثال: safaro/delliza-bakery
   repo: samadzadehartin-svg/delliza
   branch: main
 

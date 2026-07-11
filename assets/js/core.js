@@ -133,25 +133,23 @@ function showToast(message) {
 function mount(role) {
   seed();
   const s = settings();
+  const logoSrc = '../assets/images/delliza-logo.jpg';
   $('headerMount').innerHTML = `
     <header class="header">
-      <div class="container header-inner">
-        <a class="brand" href="../buyer/">
-          <span class="logo"><i class="fa-solid fa-cake-candles"></i></span>
+      <div class="container header-inner header-inner--minimal">
+        <a class="brand" href="../buyer/" aria-label="${s.brand}">
+          <span class="logo logo-image"><img src="${logoSrc}" alt="${s.brand}"></span>
           <span>${s.brand}<small>${s.subtitle}</small></span>
         </a>
-        <nav class="nav">
-          <a class="${role === 'buyer' ? 'active' : ''}" href="../buyer/">مشتری</a>
-          <a class="${role === 'staff' ? 'active' : ''}" href="../staff/">فروش</a>
-          <a class="${role === 'admin' ? 'active' : ''}" href="../admin/">مدیریت</a>
+        <div class="header-actions">
           <button class="soft" onclick="toggleDark()">حالت شب</button>
-        </nav>
+        </div>
       </div>
     </header>`;
   $('footerMount').innerHTML = `
     <footer class="footer">
       <div class="container footer-grid">
-        <div><b>${s.brand}</b><p>${s.subtitle}</p></div>
+        <div class="footer-brand"><span class="logo logo-image footer-logo"><img src="${logoSrc}" alt="${s.brand}"></span><div><b>${s.brand}</b><p>${s.subtitle}</p></div></div>
         <div><span>${s.phone}</span><span>${s.instagram}</span></div>
         <div><span>${s.address}</span></div>
       </div>

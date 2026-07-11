@@ -135,9 +135,9 @@ function instagramProfileUrl() {
   const s = settings();
   const direct = String(s.instagramUrl || '').trim();
   if (direct) return direct;
-  const raw = String(s.instagram || '@dellizabakery').trim();
+  const raw = String(s.instagram || '@delliza.bakery').trim();
   if (/^https?:\/\//i.test(raw)) return raw;
-  const handle = raw.replace('@', '').replace(/\s+/g, '').replace(/^\/+|\/+$/g, '') || 'dellizabakery';
+  const handle = raw.replace('@', '').replace(/\s+/g, '').replace(/^\/+|\/+$/g, '') || 'delliza.bakery';
   return 'https://www.instagram.com/' + encodeURIComponent(handle) + '/';
 }
 
@@ -299,23 +299,70 @@ function toggleDark() {
 
 function roleAuth(role) { return read(role + 'Auth', null); }
 
-function login(role, username, password) {
-  if (role === 'admin' && username === 'admin123' && password === 'admin123') {
-    write('adminAuth', { username, name: 'مدیر دلیزا' });
+function clearRoleAuth() {
+  localStorage.removeItem(PREFIX + 'adminAuth');
+  localStorage.removeItem(PREFIX + 'staffAuth');
+}
+
+function saveRoleAuth(requestedRole, result) {
+  const auth = {
+    email: result?.user?.email || '',
+    name: result?.displayName || result?.profile?.display_name || result?.user?.email || 'کاربر دلیزا',
+    role: result?.role || result?.profile?.role || requestedRole,
+    userId: result?.user?.id || '',
+    signedInAt: new Date().toISOString()
+  };
+  if (requestedRole === 'admin' || auth.role === 'admin') write('adminAuth', auth, { skipRemote: true, silent: true });
+  if (requestedRole === 'staff' || auth.role === 'staff' || auth.role === 'admin') write('staffAuth', auth, { skipRemote: true, silent: true });
+  return auth;
+}
+
+async function syncRoleAuth(role) {
+  if (!['admin', 'staff'].includes(role)) return true;
+  if (!window.DELIZA_DB?.isConfigured?.()) return Boolean(roleAuth(role));
+  const result = await window.DELIZA_DB.ensureRole(role);
+  if (result.ok) {
+    saveRoleAuth(role, result);
+    return true;
+  }
+  clearRoleAuth();
+  return false;
+}
+
+async function login(role, email, password) {
+  if (window.DELIZA_DB?.isConfigured?.() && window.DELIZA_DB?.signInWithRole) {
+    const result = await window.DELIZA_DB.signInWithRole(role, email, password);
+    if (result.ok) {
+      saveRoleAuth(role, result);
+      return true;
+    }
+    const msg = result.error === 'role_not_allowed'
+      ? 'این حساب اجازه ورود به این پنل را ندارد.'
+      : result.error === 'role_not_active'
+        ? 'نقش این حساب فعال نیست.'
+        : 'ورود ناموفق بود. ایمیل، پسورد یا نقش کاربر را بررسی کن.';
+    alert(msg);
+    return false;
+  }
+
+  // fallback فقط برای حالت دمو، وقتی Supabase تنظیم نشده باشد.
+  if (role === 'admin' && email === 'admin123' && password === 'admin123') {
+    write('adminAuth', { email, name: 'مدیر دلیزا', role: 'admin' }, { skipRemote: true, silent: true });
     return true;
   }
   if (role === 'staff') {
-    const user = staffUsers().find((x) => x.username === username && x.password === password && x.active !== false);
+    const user = staffUsers().find((x) => x.username === email && x.password === password && x.active !== false);
     if (user) {
-      write('staffAuth', user);
+      write('staffAuth', { ...user, role: 'staff' }, { skipRemote: true, silent: true });
       return true;
     }
   }
   return false;
 }
 
-function logout(role) {
-  localStorage.removeItem(PREFIX + role + 'Auth');
+async function logout(role) {
+  clearRoleAuth();
+  if (window.DELIZA_DB?.signOut) await window.DELIZA_DB.signOut();
   location.reload();
 }
 
@@ -342,22 +389,35 @@ function resizeImageFile(file, maxSize = 900, quality = 0.72) {
 }
 
 function loginBox(role, title) {
-  return `<div class="card pad login-box"><h2>${title}</h2><input id="u" class="field" placeholder="یوزرنیم"><input id="p" class="field" type="password" placeholder="پسورد"><button class="btn" style="width:100%;margin-top:10px" onclick="doLogin('${role}')">ورود</button><p class="small">دمو: ${role === 'admin' ? 'admin123 / admin123' : 'staff123 / staff123'}</p></div>`;
+  const configured = window.DELIZA_DB?.isConfigured?.();
+  return `<div class="card pad login-box"><h2>${title}</h2><p class="small">${configured ? 'ورود امن با حساب Supabase Auth' : 'Supabase تنظیم نشده؛ ورود دمو فعال است.'}</p><input id="u" class="field" dir="ltr" type="${configured ? 'email' : 'text'}" autocomplete="username" placeholder="${configured ? 'ایمیل' : 'یوزرنیم دمو'}"><input id="p" class="field" type="password" autocomplete="current-password" placeholder="پسورد"><button id="loginBtn" class="btn" style="width:100%;margin-top:10px" onclick="doLogin('${role}')">ورود</button>${configured ? '<p class="small">اگر ورود انجام نشد، در Supabase برای همین ایمیل نقش admin یا staff بساز.</p>' : `<p class="small">دمو: ${role === 'admin' ? 'admin123 / admin123' : 'staff123 / staff123'}</p>`}</div>`;
 }
 
-function doLogin(role) {
-  if (login(role, $('u').value, $('p').value)) location.reload();
-  else alert('اطلاعات ورود اشتباه است');
+async function doLogin(role) {
+  const btn = $('loginBtn');
+  if (btn) { btn.disabled = true; btn.textContent = 'در حال ورود...'; }
+  const ok = await login(role, $('u').value, $('p').value);
+  if (ok) location.reload();
+  else {
+    if (btn) { btn.disabled = false; btn.textContent = 'ورود'; }
+    if (!window.DELIZA_DB?.isConfigured?.()) alert('اطلاعات ورود اشتباه است');
+  }
 }
 
 
 async function bootstrapData(role) {
   seed();
+
+  if (['admin', 'staff'].includes(role)) {
+    const ok = await syncRoleAuth(role);
+    if (window.DELIZA_DB?.isConfigured?.() && !ok) return;
+  }
+
   if (window.DELIZA_DB?.isConfigured?.()) {
     const pulled = await window.DELIZA_DB.pull();
 
     // اگر منوی جدید داخل فایل سایت آپدیت شده باشد، با اولین ورود مدیر به Supabase هم منتقل می‌شود.
-    if (role === 'admin' && pulled.ok) {
+    if (role === 'admin' && roleAuth('admin') && pulled.ok) {
       const currentSettings = settings();
       const needsMenuMigration = pulled.count === 0 || currentSettings.menuVersion !== DATA_VERSION;
       if (needsMenuMigration) {

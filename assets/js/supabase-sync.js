@@ -128,6 +128,89 @@
     return result;
   }
 
+  async function currentUser() {
+    const db = getClient();
+    if (!db) return null;
+    const { data, error } = await db.auth.getUser();
+    if (error) {
+      lastError = error.message || String(error);
+      return null;
+    }
+    return data?.user || null;
+  }
+
+  async function roleForUser(userId) {
+    const db = getClient();
+    if (!db || !userId) return null;
+    const { data, error } = await db
+      .from('user_roles')
+      .select('role,display_name,active')
+      .eq('user_id', userId)
+      .maybeSingle();
+    if (error) throw error;
+    return data || null;
+  }
+
+  function roleIsAllowed(requiredRole, actualRole) {
+    if (!requiredRole) return Boolean(actualRole);
+    if (requiredRole === actualRole) return true;
+    return requiredRole === 'staff' && actualRole === 'admin';
+  }
+
+  async function ensureRole(requiredRole) {
+    const db = getClient();
+    if (!db) return { ok: false, error: 'not_configured' };
+    try {
+      const user = await currentUser();
+      if (!user) return { ok: false, error: 'not_signed_in' };
+      const profile = await roleForUser(user.id);
+      if (!profile || profile.active === false) return { ok: false, user, error: 'role_not_active' };
+      if (!roleIsAllowed(requiredRole, profile.role)) {
+        return { ok: false, user, profile, error: 'role_not_allowed' };
+      }
+      lastError = '';
+      return { ok: true, user, profile, role: profile.role, displayName: profile.display_name || user.email };
+    } catch (error) {
+      lastError = error?.message || String(error);
+      console.warn('[Delliza Supabase] ensureRole failed:', error);
+      return { ok: false, error: lastError };
+    }
+  }
+
+  async function signInWithRole(requiredRole, email, password) {
+    const db = getClient();
+    if (!db) return { ok: false, error: 'not_configured' };
+    try {
+      const { error } = await db.auth.signInWithPassword({ email: String(email || '').trim(), password });
+      if (error) throw error;
+      const result = await ensureRole(requiredRole);
+      if (!result.ok) {
+        await db.auth.signOut();
+        return result;
+      }
+      lastError = '';
+      return result;
+    } catch (error) {
+      lastError = error?.message || String(error);
+      console.warn('[Delliza Supabase] signIn failed:', error);
+      return { ok: false, error: lastError };
+    }
+  }
+
+  async function signOut() {
+    const db = getClient();
+    if (!db) return { ok: true, skipped: true };
+    try {
+      const { error } = await db.auth.signOut();
+      if (error) throw error;
+      lastError = '';
+      return { ok: true };
+    } catch (error) {
+      lastError = error?.message || String(error);
+      return { ok: false, error: lastError };
+    }
+  }
+
   window.DELIZA_SYNC_KEYS = GLOBAL_KEYS;
-  window.DELIZA_DB = { isConfigured, statusText, pull, push, pushAll, refreshAndRerender, normalizeSupabaseUrl };
+  window.DELIZA_DB = { isConfigured, statusText, pull, push, pushAll, refreshAndRerender, normalizeSupabaseUrl, currentUser, ensureRole, signInWithRole, signOut };
 })();

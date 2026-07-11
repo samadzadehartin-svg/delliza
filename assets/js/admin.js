@@ -114,7 +114,7 @@
   };
 
   const renderOutput = () => {
-    els.output.value = buildProductsJs();
+    if (els.output) els.output.value = buildProductsJs();
   };
 
   const renderStatus = () => {
@@ -298,7 +298,7 @@
     });
     autoSaveDraft();
     renderTable();
-    toast("قیمت‌های جدول ذخیره شد. برای انتشار روی GitHub خروجی products.js بگیر.");
+    toast("قیمت‌های جدول ذخیره شد. برای انتشار، فایل products.js را دانلود کن.");
   };
 
   const saveDraft = () => {
@@ -318,9 +318,12 @@
       await navigator.clipboard.writeText(buildProductsJs());
       toast("کد products.js کپی شد.");
     } catch (error) {
-      els.output.select();
-      document.execCommand("copy");
-      toast("کد products.js انتخاب/کپی شد.");
+      if (els.output) {
+        els.output.hidden = false;
+        els.output.select();
+        document.execCommand("copy");
+      }
+      toast("کد products.js کپی شد یا برای کپی آماده شد.");
     }
   };
 

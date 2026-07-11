@@ -1,4 +1,4 @@
-const DATA_VERSION='delliza_menu_uploaded_index_12_2026_02';
+const DATA_VERSION='delliza_product_images_uploaded_2026_07_11_01';
 const DEFAULT_IMG='../assets/images/product-default.svg';
 const DEFAULT_CATEGORIES=[
   {
@@ -32,7 +32,7 @@ const DEFAULT_CATEGORIES=[
     "active": true
   }
 ];
-const DEFAULT_PRODUCTS=[
+const DEFAULT_PR[
   {
     "id": 1,
     "name": "کیک براونی",
@@ -48,9 +48,9 @@ const DEFAULT_PRODUCTS=[
       "سینی",
       "شکلاتی"
     ],
-    "img": "../assets/images/fresh-products/layered-cake.jpg",
+    "img": "../assets/images/products/product-01.jpg",
     "gallery": [
-      "../assets/images/fresh-products/layered-cake.jpg"
+      "../assets/images/products/product-01.jpg"
     ],
     "desc": "آرد، تخم‌مرغ، کره، شکر، شکلات، پودر کاکائو",
     "ingredients": "آرد، تخم‌مرغ، کره، شکر، شکلات، پودر کاکائو",
@@ -76,9 +76,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/pear-cake.jpg",
+    "img": "../assets/images/products/product-02.jpg",
     "gallery": [
-      "../assets/images/fresh-products/pear-cake.jpg"
+      "../assets/images/products/product-02.jpg"
     ],
     "desc": "آرد، تخم‌مرغ، شکر، روغن، هویج، گردو، دارچین",
     "ingredients": "آرد، تخم‌مرغ، شکر، روغن، هویج، گردو، دارچین",
@@ -105,9 +105,9 @@ const DEFAULT_PRODUCTS=[
       "سینی",
       "شکلاتی"
     ],
-    "img": "../assets/images/fresh-products/layered-cake.jpg",
+    "img": "../assets/images/products/product-03.jpg",
     "gallery": [
-      "../assets/images/fresh-products/layered-cake.jpg"
+      "../assets/images/products/product-03.jpg"
     ],
     "desc": "آرد، تخم‌مرغ، شیر، شکر، شکلات، پودر کاکائو",
     "ingredients": "آرد، تخم‌مرغ، شیر، شکر، شکلات، پودر کاکائو",
@@ -133,9 +133,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/pear-cake.jpg",
+    "img": "../assets/images/products/product-04.jpg",
     "gallery": [
-      "../assets/images/fresh-products/pear-cake.jpg"
+      "../assets/images/products/product-04.jpg"
     ],
     "desc": "آرد، تخم‌مرغ، کره، شکر، سیب، دارچین",
     "ingredients": "آرد، تخم‌مرغ، کره، شکر، سیب، دارچین",
@@ -162,9 +162,9 @@ const DEFAULT_PRODUCTS=[
       "سینی",
       "شکلاتی"
     ],
-    "img": "../assets/images/fresh-products/layered-cake.jpg",
+    "img": "../assets/images/products/product-05.jpg",
     "gallery": [
-      "../assets/images/fresh-products/layered-cake.jpg"
+      "../assets/images/products/product-05.jpg"
     ],
     "desc": "آرد، تخم‌مرغ، خامه، شکلات، پودر کاکائو، ژلاتین",
     "ingredients": "آرد، تخم‌مرغ، خامه، شکلات، پودر کاکائو، ژلاتین",
@@ -190,9 +190,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/pear-cake.jpg",
+    "img": "../assets/images/products/product-06.jpg",
     "gallery": [
-      "../assets/images/fresh-products/pear-cake.jpg"
+      "../assets/images/products/product-06.jpg"
     ],
     "desc": "آرد، تخم‌مرغ، خامه، شکر، موز، شکلات",
     "ingredients": "آرد، تخم‌مرغ، خامه، شکر، موز، شکلات",
@@ -218,9 +218,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/pear-cake.jpg",
+    "img": "../assets/images/products/product-07.jpg",
     "gallery": [
-      "../assets/images/fresh-products/pear-cake.jpg"
+      "../assets/images/products/product-07.jpg"
     ],
     "desc": "آرد، تخم‌مرغ، شکر، کره، پودر کاکائو، پنیر خامه‌ای، رنگ طبیعی",
     "ingredients": "آرد، تخم‌مرغ، شکر، کره، پودر کاکائو، پنیر خامه‌ای، رنگ طبیعی",
@@ -246,9 +246,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/pear-cake.jpg",
+    "img": "../assets/images/products/product-08.jpg",
     "gallery": [
-      "../assets/images/fresh-products/pear-cake.jpg"
+      "../assets/images/products/product-08.jpg"
     ],
     "desc": "آرد، تخم‌مرغ، کره، عسل، خامه، پرتقال",
     "ingredients": "آرد، تخم‌مرغ، کره، عسل، خامه، پرتقال",
@@ -275,9 +275,9 @@ const DEFAULT_PRODUCTS=[
       "سینی",
       "شکلاتی"
     ],
-    "img": "../assets/images/fresh-products/layered-cake.jpg",
+    "img": "../assets/images/products/product-09.jpg",
     "gallery": [
-      "../assets/images/fresh-products/layered-cake.jpg"
+      "../assets/images/products/product-09.jpg"
     ],
     "desc": "آرد، تخم‌مرغ، کره، شکلات، کارامل، بادام‌زمینی",
     "ingredients": "آرد، تخم‌مرغ، کره، شکلات، کارامل، بادام‌زمینی",
@@ -303,9 +303,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/pear-cake.jpg",
+    "img": "../assets/images/products/product-10.jpg",
     "gallery": [
-      "../assets/images/fresh-products/pear-cake.jpg"
+      "../assets/images/products/product-10.jpg"
     ],
     "desc": "آرد، تخم‌مرغ، کره، خرما، گردو، دارچین",
     "ingredients": "آرد، تخم‌مرغ، کره، خرما، گردو، دارچین",
@@ -331,9 +331,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/lotus-cheesecake.jpg",
+    "img": "../assets/images/products/product-11.jpg",
     "gallery": [
-      "../assets/images/fresh-products/lotus-cheesecake.jpg"
+      "../assets/images/products/product-11.jpg"
     ],
     "desc": "بیسکویت، کره، پنیر خامه‌ای، خامه، لوتوس",
     "ingredients": "بیسکویت، کره، پنیر خامه‌ای، خامه، لوتوس",
@@ -359,9 +359,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/pear-cake.jpg",
+    "img": "../assets/images/products/product-12.jpg",
     "gallery": [
-      "../assets/images/fresh-products/pear-cake.jpg"
+      "../assets/images/products/product-12.jpg"
     ],
     "desc": "آرد، تخم‌مرغ، شیر، کره، شکر، پودر نارگیل",
     "ingredients": "آرد، تخم‌مرغ، شیر، کره، شکر، پودر نارگیل",
@@ -388,9 +388,9 @@ const DEFAULT_PRODUCTS=[
       "سینی",
       "شکلاتی"
     ],
-    "img": "../assets/images/fresh-products/layered-cake.jpg",
+    "img": "../assets/images/products/product-13.jpg",
     "gallery": [
-      "../assets/images/fresh-products/layered-cake.jpg"
+      "../assets/images/products/product-13.jpg"
     ],
     "desc": "آرد، تخم‌مرغ، خامه، شکر، شکلات، کرم میانی",
     "ingredients": "آرد، تخم‌مرغ، خامه، شکر، شکلات، کرم میانی",
@@ -417,9 +417,9 @@ const DEFAULT_PRODUCTS=[
       "سینی",
       "زعفرانی"
     ],
-    "img": "../assets/images/fresh-products/pear-cake.jpg",
+    "img": "../assets/images/products/product-14.jpg",
     "gallery": [
-      "../assets/images/fresh-products/pear-cake.jpg"
+      "../assets/images/products/product-14.jpg"
     ],
     "desc": "آرد، تخم‌مرغ، شیر، کره، شکر، زعفران",
     "ingredients": "آرد، تخم‌مرغ، شیر، کره، شکر، زعفران",
@@ -445,9 +445,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/pear-cake.jpg",
+    "img": "../assets/images/products/product-15.jpg",
     "gallery": [
-      "../assets/images/fresh-products/pear-cake.jpg"
+      "../assets/images/products/product-15.jpg"
     ],
     "desc": "آرد، تخم‌مرغ، کره، شکر، گلابی، دارچین — قیمت برای سفارش سینی",
     "ingredients": "آرد، تخم‌مرغ، کره، شکر، گلابی، دارچین",
@@ -473,9 +473,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/pear-cake.jpg",
+    "img": "../assets/images/products/product-16.jpg",
     "gallery": [
-      "../assets/images/fresh-products/pear-cake.jpg"
+      "../assets/images/products/product-16.jpg"
     ],
     "desc": "آرد، تخم‌مرغ، شیر، خامه، شکر، نسکافه",
     "ingredients": "آرد، تخم‌مرغ، شیر، خامه، شکر، نسکافه",
@@ -501,9 +501,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/pear-cake.jpg",
+    "img": "../assets/images/products/product-17.jpg",
     "gallery": [
-      "../assets/images/fresh-products/pear-cake.jpg"
+      "../assets/images/products/product-17.jpg"
     ],
     "desc": "آرد، تخم‌مرغ، شیر، شکر، قهوه، شکلات",
     "ingredients": "آرد، تخم‌مرغ، شیر، شکر، قهوه، شکلات",
@@ -530,9 +530,9 @@ const DEFAULT_PRODUCTS=[
       "تک نفره",
       "زعفرانی"
     ],
-    "img": "../assets/images/fresh-products/pear-cake.jpg",
+    "img": "../assets/images/products/product-18.jpg",
     "gallery": [
-      "../assets/images/fresh-products/pear-cake.jpg"
+      "../assets/images/products/product-18.jpg"
     ],
     "desc": "آرد، روغن، شکر، گلاب، زعفران",
     "ingredients": "آرد، روغن، شکر، گلاب، زعفران",
@@ -558,9 +558,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "تک نفره"
     ],
-    "img": "../assets/images/fresh-products/halva.jpg",
+    "img": "../assets/images/products/product-19.jpg",
     "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
+      "../assets/images/products/product-19.jpg"
     ],
     "desc": "آرد سفید، آرد برنج، آرد نخودچی، روغن، شکر، شربت",
     "ingredients": "آرد سفید، آرد برنج، آرد نخودچی، روغن، شکر، شربت",
@@ -586,9 +586,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "تک نفره"
     ],
-    "img": "../assets/images/fresh-products/halva.jpg",
+    "img": "../assets/images/products/product-20.jpg",
     "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
+      "../assets/images/products/product-20.jpg"
     ],
     "desc": "آرد، کره، خرما، گردو، دارچین",
     "ingredients": "آرد، کره، خرما، گردو، دارچین",
@@ -615,9 +615,9 @@ const DEFAULT_PRODUCTS=[
       "تک نفره",
       "پسته‌ای"
     ],
-    "img": "../assets/images/fresh-products/halva.jpg",
+    "img": "../assets/images/products/product-21.jpg",
     "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
+      "../assets/images/products/product-21.jpg"
     ],
     "desc": "آرد، روغن، شکر، زعفران، پسته",
     "ingredients": "آرد، روغن، شکر، زعفران، پسته",
@@ -643,9 +643,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "تک نفره"
     ],
-    "img": "../assets/images/fresh-products/pear-cake.jpg",
+    "img": "../assets/images/products/product-22.jpg",
     "gallery": [
-      "../assets/images/fresh-products/pear-cake.jpg"
+      "../assets/images/products/product-22.jpg"
     ],
     "desc": "آرد، روغن، شکر، گلاب، هویج",
     "ingredients": "آرد، روغن، شکر، گلاب، هویج",
@@ -671,9 +671,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "تک نفره"
     ],
-    "img": "../assets/images/fresh-products/halva.jpg",
+    "img": "../assets/images/products/product-23.jpg",
     "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
+      "../assets/images/products/product-23.jpg"
     ],
     "desc": "آرد، روغن، شکر، شیر خشک، هل",
     "ingredients": "آرد، روغن، شکر، شیر خشک، هل",
@@ -699,9 +699,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "تک نفره"
     ],
-    "img": "../assets/images/fresh-products/halva.jpg",
+    "img": "../assets/images/products/product-24.jpg",
     "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
+      "../assets/images/products/product-24.jpg"
     ],
     "desc": "آرد، روغن، شکر، هل، زنجبیل",
     "ingredients": "آرد، روغن، شکر، هل، زنجبیل",
@@ -727,9 +727,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "تک نفره"
     ],
-    "img": "../assets/images/fresh-products/halva.jpg",
+    "img": "../assets/images/products/product-25.jpg",
     "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
+      "../assets/images/products/product-25.jpg"
     ],
     "desc": "آرد، روغن، شکر، ارده، کنجد",
     "ingredients": "آرد، روغن، شکر، ارده، کنجد",
@@ -755,9 +755,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "تک نفره"
     ],
-    "img": "../assets/images/fresh-products/halva.jpg",
+    "img": "../assets/images/products/product-26.jpg",
     "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
+      "../assets/images/products/product-26.jpg"
     ],
     "desc": "آرد، کره، شکر، گلاب، شیر",
     "ingredients": "آرد، کره، شکر، گلاب، شیر",
@@ -784,9 +784,9 @@ const DEFAULT_PRODUCTS=[
       "سینی / ۱ کیلویی",
       "زعفرانی"
     ],
-    "img": "../assets/images/fresh-products/pear-cake.jpg",
+    "img": "../assets/images/products/product-27.jpg",
     "gallery": [
-      "../assets/images/fresh-products/pear-cake.jpg"
+      "../assets/images/products/product-27.jpg"
     ],
     "desc": "آرد، روغن، شکر، گلاب، زعفران",
     "ingredients": "آرد، روغن، شکر، گلاب، زعفران",
@@ -812,9 +812,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی / ۱ کیلویی"
     ],
-    "img": "../assets/images/fresh-products/halva.jpg",
+    "img": "../assets/images/products/product-28.jpg",
     "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
+      "../assets/images/products/product-28.jpg"
     ],
     "desc": "آرد سفید، آرد برنج، آرد نخودچی، روغن، شکر، شربت",
     "ingredients": "آرد سفید، آرد برنج، آرد نخودچی، روغن، شکر، شربت",
@@ -840,9 +840,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی / ۱ کیلویی"
     ],
-    "img": "../assets/images/fresh-products/pear-cake.jpg",
+    "img": "../assets/images/products/product-29.jpg",
     "gallery": [
-      "../assets/images/fresh-products/pear-cake.jpg"
+      "../assets/images/products/product-29.jpg"
     ],
     "desc": "آرد، روغن، شکر، گلاب، هویج",
     "ingredients": "آرد، روغن، شکر، گلاب، هویج",
@@ -868,9 +868,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی / ۱ کیلویی"
     ],
-    "img": "../assets/images/fresh-products/halva.jpg",
+    "img": "../assets/images/products/product-30.jpg",
     "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
+      "../assets/images/products/product-30.jpg"
     ],
     "desc": "آرد، روغن، شکر، شیر خشک، هل",
     "ingredients": "آرد، روغن، شکر، شیر خشک، هل",
@@ -896,9 +896,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی / ۱ کیلویی"
     ],
-    "img": "../assets/images/fresh-products/halva.jpg",
+    "img": "../assets/images/products/product-31.jpg",
     "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
+      "../assets/images/products/product-31.jpg"
     ],
     "desc": "آرد، روغن، شکر، هل، زنجبیل",
     "ingredients": "آرد، روغن، شکر، هل، زنجبیل",
@@ -925,9 +925,9 @@ const DEFAULT_PRODUCTS=[
       "سینی / ۱ کیلویی",
       "پسته‌ای"
     ],
-    "img": "../assets/images/fresh-products/halva.jpg",
+    "img": "../assets/images/products/product-32.jpg",
     "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
+      "../assets/images/products/product-32.jpg"
     ],
     "desc": "آرد، روغن، شکر، زعفران، پسته",
     "ingredients": "آرد، روغن، شکر، زعفران، پسته",
@@ -953,9 +953,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی / ۱ کیلویی"
     ],
-    "img": "../assets/images/fresh-products/halva.jpg",
+    "img": "../assets/images/products/product-33.jpg",
     "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
+      "../assets/images/products/product-33.jpg"
     ],
     "desc": "آرد، کره، خرما، گردو، دارچین",
     "ingredients": "آرد، کره، خرما، گردو، دارچین",
@@ -981,9 +981,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی / ۱ کیلویی"
     ],
-    "img": "../assets/images/fresh-products/halva.jpg",
+    "img": "../assets/images/products/product-34.jpg",
     "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
+      "../assets/images/products/product-34.jpg"
     ],
     "desc": "آرد، کره، شکر، گلاب، شیر",
     "ingredients": "آرد، کره، شکر، گلاب، شیر",
@@ -1011,9 +1011,9 @@ const DEFAULT_PRODUCTS=[
       "عدد",
       "بیس سفارش"
     ],
-    "img": "../assets/images/fresh-products/donut.jpg",
+    "img": "../assets/images/products/product-35.jpg",
     "gallery": [
-      "../assets/images/fresh-products/donut.jpg"
+      "../assets/images/products/product-35.jpg"
     ],
     "desc": "آرد، شیر، تخم‌مرغ، شکر، خمیرمایه — حداقل سفارش ۱۰ عدد",
     "ingredients": "آرد، شیر، تخم‌مرغ، شکر، خمیرمایه",
@@ -1041,9 +1041,9 @@ const DEFAULT_PRODUCTS=[
       "عدد",
       "بیس سفارش"
     ],
-    "img": "../assets/images/fresh-products/croissant.jpg",
+    "img": "../assets/images/products/product-36.jpg",
     "gallery": [
-      "../assets/images/fresh-products/croissant.jpg"
+      "../assets/images/products/product-36.jpg"
     ],
     "desc": "آرد، کره، شیر، تخم‌مرغ، خمیرمایه — حداقل سفارش ۱۰ عدد",
     "ingredients": "آرد، کره، شیر، تخم‌مرغ، خمیرمایه",
@@ -1070,9 +1070,9 @@ const DEFAULT_PRODUCTS=[
       "کیلویی",
       "بیس سفارش"
     ],
-    "img": "../assets/images/fresh-products/donut.jpg",
+    "img": "../assets/images/products/product-37.jpg",
     "gallery": [
-      "../assets/images/fresh-products/donut.jpg"
+      "../assets/images/products/product-37.jpg"
     ],
     "desc": "آرد، شیر، تخم‌مرغ، شکر، خمیرمایه — قیمت بر اساس وزن نهایی محاسبه می‌شود",
     "ingredients": "آرد، شیر، تخم‌مرغ، شکر، خمیرمایه",
@@ -1097,9 +1097,9 @@ const DEFAULT_PRODUCTS=[
     "status": "active",
     "type": "B2C",
     "tags": [],
-    "img": "../assets/images/fresh-products/mousse-cake.jpg",
+    "img": "../assets/images/products/product-38.jpg",
     "gallery": [
-      "../assets/images/fresh-products/mousse-cake.jpg"
+      "../assets/images/products/product-38.jpg"
     ],
     "desc": "کیک اسفنجی، خامه، فیلینگ، میوه یا شکلات",
     "ingredients": "کیک اسفنجی، خامه، فیلینگ، میوه یا شکلات",
@@ -1126,9 +1126,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/cookies.jpg",
+    "img": "../assets/images/products/product-39.jpg",
     "gallery": [
-      "../assets/images/fresh-products/cookies.jpg"
+      "../assets/images/products/product-39.jpg"
     ],
     "desc": "آرد برنج، روغن، پودر قند، هل، گلاب",
     "ingredients": "آرد برنج، روغن، پودر قند، هل، گلاب",
@@ -1154,9 +1154,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/cookies.jpg",
+    "img": "../assets/images/products/product-40.jpg",
     "gallery": [
-      "../assets/images/fresh-products/cookies.jpg"
+      "../assets/images/products/product-40.jpg"
     ],
     "desc": "آرد نخودچی، روغن، پودر قند، هل",
     "ingredients": "آرد نخودچی، روغن، پودر قند، هل",
@@ -1182,9 +1182,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/cookies.jpg",
+    "img": "../assets/images/products/product-41.jpg",
     "gallery": [
-      "../assets/images/fresh-products/cookies.jpg"
+      "../assets/images/products/product-41.jpg"
     ],
     "desc": "آرد، تخم‌مرغ، کره، شکر، وانیل",
     "ingredients": "آرد، تخم‌مرغ، کره، شکر، وانیل",
@@ -1210,9 +1210,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/cookies.jpg",
+    "img": "../assets/images/products/product-42.jpg",
     "gallery": [
-      "../assets/images/fresh-products/cookies.jpg"
+      "../assets/images/products/product-42.jpg"
     ],
     "desc": "آرد، کره، پودر قند، وانیل، مغز",
     "ingredients": "آرد، کره، پودر قند، وانیل، مغز",
@@ -1238,9 +1238,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/cookies.jpg",
+    "img": "../assets/images/products/product-43.jpg",
     "gallery": [
-      "../assets/images/fresh-products/cookies.jpg"
+      "../assets/images/products/product-43.jpg"
     ],
     "desc": "آرد، سفیده تخم‌مرغ، شکر، نارگیل",
     "ingredients": "آرد، سفیده تخم‌مرغ، شکر، نارگیل",
@@ -1266,9 +1266,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/cookies.jpg",
+    "img": "../assets/images/products/product-44.jpg",
     "gallery": [
-      "../assets/images/fresh-products/cookies.jpg"
+      "../assets/images/products/product-44.jpg"
     ],
     "desc": "آرد نخودچی، کره، پودر قند، هل",
     "ingredients": "آرد نخودچی، کره، پودر قند، هل",
@@ -1294,9 +1294,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/cookies.jpg",
+    "img": "../assets/images/products/product-45.jpg",
     "gallery": [
-      "../assets/images/fresh-products/cookies.jpg"
+      "../assets/images/products/product-45.jpg"
     ],
     "desc": "کره، شکر، عسل، بادام",
     "ingredients": "کره، شکر، عسل، بادام",
@@ -1322,9 +1322,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/cookies.jpg",
+    "img": "../assets/images/products/product-46.jpg",
     "gallery": [
-      "../assets/images/fresh-products/cookies.jpg"
+      "../assets/images/products/product-46.jpg"
     ],
     "desc": "جو دوسر، عسل، مغزها، میوه خشک",
     "ingredients": "جو دوسر، عسل، مغزها، میوه خشک",
@@ -1350,9 +1350,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/cookies.jpg",
+    "img": "../assets/images/products/product-47.jpg",
     "gallery": [
-      "../assets/images/fresh-products/cookies.jpg"
+      "../assets/images/products/product-47.jpg"
     ],
     "desc": "آرد، تخم‌مرغ، کره، شکر قهوه‌ای، شکلات",
     "ingredients": "آرد، تخم‌مرغ، کره، شکر قهوه‌ای، شکلات",
@@ -1378,9 +1378,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/cookies.jpg",
+    "img": "../assets/images/products/product-48.jpg",
     "gallery": [
-      "../assets/images/fresh-products/cookies.jpg"
+      "../assets/images/products/product-48.jpg"
     ],
     "desc": "خمیر، کره، پنیر، ادویه",
     "ingredients": "خمیر، کره، پنیر، ادویه",
@@ -1406,9 +1406,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/cookies.jpg",
+    "img": "../assets/images/products/product-49.jpg",
     "gallery": [
-      "../assets/images/fresh-products/cookies.jpg"
+      "../assets/images/products/product-49.jpg"
     ],
     "desc": "بیسکویت، کره، پودر کاکائو، مغز",
     "ingredients": "بیسکویت، کره، پودر کاکائو، مغز",
@@ -1434,9 +1434,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/cookies.jpg",
+    "img": "../assets/images/products/product-50.jpg",
     "gallery": [
-      "../assets/images/fresh-products/cookies.jpg"
+      "../assets/images/products/product-50.jpg"
     ],
     "desc": "زرده تخم‌مرغ، پودر قند، وانیل",
     "ingredients": "زرده تخم‌مرغ، پودر قند، وانیل",
@@ -1462,9 +1462,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/cookies.jpg",
+    "img": "../assets/images/products/product-51.jpg",
     "gallery": [
-      "../assets/images/fresh-products/cookies.jpg"
+      "../assets/images/products/product-51.jpg"
     ],
     "desc": "سفیده تخم‌مرغ، پودر قند، وانیل",
     "ingredients": "سفیده تخم‌مرغ، پودر قند، وانیل",
@@ -1491,9 +1491,9 @@ const DEFAULT_PRODUCTS=[
       "بیس سفارش ۱۰ عدد",
       "بسته ۱۰ عدد"
     ],
-    "img": "../assets/images/fresh-products/mochi.jpg",
+    "img": "../assets/images/products/product-52.jpg",
     "gallery": [
-      "../assets/images/fresh-products/mochi.jpg"
+      "../assets/images/products/product-52.jpg"
     ],
     "desc": "آرد برنج، نشاسته، شکر، کرم — قیمت بسته ۱۰ عددی",
     "ingredients": "آرد برنج، نشاسته، شکر، کرم",
@@ -1520,9 +1520,9 @@ const DEFAULT_PRODUCTS=[
       "بیس سفارش ۱۰ عدد",
       "بسته ۱۰ عدد"
     ],
-    "img": "../assets/images/fresh-products/layered-cake.jpg",
+    "img": "../assets/images/products/product-53.jpg",
     "gallery": [
-      "../assets/images/fresh-products/layered-cake.jpg"
+      "../assets/images/products/product-53.jpg"
     ],
     "desc": "آرد برنج، نشاسته، شکر، کارامل، شکلات، بادام‌زمینی — قیمت بسته ۱۰ عددی",
     "ingredients": "آرد برنج، نشاسته، شکر، کارامل، شکلات، بادام‌زمینی",
@@ -1548,9 +1548,9 @@ const DEFAULT_PRODUCTS=[
     "tags": [
       "سینی"
     ],
-    "img": "../assets/images/fresh-products/fruit-mousse.jpg",
+    "img": "../assets/images/products/product-54.jpg",
     "gallery": [
-      "../assets/images/fresh-products/fruit-mousse.jpg"
+      "../assets/images/products/product-54.jpg"
     ],
     "desc": "خامه، شکر، ژلاتین، پوره میوه",
     "ingredients": "خامه، شکر، ژلاتین، پوره میوه",
@@ -1561,6 +1561,8 @@ const DEFAULT_PRODUCTS=[
       "minOrder": true,
       "weight": true
     }
+  }
+]}
   }
 ];
 const DEFAULT_STAFF=[
@@ -1585,5 +1587,5 @@ const DEFAULT_SETTINGS={
   "phone": "۰۹۰۲۲۱۲۲۲۸۶",
   "address": "تهران، ایران",
   "instagram": "@Delliza.bakery",
-  "menuVersion": "delliza_menu_uploaded_index_12_2026_02"
+  "menuVersion": "delliza_product_images_uploaded_2026_07_11_01"
 };

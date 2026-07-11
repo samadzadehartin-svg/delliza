@@ -1,0 +1,10 @@
+{
+  "name": "دلیزا | کاتالوگ محصولات قنادی",
+  "short_name": "دلیزا",
+  "start_url": "/buyer/",
+  "display": "standalone",
+  "theme_color": "#d9468f",
+  "background_color": "#fff7fb",
+  "dir": "rtl",
+  "lang": "fa"
+}

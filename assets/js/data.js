@@ -1,4 +1,4 @@
-const DATA_VERSION='delliza_full_products_2026_01';
+const DATA_VERSION='delliza_menu_uploaded_index_12_2026_02';
 const DEFAULT_IMG='../assets/images/product-default.svg';
 const DEFAULT_CATEGORIES=[
   {
@@ -8,7 +8,7 @@ const DEFAULT_CATEGORIES=[
   },
   {
     "id": "halva-tray",
-    "title": "حلوا سینی",
+    "title": "حلوا سینی / یک کیلویی",
     "active": true
   },
   {
@@ -35,137 +35,24 @@ const DEFAULT_CATEGORIES=[
 const DEFAULT_PRODUCTS=[
   {
     "id": 1,
-    "name": "کیک اوچکلمان",
+    "name": "کیک براونی",
     "category": "cake",
-    "flavor": "شکلاتی",
-    "weight": "یک عدد",
-    "price": 144000,
+    "flavor": "کیک و شیرینی",
+    "weight": "سینی",
+    "price": 1880000,
     "stock": 80,
     "minOrder": 1,
     "status": "active",
     "type": "B2C",
     "tags": [
-      "پرفروش",
+      "سینی",
       "شکلاتی"
     ],
     "img": "../assets/images/fresh-products/layered-cake.jpg",
     "gallery": [
       "../assets/images/fresh-products/layered-cake.jpg"
     ],
-    "desc": "کیک لایه‌ای شکلاتی با کرم مخصوص و تزیین شکلاتی.",
-    "ingredients": "آرد، تخم‌مرغ، خامه، شکر، شکلات، کرم میانی",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 2,
-    "name": "کیک موس شکلاتی",
-    "category": "cake",
-    "flavor": "شکلات تلخ",
-    "weight": "یک عدد",
-    "price": 161000,
-    "stock": 80,
-    "minOrder": 1,
-    "status": "active",
-    "type": "B2C",
-    "tags": [
-      "ویژه",
-      "شکلاتی"
-    ],
-    "img": "../assets/images/fresh-products/mousse-cake.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/mousse-cake.jpg"
-    ],
-    "desc": "موس لطیف شکلات تلخ روی کیک شکلاتی با روکش گاناش براق.",
-    "ingredients": "آرد، تخم‌مرغ، خامه، شکلات، پودر کاکائو، ژلاتین",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 3,
-    "name": "کیک گلابی",
-    "category": "cake",
-    "flavor": "گلابی و دارچین",
-    "weight": "یک عدد",
-    "price": 85000,
-    "stock": 80,
-    "minOrder": 1,
-    "status": "active",
-    "type": "B2C",
-    "tags": [
-      "خانگی"
-    ],
-    "img": "../assets/images/fresh-products/pear-cake.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/pear-cake.jpg"
-    ],
-    "desc": "کیک کره‌ای گلابی با بافت نرم و عطر دارچین.",
-    "ingredients": "آرد، تخم‌مرغ، کره، شکر، گلابی، دارچین",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 4,
-    "name": "چیزکیک لوتوس",
-    "category": "cake",
-    "flavor": "لوتوس",
-    "weight": "یک عدد",
-    "price": 129000,
-    "stock": 80,
-    "minOrder": 1,
-    "status": "active",
-    "type": "B2C",
-    "tags": [
-      "محبوب"
-    ],
-    "img": "../assets/images/fresh-products/lotus-cheesecake.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/lotus-cheesecake.jpg"
-    ],
-    "desc": "چیزکیک لطیف با بیسکویت لوتوس و کرم کارامل مخصوص.",
-    "ingredients": "بیسکویت، کره، پنیر خامه‌ای، خامه، لوتوس",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 5,
-    "name": "کیک براونی",
-    "category": "cake",
-    "flavor": "شکلاتی",
-    "weight": "یک عدد",
-    "price": 75000,
-    "stock": 80,
-    "minOrder": 1,
-    "status": "active",
-    "type": "B2C",
-    "tags": [
-      "شکلاتی"
-    ],
-    "img": "../assets/images/fresh-products/mousse-cake.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/mousse-cake.jpg"
-    ],
-    "desc": "براونی شکلاتی متراکم و مرطوب برای دوست‌داران شکلات.",
+    "desc": "آرد، تخم‌مرغ، کره، شکر، شکلات، پودر کاکائو",
     "ingredients": "آرد، تخم‌مرغ، کره، شکر، شکلات، پودر کاکائو",
     "visible": {
       "ingredients": true,
@@ -176,25 +63,25 @@ const DEFAULT_PRODUCTS=[
     }
   },
   {
-    "id": 6,
-    "name": "کیک زعفرانی",
+    "id": 2,
+    "name": "کیک هویج و گردو",
     "category": "cake",
-    "flavor": "زعفران",
-    "weight": "یک عدد",
-    "price": 78000,
+    "flavor": "کیک و شیرینی",
+    "weight": "سینی",
+    "price": 650000,
     "stock": 80,
     "minOrder": 1,
     "status": "active",
     "type": "B2C",
     "tags": [
-      "زعفرانی"
+      "سینی"
     ],
     "img": "../assets/images/fresh-products/pear-cake.jpg",
     "gallery": [
       "../assets/images/fresh-products/pear-cake.jpg"
     ],
-    "desc": "کیک زعفرانی معطر با بافت نرم و طعم ایرانی.",
-    "ingredients": "آرد، تخم‌مرغ، شیر، کره، شکر، زعفران",
+    "desc": "آرد، تخم‌مرغ، شکر، روغن، هویج، گردو، دارچین",
+    "ingredients": "آرد، تخم‌مرغ، شکر، روغن، هویج، گردو، دارچین",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -204,24 +91,53 @@ const DEFAULT_PRODUCTS=[
     }
   },
   {
-    "id": 7,
-    "name": "استرول کیک سیب و دارچین",
+    "id": 3,
+    "name": "کیک خیس شکلاتی",
     "category": "cake",
-    "flavor": "سیب و دارچین",
-    "weight": "یک عدد",
-    "price": 66000,
+    "flavor": "کیک و شیرینی",
+    "weight": "سینی",
+    "price": 800000,
     "stock": 80,
     "minOrder": 1,
     "status": "active",
     "type": "B2C",
     "tags": [
-      "دارچینی"
+      "سینی",
+      "شکلاتی"
+    ],
+    "img": "../assets/images/fresh-products/layered-cake.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/layered-cake.jpg"
+    ],
+    "desc": "آرد، تخم‌مرغ، شیر، شکر، شکلات، پودر کاکائو",
+    "ingredients": "آرد، تخم‌مرغ، شیر، شکر، شکلات، پودر کاکائو",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    }
+  },
+  {
+    "id": 4,
+    "name": "استرول کیک سیب و دارچین",
+    "category": "cake",
+    "flavor": "کیک و شیرینی",
+    "weight": "سینی",
+    "price": 890000,
+    "stock": 80,
+    "minOrder": 1,
+    "status": "active",
+    "type": "B2C",
+    "tags": [
+      "سینی"
     ],
     "img": "../assets/images/fresh-products/pear-cake.jpg",
     "gallery": [
       "../assets/images/fresh-products/pear-cake.jpg"
     ],
-    "desc": "کیک سیب و دارچین با تاپینگ استرول کرانچی.",
+    "desc": "آرد، تخم‌مرغ، کره، شکر، سیب، دارچین",
     "ingredients": "آرد، تخم‌مرغ، کره، شکر، سیب، دارچین",
     "visible": {
       "ingredients": true,
@@ -232,25 +148,110 @@ const DEFAULT_PRODUCTS=[
     }
   },
   {
-    "id": 8,
-    "name": "کیک خیس شکلاتی",
+    "id": 5,
+    "name": "کیک موس شکلاتی",
     "category": "cake",
-    "flavor": "شکلاتی",
-    "weight": "یک عدد",
-    "price": 71000,
+    "flavor": "کیک و شیرینی",
+    "weight": "سینی",
+    "price": 1380000,
     "stock": 80,
     "minOrder": 1,
     "status": "active",
     "type": "B2C",
     "tags": [
+      "سینی",
       "شکلاتی"
     ],
-    "img": "../assets/images/fresh-products/mousse-cake.jpg",
+    "img": "../assets/images/fresh-products/layered-cake.jpg",
     "gallery": [
-      "../assets/images/fresh-products/mousse-cake.jpg"
+      "../assets/images/fresh-products/layered-cake.jpg"
     ],
-    "desc": "کیک خیس شکلاتی با بافت نرم و طعم غلیظ کاکائو.",
-    "ingredients": "آرد، تخم‌مرغ، شیر، شکر، شکلات، پودر کاکائو",
+    "desc": "آرد، تخم‌مرغ، خامه، شکلات، پودر کاکائو، ژلاتین",
+    "ingredients": "آرد، تخم‌مرغ، خامه، شکلات، پودر کاکائو، ژلاتین",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    }
+  },
+  {
+    "id": 6,
+    "name": "کیک ترافل موز",
+    "category": "cake",
+    "flavor": "کیک و شیرینی",
+    "weight": "سینی",
+    "price": 430000,
+    "stock": 80,
+    "minOrder": 1,
+    "status": "active",
+    "type": "B2C",
+    "tags": [
+      "سینی"
+    ],
+    "img": "../assets/images/fresh-products/pear-cake.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/pear-cake.jpg"
+    ],
+    "desc": "آرد، تخم‌مرغ، خامه، شکر، موز، شکلات",
+    "ingredients": "آرد، تخم‌مرغ، خامه، شکر، موز، شکلات",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    }
+  },
+  {
+    "id": 7,
+    "name": "کیک ردولوت",
+    "category": "cake",
+    "flavor": "کیک و شیرینی",
+    "weight": "سینی",
+    "price": 470000,
+    "stock": 80,
+    "minOrder": 1,
+    "status": "active",
+    "type": "B2C",
+    "tags": [
+      "سینی"
+    ],
+    "img": "../assets/images/fresh-products/pear-cake.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/pear-cake.jpg"
+    ],
+    "desc": "آرد، تخم‌مرغ، شکر، کره، پودر کاکائو، پنیر خامه‌ای، رنگ طبیعی",
+    "ingredients": "آرد، تخم‌مرغ، شکر، کره، پودر کاکائو، پنیر خامه‌ای، رنگ طبیعی",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    }
+  },
+  {
+    "id": 8,
+    "name": "کیک مدوویک پرتقالی",
+    "category": "cake",
+    "flavor": "کیک و شیرینی",
+    "weight": "سینی",
+    "price": 610000,
+    "stock": 80,
+    "minOrder": 1,
+    "status": "active",
+    "type": "B2C",
+    "tags": [
+      "سینی"
+    ],
+    "img": "../assets/images/fresh-products/pear-cake.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/pear-cake.jpg"
+    ],
+    "desc": "آرد، تخم‌مرغ، کره، عسل، خامه، پرتقال",
+    "ingredients": "آرد، تخم‌مرغ، کره، عسل، خامه، پرتقال",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -263,21 +264,22 @@ const DEFAULT_PRODUCTS=[
     "id": 9,
     "name": "پایه کیک شکلاتی اسنیکرز",
     "category": "cake",
-    "flavor": "اسنیکرز",
-    "weight": "یک عدد",
-    "price": 52000,
+    "flavor": "کیک و شیرینی",
+    "weight": "سینی",
+    "price": 1120000,
     "stock": 80,
     "minOrder": 1,
     "status": "active",
     "type": "B2C",
     "tags": [
-      "کاراملی"
+      "سینی",
+      "شکلاتی"
     ],
     "img": "../assets/images/fresh-products/layered-cake.jpg",
     "gallery": [
       "../assets/images/fresh-products/layered-cake.jpg"
     ],
-    "desc": "پایه کیک شکلاتی با ترکیب کارامل و بادام‌زمینی.",
+    "desc": "آرد، تخم‌مرغ، کره، شکلات، کارامل، بادام‌زمینی",
     "ingredients": "آرد، تخم‌مرغ، کره، شکلات، کارامل، بادام‌زمینی",
     "visible": {
       "ingredients": true,
@@ -289,51 +291,23 @@ const DEFAULT_PRODUCTS=[
   },
   {
     "id": 10,
-    "name": "کیک هویج و گردو",
-    "category": "cake",
-    "flavor": "هویج و گردو",
-    "weight": "یک عدد",
-    "price": 56000,
-    "stock": 80,
-    "minOrder": 1,
-    "status": "active",
-    "type": "B2C",
-    "tags": [
-      "کلاسیک"
-    ],
-    "img": "../assets/images/fresh-products/pear-cake.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/pear-cake.jpg"
-    ],
-    "desc": "کیک کلاسیک هویج و گردو با عطر دارچین.",
-    "ingredients": "آرد، تخم‌مرغ، شکر، روغن، هویج، گردو، دارچین",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 11,
     "name": "کیک دیت خرمایی",
     "category": "cake",
-    "flavor": "خرما",
-    "weight": "یک عدد",
-    "price": 39000,
+    "flavor": "کیک و شیرینی",
+    "weight": "سینی",
+    "price": 560000,
     "stock": 80,
     "minOrder": 1,
     "status": "active",
     "type": "B2C",
     "tags": [
-      "خرمایی"
+      "سینی"
     ],
     "img": "../assets/images/fresh-products/pear-cake.jpg",
     "gallery": [
       "../assets/images/fresh-products/pear-cake.jpg"
     ],
-    "desc": "کیک خرمایی نرم با گردو و دارچین.",
+    "desc": "آرد، تخم‌مرغ، کره، خرما، گردو، دارچین",
     "ingredients": "آرد، تخم‌مرغ، کره، خرما، گردو، دارچین",
     "visible": {
       "ingredients": true,
@@ -344,25 +318,25 @@ const DEFAULT_PRODUCTS=[
     }
   },
   {
-    "id": 12,
-    "name": "کیک مدوویک پرتقالی",
+    "id": 11,
+    "name": "چیزکیک لوتوس",
     "category": "cake",
-    "flavor": "پرتقال و عسل",
-    "weight": "یک عدد",
-    "price": 52000,
+    "flavor": "کیک و شیرینی",
+    "weight": "سینی",
+    "price": 1120000,
     "stock": 80,
     "minOrder": 1,
     "status": "active",
     "type": "B2C",
     "tags": [
-      "عسلی"
+      "سینی"
     ],
     "img": "../assets/images/fresh-products/lotus-cheesecake.jpg",
     "gallery": [
       "../assets/images/fresh-products/lotus-cheesecake.jpg"
     ],
-    "desc": "مدوویک لطیف با عسل، خامه و رایحه پرتقال.",
-    "ingredients": "آرد، تخم‌مرغ، کره، عسل، خامه، پرتقال",
+    "desc": "بیسکویت، کره، پنیر خامه‌ای، خامه، لوتوس",
+    "ingredients": "بیسکویت، کره، پنیر خامه‌ای، خامه، لوتوس",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -372,80 +346,24 @@ const DEFAULT_PRODUCTS=[
     }
   },
   {
-    "id": 13,
-    "name": "کیک ترافل موز",
-    "category": "cake",
-    "flavor": "موز و شکلات",
-    "weight": "یک عدد",
-    "price": 34000,
-    "stock": 80,
-    "minOrder": 1,
-    "status": "active",
-    "type": "B2C",
-    "tags": [
-      "موزی"
-    ],
-    "img": "../assets/images/fresh-products/layered-cake.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/layered-cake.jpg"
-    ],
-    "desc": "کیک موزی با خامه و ترافل شکلاتی.",
-    "ingredients": "آرد، تخم‌مرغ، خامه، شکر، موز، شکلات",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 14,
-    "name": "کیک ردولوت",
-    "category": "cake",
-    "flavor": "ردولوت",
-    "weight": "یک عدد",
-    "price": 38000,
-    "stock": 80,
-    "minOrder": 1,
-    "status": "active",
-    "type": "B2C",
-    "tags": [
-      "کرم‌دار"
-    ],
-    "img": "../assets/images/fresh-products/fruit-mousse.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/fruit-mousse.jpg"
-    ],
-    "desc": "ردولوت با کرم پنیر خامه‌ای و بافت مخملی.",
-    "ingredients": "آرد، تخم‌مرغ، شکر، کره، پودر کاکائو، پنیر خامه‌ای، رنگ طبیعی",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 15,
+    "id": 12,
     "name": "کیک شنی",
     "category": "cake",
-    "flavor": "نارگیل",
-    "weight": "یک عدد",
-    "price": 32000,
+    "flavor": "کیک و شیرینی",
+    "weight": "سینی",
+    "price": 610000,
     "stock": 80,
     "minOrder": 1,
     "status": "active",
     "type": "B2C",
     "tags": [
-      "خانگی"
+      "سینی"
     ],
     "img": "../assets/images/fresh-products/pear-cake.jpg",
     "gallery": [
       "../assets/images/fresh-products/pear-cake.jpg"
     ],
-    "desc": "کیک شنی سبک با طعم نارگیل و بافت لطیف.",
+    "desc": "آرد، تخم‌مرغ، شیر، کره، شکر، پودر نارگیل",
     "ingredients": "آرد، تخم‌مرغ، شیر، کره، شکر، پودر نارگیل",
     "visible": {
       "ingredients": true,
@@ -456,25 +374,26 @@ const DEFAULT_PRODUCTS=[
     }
   },
   {
-    "id": 16,
-    "name": "کیک موکا",
+    "id": 13,
+    "name": "کیک اوچکلمان",
     "category": "cake",
-    "flavor": "موکا",
-    "weight": "یک عدد",
-    "price": 33000,
+    "flavor": "کیک و شیرینی",
+    "weight": "سینی",
+    "price": 1240000,
     "stock": 80,
     "minOrder": 1,
     "status": "active",
     "type": "B2C",
     "tags": [
-      "قهوه"
+      "سینی",
+      "شکلاتی"
     ],
-    "img": "../assets/images/fresh-products/mousse-cake.jpg",
+    "img": "../assets/images/fresh-products/layered-cake.jpg",
     "gallery": [
-      "../assets/images/fresh-products/mousse-cake.jpg"
+      "../assets/images/fresh-products/layered-cake.jpg"
     ],
-    "desc": "کیک موکا با ترکیب قهوه و شکلات.",
-    "ingredients": "آرد، تخم‌مرغ، شیر، شکر، قهوه، شکلات",
+    "desc": "آرد، تخم‌مرغ، خامه، شکر، شکلات، کرم میانی",
+    "ingredients": "آرد، تخم‌مرغ، خامه، شکر، شکلات، کرم میانی",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -484,24 +403,81 @@ const DEFAULT_PRODUCTS=[
     }
   },
   {
-    "id": 17,
-    "name": "کیک نسکافه‌ای",
+    "id": 14,
+    "name": "کیک زعفرانی",
     "category": "cake",
-    "flavor": "نسکافه",
-    "weight": "یک عدد",
-    "price": 32000,
+    "flavor": "کیک و شیرینی",
+    "weight": "سینی",
+    "price": 1030000,
     "stock": 80,
     "minOrder": 1,
     "status": "active",
     "type": "B2C",
     "tags": [
-      "قهوه"
+      "سینی",
+      "زعفرانی"
     ],
-    "img": "../assets/images/fresh-products/layered-cake.jpg",
+    "img": "../assets/images/fresh-products/pear-cake.jpg",
     "gallery": [
-      "../assets/images/fresh-products/layered-cake.jpg"
+      "../assets/images/fresh-products/pear-cake.jpg"
     ],
-    "desc": "کیک نسکافه‌ای با طعم ملایم قهوه.",
+    "desc": "آرد، تخم‌مرغ، شیر، کره، شکر، زعفران",
+    "ingredients": "آرد، تخم‌مرغ، شیر، کره، شکر، زعفران",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    }
+  },
+  {
+    "id": 15,
+    "name": "کیک گلابی",
+    "category": "cake",
+    "flavor": "کیک و شیرینی",
+    "weight": "سینی",
+    "price": 770000,
+    "stock": 80,
+    "minOrder": 1,
+    "status": "active",
+    "type": "B2C",
+    "tags": [
+      "سینی"
+    ],
+    "img": "../assets/images/fresh-products/pear-cake.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/pear-cake.jpg"
+    ],
+    "desc": "آرد، تخم‌مرغ، کره، شکر، گلابی، دارچین — قیمت برای سفارش سینی",
+    "ingredients": "آرد، تخم‌مرغ، کره، شکر، گلابی، دارچین",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    }
+  },
+  {
+    "id": 16,
+    "name": "کیک نسکافه‌ای",
+    "category": "cake",
+    "flavor": "کیک و شیرینی",
+    "weight": "سینی",
+    "price": 410000,
+    "stock": 80,
+    "minOrder": 1,
+    "status": "active",
+    "type": "B2C",
+    "tags": [
+      "سینی"
+    ],
+    "img": "../assets/images/fresh-products/pear-cake.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/pear-cake.jpg"
+    ],
+    "desc": "آرد، تخم‌مرغ، شیر، خامه، شکر، نسکافه",
     "ingredients": "آرد، تخم‌مرغ، شیر، خامه، شکر، نسکافه",
     "visible": {
       "ingredients": true,
@@ -512,141 +488,53 @@ const DEFAULT_PRODUCTS=[
     }
   },
   {
+    "id": 17,
+    "name": "کیک موکا",
+    "category": "cake",
+    "flavor": "کیک و شیرینی",
+    "weight": "سینی",
+    "price": 420000,
+    "stock": 80,
+    "minOrder": 1,
+    "status": "active",
+    "type": "B2C",
+    "tags": [
+      "سینی"
+    ],
+    "img": "../assets/images/fresh-products/pear-cake.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/pear-cake.jpg"
+    ],
+    "desc": "آرد، تخم‌مرغ، شیر، شکر، قهوه، شکلات",
+    "ingredients": "آرد، تخم‌مرغ، شیر، شکر، قهوه، شکلات",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    }
+  },
+  {
     "id": 18,
-    "name": "حلوای شیر سینی ۱ کیلویی",
-    "category": "halva-tray",
-    "flavor": "شیر",
-    "weight": "سینی ۱ کیلویی",
-    "price": 405000,
-    "stock": 30,
+    "name": "زعفرانی",
+    "category": "halva-single",
+    "flavor": "تک نفره",
+    "weight": "تک نفره",
+    "price": 20000,
+    "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2B",
+    "type": "B2C",
     "tags": [
-      "سینی",
-      "مناسبتی"
+      "تک نفره",
+      "زعفرانی"
     ],
-    "img": "../assets/images/fresh-products/halva.jpg",
+    "img": "../assets/images/fresh-products/pear-cake.jpg",
     "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
+      "../assets/images/fresh-products/pear-cake.jpg"
     ],
-    "desc": "حلوای شیر سینی ۱ کیلویی مناسب مراسم، پذیرایی و سفارش سازمانی.",
-    "ingredients": "آرد، کره، شکر، گلاب، شیر",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 19,
-    "name": "حلوای پسته‌ای تاپینگ سینی ۱ کیلویی",
-    "category": "halva-tray",
-    "flavor": "پسته",
-    "weight": "سینی ۱ کیلویی",
-    "price": 585000,
-    "stock": 30,
-    "minOrder": 1,
-    "status": "active",
-    "type": "B2B",
-    "tags": [
-      "سینی",
-      "مناسبتی"
-    ],
-    "img": "../assets/images/fresh-products/halva.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
-    ],
-    "desc": "حلوای پسته‌ای تاپینگ سینی ۱ کیلویی مناسب مراسم، پذیرایی و سفارش سازمانی.",
-    "ingredients": "آرد، روغن، شکر، زعفران، پسته",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 20,
-    "name": "حلوای عربی سینی ۱ کیلویی",
-    "category": "halva-tray",
-    "flavor": "عربی",
-    "weight": "سینی ۱ کیلویی",
-    "price": 385000,
-    "stock": 30,
-    "minOrder": 1,
-    "status": "active",
-    "type": "B2B",
-    "tags": [
-      "سینی",
-      "مناسبتی"
-    ],
-    "img": "../assets/images/fresh-products/halva.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
-    ],
-    "desc": "حلوای عربی سینی ۱ کیلویی مناسب مراسم، پذیرایی و سفارش سازمانی.",
-    "ingredients": "آرد، روغن، شکر، شیر خشک، هل",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 21,
-    "name": "حلوای خرمایی گردویی سینی ۱ کیلویی",
-    "category": "halva-tray",
-    "flavor": "خرما و گردو",
-    "weight": "سینی ۱ کیلویی",
-    "price": 395000,
-    "stock": 30,
-    "minOrder": 1,
-    "status": "active",
-    "type": "B2B",
-    "tags": [
-      "سینی",
-      "مناسبتی"
-    ],
-    "img": "../assets/images/fresh-products/halva.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
-    ],
-    "desc": "حلوای خرمایی گردویی سینی ۱ کیلویی مناسب مراسم، پذیرایی و سفارش سازمانی.",
-    "ingredients": "آرد، کره، خرما، گردو، دارچین",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 22,
-    "name": "حلوای زعفرانی نذری سینی ۱ کیلویی",
-    "category": "halva-tray",
-    "flavor": "زعفران",
-    "weight": "سینی ۱ کیلویی",
-    "price": 275000,
-    "stock": 30,
-    "minOrder": 1,
-    "status": "active",
-    "type": "B2B",
-    "tags": [
-      "سینی",
-      "مناسبتی"
-    ],
-    "img": "../assets/images/fresh-products/halva.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
-    ],
-    "desc": "حلوای زعفرانی نذری سینی ۱ کیلویی مناسب مراسم، پذیرایی و سفارش سازمانی.",
+    "desc": "آرد، روغن، شکر، گلاب، زعفران",
     "ingredients": "آرد، روغن، شکر، گلاب، زعفران",
     "visible": {
       "ingredients": true,
@@ -657,25 +545,24 @@ const DEFAULT_PRODUCTS=[
     }
   },
   {
-    "id": 23,
-    "name": "حلوای سه آرد سینی ۱ کیلویی",
-    "category": "halva-tray",
-    "flavor": "سه آرد",
-    "weight": "سینی ۱ کیلویی",
-    "price": 335000,
-    "stock": 30,
+    "id": 19,
+    "name": "سه آرد",
+    "category": "halva-single",
+    "flavor": "تک نفره",
+    "weight": "تک نفره",
+    "price": 20000,
+    "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2B",
+    "type": "B2C",
     "tags": [
-      "سینی",
-      "مناسبتی"
+      "تک نفره"
     ],
     "img": "../assets/images/fresh-products/halva.jpg",
     "gallery": [
       "../assets/images/fresh-products/halva.jpg"
     ],
-    "desc": "حلوای سه آرد سینی ۱ کیلویی مناسب مراسم، پذیرایی و سفارش سازمانی.",
+    "desc": "آرد سفید، آرد برنج، آرد نخودچی، روغن، شکر، شربت",
     "ingredients": "آرد سفید، آرد برنج، آرد نخودچی، روغن، شکر، شربت",
     "visible": {
       "ingredients": true,
@@ -686,25 +573,81 @@ const DEFAULT_PRODUCTS=[
     }
   },
   {
-    "id": 24,
-    "name": "حلوای هویج سینی ۱ کیلویی",
-    "category": "halva-tray",
-    "flavor": "هویج",
-    "weight": "سینی ۱ کیلویی",
-    "price": 275000,
-    "stock": 30,
+    "id": 20,
+    "name": "خرمایی گردویی",
+    "category": "halva-single",
+    "flavor": "تک نفره",
+    "weight": "تک نفره",
+    "price": 20000,
+    "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2B",
+    "type": "B2C",
     "tags": [
-      "سینی",
-      "مناسبتی"
+      "تک نفره"
     ],
     "img": "../assets/images/fresh-products/halva.jpg",
     "gallery": [
       "../assets/images/fresh-products/halva.jpg"
     ],
-    "desc": "حلوای هویج سینی ۱ کیلویی مناسب مراسم، پذیرایی و سفارش سازمانی.",
+    "desc": "آرد، کره، خرما، گردو، دارچین",
+    "ingredients": "آرد، کره، خرما، گردو، دارچین",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    }
+  },
+  {
+    "id": 21,
+    "name": "پسته‌ای (تاپینگ)",
+    "category": "halva-single",
+    "flavor": "تک نفره",
+    "weight": "تک نفره",
+    "price": 20000,
+    "stock": 80,
+    "minOrder": 1,
+    "status": "active",
+    "type": "B2C",
+    "tags": [
+      "تک نفره",
+      "پسته‌ای"
+    ],
+    "img": "../assets/images/fresh-products/halva.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/halva.jpg"
+    ],
+    "desc": "آرد، روغن، شکر، زعفران، پسته",
+    "ingredients": "آرد، روغن، شکر، زعفران، پسته",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    }
+  },
+  {
+    "id": 22,
+    "name": "هویج",
+    "category": "halva-single",
+    "flavor": "تک نفره",
+    "weight": "تک نفره",
+    "price": 20000,
+    "stock": 80,
+    "minOrder": 1,
+    "status": "active",
+    "type": "B2C",
+    "tags": [
+      "تک نفره"
+    ],
+    "img": "../assets/images/fresh-products/pear-cake.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/pear-cake.jpg"
+    ],
+    "desc": "آرد، روغن، شکر، گلاب، هویج",
     "ingredients": "آرد، روغن، شکر، گلاب، هویج",
     "visible": {
       "ingredients": true,
@@ -715,25 +658,52 @@ const DEFAULT_PRODUCTS=[
     }
   },
   {
-    "id": 25,
-    "name": "حلوای زنجبیلی سینی ۱ کیلویی",
-    "category": "halva-tray",
-    "flavor": "زنجبیل",
-    "weight": "سینی ۱ کیلویی",
-    "price": 275000,
-    "stock": 30,
+    "id": 23,
+    "name": "عربی",
+    "category": "halva-single",
+    "flavor": "تک نفره",
+    "weight": "تک نفره",
+    "price": 20000,
+    "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2B",
+    "type": "B2C",
     "tags": [
-      "سینی",
-      "مناسبتی"
+      "تک نفره"
     ],
     "img": "../assets/images/fresh-products/halva.jpg",
     "gallery": [
       "../assets/images/fresh-products/halva.jpg"
     ],
-    "desc": "حلوای زنجبیلی سینی ۱ کیلویی مناسب مراسم، پذیرایی و سفارش سازمانی.",
+    "desc": "آرد، روغن، شکر، شیر خشک، هل",
+    "ingredients": "آرد، روغن، شکر، شیر خشک، هل",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    }
+  },
+  {
+    "id": 24,
+    "name": "زنجبیلی",
+    "category": "halva-single",
+    "flavor": "تک نفره",
+    "weight": "تک نفره",
+    "price": 20000,
+    "stock": 80,
+    "minOrder": 1,
+    "status": "active",
+    "type": "B2C",
+    "tags": [
+      "تک نفره"
+    ],
+    "img": "../assets/images/fresh-products/halva.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/halva.jpg"
+    ],
+    "desc": "آرد، روغن، شکر، هل، زنجبیل",
     "ingredients": "آرد، روغن، شکر، هل، زنجبیل",
     "visible": {
       "ingredients": true,
@@ -744,24 +714,52 @@ const DEFAULT_PRODUCTS=[
     }
   },
   {
-    "id": 26,
-    "name": "حلوای شیر تک‌نفره",
+    "id": 25,
+    "name": "کنجدی",
     "category": "halva-single",
-    "flavor": "شیر",
-    "weight": "تک‌نفره",
-    "price": 16000,
-    "stock": 120,
-    "minOrder": 12,
+    "flavor": "تک نفره",
+    "weight": "تک نفره",
+    "price": 20000,
+    "stock": 80,
+    "minOrder": 1,
     "status": "active",
     "type": "B2C",
     "tags": [
-      "تک‌نفره"
+      "تک نفره"
     ],
     "img": "../assets/images/fresh-products/halva.jpg",
     "gallery": [
       "../assets/images/fresh-products/halva.jpg"
     ],
-    "desc": "حلوای شیر تک‌نفره مناسب باکس پذیرایی و سفارش مناسبتی.",
+    "desc": "آرد، روغن، شکر، ارده، کنجد",
+    "ingredients": "آرد، روغن، شکر، ارده، کنجد",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    }
+  },
+  {
+    "id": 26,
+    "name": "شیر",
+    "category": "halva-single",
+    "flavor": "تک نفره",
+    "weight": "تک نفره",
+    "price": 20000,
+    "stock": 80,
+    "minOrder": 1,
+    "status": "active",
+    "type": "B2C",
+    "tags": [
+      "تک نفره"
+    ],
+    "img": "../assets/images/fresh-products/halva.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/halva.jpg"
+    ],
+    "desc": "آرد، کره، شکر، گلاب، شیر",
     "ingredients": "آرد، کره، شکر، گلاب، شیر",
     "visible": {
       "ingredients": true,
@@ -773,107 +771,24 @@ const DEFAULT_PRODUCTS=[
   },
   {
     "id": 27,
-    "name": "حلوای پسته‌ای تاپینگ تک‌نفره",
-    "category": "halva-single",
-    "flavor": "پسته",
-    "weight": "تک‌نفره",
-    "price": 18000,
-    "stock": 120,
-    "minOrder": 12,
+    "name": "حلوای زعفرانی نذری",
+    "category": "halva-tray",
+    "flavor": "سینی / ۱ کیلویی",
+    "weight": "سینی / ۱ کیلویی",
+    "price": 370000,
+    "stock": 80,
+    "minOrder": 1,
     "status": "active",
     "type": "B2C",
     "tags": [
-      "تک‌نفره"
+      "سینی / ۱ کیلویی",
+      "زعفرانی"
     ],
-    "img": "../assets/images/fresh-products/halva.jpg",
+    "img": "../assets/images/fresh-products/pear-cake.jpg",
     "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
+      "../assets/images/fresh-products/pear-cake.jpg"
     ],
-    "desc": "حلوای پسته‌ای تاپینگ تک‌نفره مناسب باکس پذیرایی و سفارش مناسبتی.",
-    "ingredients": "آرد، روغن، شکر، زعفران، پسته",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 28,
-    "name": "حلوای خرمایی گردویی تک‌نفره",
-    "category": "halva-single",
-    "flavor": "خرما و گردو",
-    "weight": "تک‌نفره",
-    "price": 15000,
-    "stock": 120,
-    "minOrder": 12,
-    "status": "active",
-    "type": "B2C",
-    "tags": [
-      "تک‌نفره"
-    ],
-    "img": "../assets/images/fresh-products/halva.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
-    ],
-    "desc": "حلوای خرمایی گردویی تک‌نفره مناسب باکس پذیرایی و سفارش مناسبتی.",
-    "ingredients": "آرد، کره، خرما، گردو، دارچین",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 29,
-    "name": "حلوای کنجدی تک‌نفره",
-    "category": "halva-single",
-    "flavor": "کنجد",
-    "weight": "تک‌نفره",
-    "price": 16000,
-    "stock": 120,
-    "minOrder": 12,
-    "status": "active",
-    "type": "B2C",
-    "tags": [
-      "تک‌نفره"
-    ],
-    "img": "../assets/images/fresh-products/halva.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
-    ],
-    "desc": "حلوای کنجدی تک‌نفره مناسب باکس پذیرایی و سفارش مناسبتی.",
-    "ingredients": "آرد، روغن، شکر، ارده، کنجد",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 30,
-    "name": "حلوای زعفرانی تک‌نفره",
-    "category": "halva-single",
-    "flavor": "زعفران",
-    "weight": "تک‌نفره",
-    "price": 14000,
-    "stock": 120,
-    "minOrder": 12,
-    "status": "active",
-    "type": "B2C",
-    "tags": [
-      "تک‌نفره"
-    ],
-    "img": "../assets/images/fresh-products/halva.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
-    ],
-    "desc": "حلوای زعفرانی تک‌نفره مناسب باکس پذیرایی و سفارش مناسبتی.",
+    "desc": "آرد، روغن، شکر، گلاب، زعفران",
     "ingredients": "آرد، روغن، شکر، گلاب، زعفران",
     "visible": {
       "ingredients": true,
@@ -884,52 +799,24 @@ const DEFAULT_PRODUCTS=[
     }
   },
   {
-    "id": 31,
-    "name": "حلوای عربی تک‌نفره",
-    "category": "halva-single",
-    "flavor": "عربی",
-    "weight": "تک‌نفره",
-    "price": 15000,
-    "stock": 120,
-    "minOrder": 12,
+    "id": 28,
+    "name": "حلوای سه آرد",
+    "category": "halva-tray",
+    "flavor": "سینی / ۱ کیلویی",
+    "weight": "سینی / ۱ کیلویی",
+    "price": 430000,
+    "stock": 80,
+    "minOrder": 1,
     "status": "active",
     "type": "B2C",
     "tags": [
-      "تک‌نفره"
+      "سینی / ۱ کیلویی"
     ],
     "img": "../assets/images/fresh-products/halva.jpg",
     "gallery": [
       "../assets/images/fresh-products/halva.jpg"
     ],
-    "desc": "حلوای عربی تک‌نفره مناسب باکس پذیرایی و سفارش مناسبتی.",
-    "ingredients": "آرد، روغن، شکر، شیر خشک، هل",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 32,
-    "name": "حلوای سه آرد تک‌نفره",
-    "category": "halva-single",
-    "flavor": "سه آرد",
-    "weight": "تک‌نفره",
-    "price": 14000,
-    "stock": 120,
-    "minOrder": 12,
-    "status": "active",
-    "type": "B2C",
-    "tags": [
-      "تک‌نفره"
-    ],
-    "img": "../assets/images/fresh-products/halva.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
-    ],
-    "desc": "حلوای سه آرد تک‌نفره مناسب باکس پذیرایی و سفارش مناسبتی.",
+    "desc": "آرد سفید، آرد برنج، آرد نخودچی، روغن، شکر، شربت",
     "ingredients": "آرد سفید، آرد برنج، آرد نخودچی، روغن، شکر، شربت",
     "visible": {
       "ingredients": true,
@@ -940,52 +827,24 @@ const DEFAULT_PRODUCTS=[
     }
   },
   {
-    "id": 33,
-    "name": "حلوای زنجبیلی تک‌نفره",
-    "category": "halva-single",
-    "flavor": "زنجبیل",
-    "weight": "تک‌نفره",
-    "price": 14000,
-    "stock": 120,
-    "minOrder": 12,
+    "id": 29,
+    "name": "حلوای هویج",
+    "category": "halva-tray",
+    "flavor": "سینی / ۱ کیلویی",
+    "weight": "سینی / ۱ کیلویی",
+    "price": 370000,
+    "stock": 80,
+    "minOrder": 1,
     "status": "active",
     "type": "B2C",
     "tags": [
-      "تک‌نفره"
+      "سینی / ۱ کیلویی"
     ],
-    "img": "../assets/images/fresh-products/halva.jpg",
+    "img": "../assets/images/fresh-products/pear-cake.jpg",
     "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
+      "../assets/images/fresh-products/pear-cake.jpg"
     ],
-    "desc": "حلوای زنجبیلی تک‌نفره مناسب باکس پذیرایی و سفارش مناسبتی.",
-    "ingredients": "آرد، روغن، شکر، هل، زنجبیل",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 34,
-    "name": "حلوای هویج تک‌نفره",
-    "category": "halva-single",
-    "flavor": "هویج",
-    "weight": "تک‌نفره",
-    "price": 14000,
-    "stock": 120,
-    "minOrder": 12,
-    "status": "active",
-    "type": "B2C",
-    "tags": [
-      "تک‌نفره"
-    ],
-    "img": "../assets/images/fresh-products/halva.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/halva.jpg"
-    ],
-    "desc": "حلوای هویج تک‌نفره مناسب باکس پذیرایی و سفارش مناسبتی.",
+    "desc": "آرد، روغن، شکر، گلاب، هویج",
     "ingredients": "آرد، روغن، شکر، گلاب، هویج",
     "visible": {
       "ingredients": true,
@@ -996,25 +855,168 @@ const DEFAULT_PRODUCTS=[
     }
   },
   {
-    "id": 35,
-    "name": "کروسان",
-    "category": "classic",
-    "flavor": "کره‌ای",
-    "weight": "یک عدد",
-    "price": 90000,
+    "id": 30,
+    "name": "حلوای عربی",
+    "category": "halva-tray",
+    "flavor": "سینی / ۱ کیلویی",
+    "weight": "سینی / ۱ کیلویی",
+    "price": 480000,
     "stock": 80,
     "minOrder": 1,
     "status": "active",
     "type": "B2C",
     "tags": [
-      "کلاسیک"
+      "سینی / ۱ کیلویی"
     ],
-    "img": "../assets/images/fresh-products/croissant.jpg",
+    "img": "../assets/images/fresh-products/halva.jpg",
     "gallery": [
-      "../assets/images/fresh-products/croissant.jpg"
+      "../assets/images/fresh-products/halva.jpg"
     ],
-    "desc": "کروسان فرانسوی لایه‌ای، تازه و خوش‌عطر.",
-    "ingredients": "آرد، کره، شیر، تخم‌مرغ، خمیرمایه",
+    "desc": "آرد، روغن، شکر، شیر خشک، هل",
+    "ingredients": "آرد، روغن، شکر، شیر خشک، هل",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    }
+  },
+  {
+    "id": 31,
+    "name": "حلوای زنجبیلی",
+    "category": "halva-tray",
+    "flavor": "سینی / ۱ کیلویی",
+    "weight": "سینی / ۱ کیلویی",
+    "price": 370000,
+    "stock": 80,
+    "minOrder": 1,
+    "status": "active",
+    "type": "B2C",
+    "tags": [
+      "سینی / ۱ کیلویی"
+    ],
+    "img": "../assets/images/fresh-products/halva.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/halva.jpg"
+    ],
+    "desc": "آرد، روغن، شکر، هل، زنجبیل",
+    "ingredients": "آرد، روغن، شکر، هل، زنجبیل",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    }
+  },
+  {
+    "id": 32,
+    "name": "حلوای پسته‌ای (تاپینگ)",
+    "category": "halva-tray",
+    "flavor": "سینی / ۱ کیلویی",
+    "weight": "سینی / ۱ کیلویی",
+    "price": 680000,
+    "stock": 80,
+    "minOrder": 1,
+    "status": "active",
+    "type": "B2C",
+    "tags": [
+      "سینی / ۱ کیلویی",
+      "پسته‌ای"
+    ],
+    "img": "../assets/images/fresh-products/halva.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/halva.jpg"
+    ],
+    "desc": "آرد، روغن، شکر، زعفران، پسته",
+    "ingredients": "آرد، روغن، شکر، زعفران، پسته",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    }
+  },
+  {
+    "id": 33,
+    "name": "حلوای خرمایی گردویی",
+    "category": "halva-tray",
+    "flavor": "سینی / ۱ کیلویی",
+    "weight": "سینی / ۱ کیلویی",
+    "price": 490000,
+    "stock": 80,
+    "minOrder": 1,
+    "status": "active",
+    "type": "B2C",
+    "tags": [
+      "سینی / ۱ کیلویی"
+    ],
+    "img": "../assets/images/fresh-products/halva.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/halva.jpg"
+    ],
+    "desc": "آرد، کره، خرما، گردو، دارچین",
+    "ingredients": "آرد، کره، خرما، گردو، دارچین",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    }
+  },
+  {
+    "id": 34,
+    "name": "حلوای شیر",
+    "category": "halva-tray",
+    "flavor": "سینی / ۱ کیلویی",
+    "weight": "سینی / ۱ کیلویی",
+    "price": 500000,
+    "stock": 80,
+    "minOrder": 1,
+    "status": "active",
+    "type": "B2C",
+    "tags": [
+      "سینی / ۱ کیلویی"
+    ],
+    "img": "../assets/images/fresh-products/halva.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/halva.jpg"
+    ],
+    "desc": "آرد، کره، شکر، گلاب، شیر",
+    "ingredients": "آرد، کره، شکر، گلاب، شیر",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    }
+  },
+  {
+    "id": 35,
+    "name": "دونات",
+    "category": "classic",
+    "flavor": "بیس سفارش ۱۰ عدد",
+    "weight": "عدد",
+    "price": 170000,
+    "stock": 80,
+    "minOrder": 10,
+    "status": "active",
+    "type": "B2C",
+    "tags": [
+      "بیس سفارش ۱۰ عدد",
+      "عدد",
+      "بیس سفارش"
+    ],
+    "img": "../assets/images/fresh-products/donut.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/donut.jpg"
+    ],
+    "desc": "آرد، شیر، تخم‌مرغ، شکر، خمیرمایه — حداقل سفارش ۱۰ عدد",
+    "ingredients": "آرد، شیر، تخم‌مرغ، شکر، خمیرمایه",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1025,25 +1027,26 @@ const DEFAULT_PRODUCTS=[
   },
   {
     "id": 36,
-    "name": "کیک تولد",
+    "name": "کروسان",
     "category": "classic",
-    "flavor": "سفارشی",
-    "weight": "هر کیلوگرم",
-    "price": 780000,
-    "stock": 10,
-    "minOrder": 1,
+    "flavor": "بیس سفارش ۱۰ عدد",
+    "weight": "عدد",
+    "price": 180000,
+    "stock": 80,
+    "minOrder": 10,
     "status": "active",
     "type": "B2C",
     "tags": [
-      "سفارشی",
-      "تولد"
+      "بیس سفارش ۱۰ عدد",
+      "عدد",
+      "بیس سفارش"
     ],
-    "img": "../assets/images/fresh-products/mousse-cake.jpg",
+    "img": "../assets/images/fresh-products/croissant.jpg",
     "gallery": [
-      "../assets/images/fresh-products/mousse-cake.jpg"
+      "../assets/images/fresh-products/croissant.jpg"
     ],
-    "desc": "کیک تولد سفارشی با فیلینگ و دکور دلخواه.",
-    "ingredients": "کیک اسفنجی، خامه، فیلینگ، میوه یا شکلات",
+    "desc": "آرد، کره، شیر، تخم‌مرغ، خمیرمایه — حداقل سفارش ۱۰ عدد",
+    "ingredients": "آرد، کره، شیر، تخم‌مرغ، خمیرمایه",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1056,50 +1059,22 @@ const DEFAULT_PRODUCTS=[
     "id": 37,
     "name": "دونات بایت",
     "category": "classic",
-    "flavor": "متنوع",
-    "weight": "تک عدد",
-    "price": 4000,
-    "stock": 400,
-    "minOrder": 20,
-    "status": "active",
-    "type": "B2B",
-    "tags": [
-      "مینی",
-      "پذیرایی"
-    ],
-    "img": "../assets/images/fresh-products/donut.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/donut.jpg"
-    ],
-    "desc": "لقمه‌های دوناتی کوچک برای پذیرایی و کنار قهوه.",
-    "ingredients": "آرد، شیر، تخم‌مرغ، شکر، خمیرمایه",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 38,
-    "name": "دونات",
-    "category": "classic",
-    "flavor": "متنوع",
-    "weight": "یک عدد",
-    "price": 80000,
+    "flavor": "کیلویی",
+    "weight": "کیلویی",
+    "price": 0,
     "stock": 80,
     "minOrder": 1,
     "status": "active",
     "type": "B2C",
     "tags": [
-      "پرفروش"
+      "کیلویی",
+      "بیس سفارش"
     ],
     "img": "../assets/images/fresh-products/donut.jpg",
     "gallery": [
       "../assets/images/fresh-products/donut.jpg"
     ],
-    "desc": "دونات نرم و پفکی با روکش‌های متنوع.",
+    "desc": "آرد، شیر، تخم‌مرغ، شکر، خمیرمایه — قیمت بر اساس وزن نهایی محاسبه می‌شود",
     "ingredients": "آرد، شیر، تخم‌مرغ، شکر، خمیرمایه",
     "visible": {
       "ingredients": true,
@@ -1107,83 +1082,55 @@ const DEFAULT_PRODUCTS=[
       "stock": true,
       "minOrder": true,
       "weight": true
-    }
+    },
+    "priceLabel": "قیمت کیلویی / بر اساس وزن نهایی"
+  },
+  {
+    "id": 38,
+    "name": "کیک تولد",
+    "category": "classic",
+    "flavor": "کلاسیک",
+    "weight": "یک عدد",
+    "price": 870000,
+    "stock": 80,
+    "minOrder": 1,
+    "status": "active",
+    "type": "B2C",
+    "tags": [],
+    "img": "../assets/images/fresh-products/mousse-cake.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/mousse-cake.jpg"
+    ],
+    "desc": "کیک اسفنجی، خامه، فیلینگ، میوه یا شکلات",
+    "ingredients": "کیک اسفنجی، خامه، فیلینگ، میوه یا شکلات",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    },
+    "priceLabel": "۸۷۰٬۰۰۰ تومان / کیلو"
   },
   {
     "id": 39,
-    "name": "شیرینی نخودچی",
-    "category": "sweets",
-    "flavor": "نخودچی",
-    "weight": "هر کیلوگرم",
-    "price": 420000,
-    "stock": 50,
-    "minOrder": 1,
-    "status": "active",
-    "type": "B2B",
-    "tags": [
-      "کیلویی"
-    ],
-    "img": "../assets/images/fresh-products/cookies.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/cookies.jpg"
-    ],
-    "desc": "شیرینی نخودچی به‌ازای هر کیلوگرم؛ وزن نهایی هنگام ثبت سفارش هماهنگ می‌شود.",
-    "ingredients": "آرد نخودچی، روغن، پودر قند، هل",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 40,
-    "name": "شیرینی بوشتوک",
-    "category": "sweets",
-    "flavor": "بوشتوک",
-    "weight": "هر کیلوگرم",
-    "price": 450000,
-    "stock": 50,
-    "minOrder": 1,
-    "status": "active",
-    "type": "B2B",
-    "tags": [
-      "کیلویی"
-    ],
-    "img": "../assets/images/fresh-products/cookies.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/cookies.jpg"
-    ],
-    "desc": "شیرینی بوشتوک به‌ازای هر کیلوگرم؛ وزن نهایی هنگام ثبت سفارش هماهنگ می‌شود.",
-    "ingredients": "آرد نخودچی، کره، پودر قند، هل",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 41,
     "name": "شیرینی برنجی",
     "category": "sweets",
-    "flavor": "برنجی",
-    "weight": "هر کیلوگرم",
-    "price": 350000,
-    "stock": 50,
+    "flavor": "شیرینی و کوکی",
+    "weight": "سینی",
+    "price": 700000,
+    "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2B",
+    "type": "B2C",
     "tags": [
-      "کیلویی"
+      "سینی"
     ],
     "img": "../assets/images/fresh-products/cookies.jpg",
     "gallery": [
       "../assets/images/fresh-products/cookies.jpg"
     ],
-    "desc": "شیرینی برنجی به‌ازای هر کیلوگرم؛ وزن نهایی هنگام ثبت سفارش هماهنگ می‌شود.",
+    "desc": "آرد برنج، روغن، پودر قند، هل، گلاب",
     "ingredients": "آرد برنج، روغن، پودر قند، هل، گلاب",
     "visible": {
       "ingredients": true,
@@ -1194,25 +1141,25 @@ const DEFAULT_PRODUCTS=[
     }
   },
   {
-    "id": 42,
-    "name": "شیرینی پفکی زرده‌ای",
+    "id": 40,
+    "name": "شیرینی نخودچی",
     "category": "sweets",
-    "flavor": "پفکی",
-    "weight": "هر کیلوگرم",
-    "price": 390000,
-    "stock": 50,
+    "flavor": "شیرینی و کوکی",
+    "weight": "سینی",
+    "price": 1140000,
+    "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2B",
+    "type": "B2C",
     "tags": [
-      "کیلویی"
+      "سینی"
     ],
     "img": "../assets/images/fresh-products/cookies.jpg",
     "gallery": [
       "../assets/images/fresh-products/cookies.jpg"
     ],
-    "desc": "شیرینی پفکی زرده‌ای به‌ازای هر کیلوگرم؛ وزن نهایی هنگام ثبت سفارش هماهنگ می‌شود.",
-    "ingredients": "زرده تخم‌مرغ، پودر قند، وانیل",
+    "desc": "آرد نخودچی، روغن، پودر قند، هل",
+    "ingredients": "آرد نخودچی، روغن، پودر قند، هل",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1222,136 +1169,24 @@ const DEFAULT_PRODUCTS=[
     }
   },
   {
-    "id": 43,
-    "name": "کوکی آمریکایی",
-    "category": "sweets",
-    "flavor": "شکلات چیپسی",
-    "weight": "هر کیلوگرم",
-    "price": 320000,
-    "stock": 50,
-    "minOrder": 1,
-    "status": "active",
-    "type": "B2B",
-    "tags": [
-      "کیلویی"
-    ],
-    "img": "../assets/images/fresh-products/cookies.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/cookies.jpg"
-    ],
-    "desc": "کوکی آمریکایی به‌ازای هر کیلوگرم؛ وزن نهایی هنگام ثبت سفارش هماهنگ می‌شود.",
-    "ingredients": "آرد، تخم‌مرغ، کره، شکر قهوه‌ای، شکلات",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 44,
-    "name": "تسمه‌ای نارگیلی",
-    "category": "sweets",
-    "flavor": "نارگیل",
-    "weight": "هر کیلوگرم",
-    "price": 320000,
-    "stock": 50,
-    "minOrder": 1,
-    "status": "active",
-    "type": "B2B",
-    "tags": [
-      "کیلویی"
-    ],
-    "img": "../assets/images/fresh-products/cookies.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/cookies.jpg"
-    ],
-    "desc": "تسمه‌ای نارگیلی به‌ازای هر کیلوگرم؛ وزن نهایی هنگام ثبت سفارش هماهنگ می‌شود.",
-    "ingredients": "آرد، سفیده تخم‌مرغ، شکر، نارگیل",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 45,
-    "name": "گرانول",
-    "category": "sweets",
-    "flavor": "گرانولا",
-    "weight": "هر کیلوگرم",
-    "price": 250000,
-    "stock": 50,
-    "minOrder": 1,
-    "status": "active",
-    "type": "B2B",
-    "tags": [
-      "کیلویی"
-    ],
-    "img": "../assets/images/fresh-products/cookies.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/cookies.jpg"
-    ],
-    "desc": "گرانول به‌ازای هر کیلوگرم؛ وزن نهایی هنگام ثبت سفارش هماهنگ می‌شود.",
-    "ingredients": "جو دوسر، عسل، مغزها، میوه خشک",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 46,
-    "name": "سیگارت چیسی",
-    "category": "sweets",
-    "flavor": "پنیری",
-    "weight": "هر کیلوگرم",
-    "price": 310000,
-    "stock": 50,
-    "minOrder": 1,
-    "status": "active",
-    "type": "B2B",
-    "tags": [
-      "کیلویی"
-    ],
-    "img": "../assets/images/fresh-products/cookies.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/cookies.jpg"
-    ],
-    "desc": "سیگارت چیسی به‌ازای هر کیلوگرم؛ وزن نهایی هنگام ثبت سفارش هماهنگ می‌شود.",
-    "ingredients": "خمیر، کره، پنیر، ادویه",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 47,
+    "id": 41,
     "name": "شیرینی خونگی",
     "category": "sweets",
-    "flavor": "خانگی",
-    "weight": "هر کیلوگرم",
-    "price": 180000,
-    "stock": 50,
+    "flavor": "شیرینی و کوکی",
+    "weight": "سینی",
+    "price": 480000,
+    "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2B",
+    "type": "B2C",
     "tags": [
-      "کیلویی"
+      "سینی"
     ],
     "img": "../assets/images/fresh-products/cookies.jpg",
     "gallery": [
       "../assets/images/fresh-products/cookies.jpg"
     ],
-    "desc": "شیرینی خونگی به‌ازای هر کیلوگرم؛ وزن نهایی هنگام ثبت سفارش هماهنگ می‌شود.",
+    "desc": "آرد، تخم‌مرغ، کره، شکر، وانیل",
     "ingredients": "آرد، تخم‌مرغ، کره، شکر، وانیل",
     "visible": {
       "ingredients": true,
@@ -1362,80 +1197,24 @@ const DEFAULT_PRODUCTS=[
     }
   },
   {
-    "id": 48,
-    "name": "بیسکو کالیکا",
-    "category": "sweets",
-    "flavor": "کاکائویی",
-    "weight": "هر کیلوگرم",
-    "price": 180000,
-    "stock": 50,
-    "minOrder": 1,
-    "status": "active",
-    "type": "B2B",
-    "tags": [
-      "کیلویی"
-    ],
-    "img": "../assets/images/fresh-products/cookies.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/cookies.jpg"
-    ],
-    "desc": "بیسکو کالیکا به‌ازای هر کیلوگرم؛ وزن نهایی هنگام ثبت سفارش هماهنگ می‌شود.",
-    "ingredients": "بیسکویت، کره، پودر کاکائو، مغز",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 49,
-    "name": "شیرینی پفکی سفیده‌ای",
-    "category": "sweets",
-    "flavor": "پفکی",
-    "weight": "هر کیلوگرم",
-    "price": 175000,
-    "stock": 50,
-    "minOrder": 1,
-    "status": "active",
-    "type": "B2B",
-    "tags": [
-      "کیلویی"
-    ],
-    "img": "../assets/images/fresh-products/cookies.jpg",
-    "gallery": [
-      "../assets/images/fresh-products/cookies.jpg"
-    ],
-    "desc": "شیرینی پفکی سفیده‌ای به‌ازای هر کیلوگرم؛ وزن نهایی هنگام ثبت سفارش هماهنگ می‌شود.",
-    "ingredients": "سفیده تخم‌مرغ، پودر قند، وانیل",
-    "visible": {
-      "ingredients": true,
-      "gallery": true,
-      "stock": true,
-      "minOrder": true,
-      "weight": true
-    }
-  },
-  {
-    "id": 50,
+    "id": 42,
     "name": "شیرینی قیطونی",
     "category": "sweets",
-    "flavor": "قیطونی",
-    "weight": "هر کیلوگرم",
-    "price": 180000,
-    "stock": 50,
+    "flavor": "شیرینی و کوکی",
+    "weight": "سینی",
+    "price": 440000,
+    "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2B",
+    "type": "B2C",
     "tags": [
-      "کیلویی"
+      "سینی"
     ],
     "img": "../assets/images/fresh-products/cookies.jpg",
     "gallery": [
       "../assets/images/fresh-products/cookies.jpg"
     ],
-    "desc": "شیرینی قیطونی به‌ازای هر کیلوگرم؛ وزن نهایی هنگام ثبت سفارش هماهنگ می‌شود.",
+    "desc": "آرد، کره، پودر قند، وانیل، مغز",
     "ingredients": "آرد، کره، پودر قند، وانیل، مغز",
     "visible": {
       "ingredients": true,
@@ -1446,24 +1225,80 @@ const DEFAULT_PRODUCTS=[
     }
   },
   {
-    "id": 51,
-    "name": "عسلی بادامی",
+    "id": 43,
+    "name": "تسمه‌ای نارگیلی",
     "category": "sweets",
-    "flavor": "عسل و بادام",
-    "weight": "هر کیلوگرم",
-    "price": 150000,
-    "stock": 50,
+    "flavor": "شیرینی و کوکی",
+    "weight": "سینی",
+    "price": 420000,
+    "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2B",
+    "type": "B2C",
     "tags": [
-      "کیلویی"
+      "سینی"
     ],
     "img": "../assets/images/fresh-products/cookies.jpg",
     "gallery": [
       "../assets/images/fresh-products/cookies.jpg"
     ],
-    "desc": "عسلی بادامی به‌ازای هر کیلوگرم؛ وزن نهایی هنگام ثبت سفارش هماهنگ می‌شود.",
+    "desc": "آرد، سفیده تخم‌مرغ، شکر، نارگیل",
+    "ingredients": "آرد، سفیده تخم‌مرغ، شکر، نارگیل",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    }
+  },
+  {
+    "id": 44,
+    "name": "شیرینی بوشتوک",
+    "category": "sweets",
+    "flavor": "شیرینی و کوکی",
+    "weight": "سینی",
+    "price": 800000,
+    "stock": 80,
+    "minOrder": 1,
+    "status": "active",
+    "type": "B2C",
+    "tags": [
+      "سینی"
+    ],
+    "img": "../assets/images/fresh-products/cookies.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/cookies.jpg"
+    ],
+    "desc": "آرد نخودچی، کره، پودر قند، هل",
+    "ingredients": "آرد نخودچی، کره، پودر قند، هل",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    }
+  },
+  {
+    "id": 45,
+    "name": "عسلی بادامی",
+    "category": "sweets",
+    "flavor": "شیرینی و کوکی",
+    "weight": "سینی",
+    "price": 340000,
+    "stock": 80,
+    "minOrder": 1,
+    "status": "active",
+    "type": "B2C",
+    "tags": [
+      "سینی"
+    ],
+    "img": "../assets/images/fresh-products/cookies.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/cookies.jpg"
+    ],
+    "desc": "کره، شکر، عسل، بادام",
     "ingredients": "کره، شکر، عسل، بادام",
     "visible": {
       "ingredients": true,
@@ -1474,25 +1309,194 @@ const DEFAULT_PRODUCTS=[
     }
   },
   {
-    "id": 52,
-    "name": "موچی با فیلینگ اسنیکرز کارامل",
-    "category": "dessert",
-    "flavor": "اسنیکرز کارامل",
-    "weight": "یک عدد",
-    "price": 25000,
+    "id": 46,
+    "name": "گرانول",
+    "category": "sweets",
+    "flavor": "شیرینی و کوکی",
+    "weight": "سینی",
+    "price": 800000,
     "stock": 80,
     "minOrder": 1,
     "status": "active",
     "type": "B2C",
     "tags": [
-      "دسر"
+      "سینی"
+    ],
+    "img": "../assets/images/fresh-products/cookies.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/cookies.jpg"
+    ],
+    "desc": "جو دوسر، عسل، مغزها، میوه خشک",
+    "ingredients": "جو دوسر، عسل، مغزها، میوه خشک",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    }
+  },
+  {
+    "id": 47,
+    "name": "کوکی آمریکایی",
+    "category": "sweets",
+    "flavor": "شیرینی و کوکی",
+    "weight": "سینی",
+    "price": 740000,
+    "stock": 80,
+    "minOrder": 1,
+    "status": "active",
+    "type": "B2C",
+    "tags": [
+      "سینی"
+    ],
+    "img": "../assets/images/fresh-products/cookies.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/cookies.jpg"
+    ],
+    "desc": "آرد، تخم‌مرغ، کره، شکر قهوه‌ای، شکلات",
+    "ingredients": "آرد، تخم‌مرغ، کره، شکر قهوه‌ای، شکلات",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    }
+  },
+  {
+    "id": 48,
+    "name": "سیگارت چیسی",
+    "category": "sweets",
+    "flavor": "شیرینی و کوکی",
+    "weight": "سینی",
+    "price": 560000,
+    "stock": 80,
+    "minOrder": 1,
+    "status": "active",
+    "type": "B2C",
+    "tags": [
+      "سینی"
+    ],
+    "img": "../assets/images/fresh-products/cookies.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/cookies.jpg"
+    ],
+    "desc": "خمیر، کره، پنیر، ادویه",
+    "ingredients": "خمیر، کره، پنیر، ادویه",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    }
+  },
+  {
+    "id": 49,
+    "name": "بیسکو کالیکا",
+    "category": "sweets",
+    "flavor": "شیرینی و کوکی",
+    "weight": "سینی",
+    "price": 480000,
+    "stock": 80,
+    "minOrder": 1,
+    "status": "active",
+    "type": "B2C",
+    "tags": [
+      "سینی"
+    ],
+    "img": "../assets/images/fresh-products/cookies.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/cookies.jpg"
+    ],
+    "desc": "بیسکویت، کره، پودر کاکائو، مغز",
+    "ingredients": "بیسکویت، کره، پودر کاکائو، مغز",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    }
+  },
+  {
+    "id": 50,
+    "name": "شیرینی پفکی (زرده‌ای)",
+    "category": "sweets",
+    "flavor": "شیرینی و کوکی",
+    "weight": "سینی",
+    "price": 890000,
+    "stock": 80,
+    "minOrder": 1,
+    "status": "active",
+    "type": "B2C",
+    "tags": [
+      "سینی"
+    ],
+    "img": "../assets/images/fresh-products/cookies.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/cookies.jpg"
+    ],
+    "desc": "زرده تخم‌مرغ، پودر قند، وانیل",
+    "ingredients": "زرده تخم‌مرغ، پودر قند، وانیل",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    }
+  },
+  {
+    "id": 51,
+    "name": "شیرینی پفکی (سفیده‌ای)",
+    "category": "sweets",
+    "flavor": "شیرینی و کوکی",
+    "weight": "سینی",
+    "price": 450000,
+    "stock": 80,
+    "minOrder": 1,
+    "status": "active",
+    "type": "B2C",
+    "tags": [
+      "سینی"
+    ],
+    "img": "../assets/images/fresh-products/cookies.jpg",
+    "gallery": [
+      "../assets/images/fresh-products/cookies.jpg"
+    ],
+    "desc": "سفیده تخم‌مرغ، پودر قند، وانیل",
+    "ingredients": "سفیده تخم‌مرغ، پودر قند، وانیل",
+    "visible": {
+      "ingredients": true,
+      "gallery": true,
+      "stock": true,
+      "minOrder": true,
+      "weight": true
+    }
+  },
+  {
+    "id": 52,
+    "name": "موچی ساده",
+    "category": "dessert",
+    "flavor": "بیس سفارش ۱۰ عدد",
+    "weight": "بسته ۱۰ عدد",
+    "price": 430000,
+    "stock": 80,
+    "minOrder": 1,
+    "status": "active",
+    "type": "B2C",
+    "tags": [
+      "بیس سفارش ۱۰ عدد",
+      "بسته ۱۰ عدد"
     ],
     "img": "../assets/images/fresh-products/mochi.jpg",
     "gallery": [
       "../assets/images/fresh-products/mochi.jpg"
     ],
-    "desc": "موچی نرم با فیلینگ اسنیکرز کارامل.",
-    "ingredients": "آرد برنج، نشاسته، شکر، کارامل، شکلات، بادام‌زمینی",
+    "desc": "آرد برنج، نشاسته، شکر، کرم — قیمت بسته ۱۰ عددی",
+    "ingredients": "آرد برنج، نشاسته، شکر، کرم",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1503,25 +1507,25 @@ const DEFAULT_PRODUCTS=[
   },
   {
     "id": 53,
-    "name": "موس میوه",
+    "name": "موچی با فیلینگ اسنیکرز کارامل",
     "category": "dessert",
-    "flavor": "میوه‌ای",
-    "weight": "یک عدد",
-    "price": 25000,
+    "flavor": "بیس سفارش ۱۰ عدد",
+    "weight": "بسته ۱۰ عدد",
+    "price": 440000,
     "stock": 80,
     "minOrder": 1,
     "status": "active",
     "type": "B2C",
     "tags": [
-      "دسر",
-      "خنک"
+      "بیس سفارش ۱۰ عدد",
+      "بسته ۱۰ عدد"
     ],
-    "img": "../assets/images/fresh-products/fruit-mousse.jpg",
+    "img": "../assets/images/fresh-products/layered-cake.jpg",
     "gallery": [
-      "../assets/images/fresh-products/fruit-mousse.jpg"
+      "../assets/images/fresh-products/layered-cake.jpg"
     ],
-    "desc": "موس لطیف با طعم میوه‌های تازه.",
-    "ingredients": "خامه، شکر، ژلاتین، پوره میوه",
+    "desc": "آرد برنج، نشاسته، شکر، کارامل، شکلات، بادام‌زمینی — قیمت بسته ۱۰ عددی",
+    "ingredients": "آرد برنج، نشاسته، شکر، کارامل، شکلات، بادام‌زمینی",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1532,24 +1536,24 @@ const DEFAULT_PRODUCTS=[
   },
   {
     "id": 54,
-    "name": "موچی ساده",
+    "name": "موس میوه",
     "category": "dessert",
-    "flavor": "خامه‌ای",
-    "weight": "یک عدد",
-    "price": 20000,
+    "flavor": "دسر",
+    "weight": "سینی",
+    "price": 260000,
     "stock": 80,
     "minOrder": 1,
     "status": "active",
     "type": "B2C",
     "tags": [
-      "دسر"
+      "سینی"
     ],
-    "img": "../assets/images/fresh-products/mochi.jpg",
+    "img": "../assets/images/fresh-products/fruit-mousse.jpg",
     "gallery": [
-      "../assets/images/fresh-products/mochi.jpg"
+      "../assets/images/fresh-products/fruit-mousse.jpg"
     ],
-    "desc": "موچی ساده با بافت لطیف و مغزی کرمی.",
-    "ingredients": "آرد برنج، نشاسته، شکر، کرم",
+    "desc": "خامه، شکر، ژلاتین، پوره میوه",
+    "ingredients": "خامه، شکر، ژلاتین، پوره میوه",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1577,8 +1581,9 @@ const DEFAULT_STAFF=[
 ];
 const DEFAULT_SETTINGS={
   "brand": "دلیزا",
-  "subtitle": "کیک، شیرینی و دسرهای دست‌ساز",
+  "subtitle": "منوی کامل کیک، شیرینی، حلوا، کلاسیک و دسر",
   "phone": "۰۹۰۲۲۱۲۲۲۸۶",
   "address": "تهران، ایران",
-  "instagram": "@Delliza.bakery"
+  "instagram": "@Delliza.bakery",
+  "menuVersion": "delliza_menu_uploaded_index_12_2026_02"
 };

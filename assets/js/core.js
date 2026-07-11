@@ -10,6 +10,15 @@ function money(value) {
   return Number(value || 0).toLocaleString('fa-IR') + ' تومان';
 }
 
+function productPriceText(product) {
+  if (product && product.priceLabel) return product.priceLabel;
+  return money(product?.price || 0);
+}
+
+function productNumericPrice(product) {
+  return Number(product?.price || 0);
+}
+
 function normalize(value) {
   return String(value || '').replace(/[ي]/g, 'ی').replace(/[ك]/g, 'ک').trim().toLowerCase();
 }
@@ -213,10 +222,21 @@ async function bootstrapData(role) {
   seed();
   if (window.DELIZA_DB?.isConfigured?.()) {
     const pulled = await window.DELIZA_DB.pull();
-    // اگر دیتابیس تازه ساخته شده باشد، پنل مدیریت داده‌های اولیه را یک‌بار به Supabase می‌فرستد.
-    if (role === 'admin' && pulled.ok && pulled.count === 0) {
-      await window.DELIZA_DB.pushAll();
+
+    // اگر منوی جدید داخل فایل سایت آپدیت شده باشد، با اولین ورود مدیر به Supabase هم منتقل می‌شود.
+    if (role === 'admin' && pulled.ok) {
+      const currentSettings = settings();
+      const needsMenuMigration = pulled.count === 0 || currentSettings.menuVersion !== DATA_VERSION;
+      if (needsMenuMigration) {
+        write('products', DEFAULT_PRODUCTS, { skipRemote: true, silent: true });
+        write('categories', DEFAULT_CATEGORIES, { skipRemote: true, silent: true });
+        write('settings', { ...currentSettings, ...DEFAULT_SETTINGS, menuVersion: DATA_VERSION }, { skipRemote: true, silent: true });
+        if (!Array.isArray(read('orders', null))) write('orders', [], { skipRemote: true, silent: true });
+        if (!Array.isArray(read('staff', null))) write('staff', DEFAULT_STAFF, { skipRemote: true, silent: true });
+        await window.DELIZA_DB.pushAll();
+      }
     }
+
     repairData();
   }
 }

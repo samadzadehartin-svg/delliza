@@ -82,5 +82,52 @@ function openProduct(id){
 function renderCartDock(){ const n=cart.reduce((s,x)=>s+x.qty,0); const d=$('cartDock'); if(!d)return; d.classList.toggle('on',n>0); d.innerHTML=`<b>${faNum(n)} آیتم سفارش</b><button class="btn" onclick="openCart()">تکمیل سفارش</button>`; }
 function openCart(){ const m=$('cartModal'); m.innerHTML=`<div class="modal-card card pad"><div class="row sticky-head"><h2>سبد سفارش</h2><button class="soft" onclick="$('cartModal').classList.remove('on')">بستن</button></div><div id="cartBox"></div></div>`; m.classList.add('on'); renderCart(); }
 function renderCart(){ const box=$('cartBox'); if(!box)return; const rows=cart.map(it=>{const p=findProduct(it.id); return p?`<div class="card pad row wrap"><div><b>${p.name}</b><p class="small">${productPriceText(p)} × <input class="field" style="width:90px" type="number" value="${it.qty}" onchange="qtyCart(${it.id},this.value)"></p></div><b class="price">${productNumericPrice(p)>0?money(productNumericPrice(p)*it.qty):productPriceText(p)}</b><button class="danger" onclick="removeCart(${it.id})">حذف</button></div>`:''}).join(''); const total=cart.reduce((s,it)=>{const p=findProduct(it.id); return s+(p?productNumericPrice(p)*it.qty:0)},0); box.innerHTML=(rows||'<p>سبد سفارش خالی است.</p>')+`<div class="card pad"><h3>ثبت اطلاعات مشتری</h3><div class="grid g2"><input id="customerName" class="field" placeholder="نام مشتری"><input id="customerPhone" class="field" placeholder="شماره تماس"><input id="customerCity" class="field" placeholder="شهر/آدرس"><textarea id="customerNote" class="field" placeholder="توضیحات سفارش"></textarea></div><div class="row"><b class="price">جمع: ${money(total)}</b><button class="btn" onclick="submitOrder()">ثبت سفارش</button></div></div>`; }
-function submitOrder(){ if(!cart.length)return alert('سبد خالی است'); const name=$('customerName').value.trim(), phone=$('customerPhone').value.trim(); if(!name||!phone)return alert('نام و شماره تماس را وارد کنید'); const order={id:Date.now(), name, phone, city:$('customerCity').value, note:$('customerNote').value, items:cart, total:cart.reduce((s,it)=>{const p=findProduct(it.id);return s+(p?productNumericPrice(p)*it.qty:0)},0), status:'در انتظار تماس', createdAt:new Date().toISOString()}; saveOrders([order,...orders()]); cart=[]; saveCart(); $('cartModal').classList.remove('on'); showToast('سفارش ثبت شد'); }
+function submitOrder(){
+  if(!cart.length) return alert('سبد خالی است');
+  const name=$('customerName').value.trim(), phone=$('customerPhone').value.trim();
+  if(!name||!phone) return alert('نام و شماره تماس را وارد کنید');
+
+  const itemDetails=orderItemSnapshots(cart);
+  const total=itemDetails.reduce((sum,item)=>sum+Number(item.lineTotal||0),0);
+  const id=Date.now();
+  const order={
+    id,
+    code:'DLZ-'+String(id).slice(-6),
+    name,
+    phone,
+    city:$('customerCity').value.trim(),
+    note:$('customerNote').value.trim(),
+    items:cart.map(x=>({id:Number(x.id),qty:Number(x.qty)||1})),
+    itemDetails,
+    total,
+    status:'در انتظار تماس',
+    source:'website',
+    instagramUrl:instagramProfileUrl(),
+    createdAt:new Date().toISOString(),
+    updatedAt:new Date().toISOString()
+  };
+
+  if(!saveOrders([order,...orders()])) return;
+  cart=[];
+  saveCart();
+  showOrderSuccess(order);
+  window.open(instagramProfileUrl(), '_blank', 'noopener');
+  copyTextToClipboard(orderDetailsText(order));
+}
+
+function showOrderSuccess(order){
+  const m=$('cartModal');
+  m.innerHTML=`<div class="modal-card card pad">
+    <div class="row sticky-head"><h2>سفارش ثبت شد</h2><button class="soft" onclick="$('cartModal').classList.remove('on')">بستن</button></div>
+    <div class="card pad"><p>سفارش شما با کد <b>${esc(orderCode(order))}</b> ثبت شد و جزئیات آن در پنل فروش ذخیره شد.</p><p class="small">متن سفارش کپی شده است. تب اینستاگرام دلیزا باز می‌شود؛ کافی است متن را در دایرکت ارسال کنید.</p></div>
+    ${orderDetailsHtml(order)}
+    <div class="actions" style="margin-top:14px">
+      <button class="btn" onclick="openInstagramForOrder(${order.id})">ارسال در اینستاگرام دلیزا</button>
+      <button class="soft" onclick="copyOrderDetails(${order.id})">کپی جزئیات سفارش</button>
+      <button class="soft" onclick="$('cartModal').classList.remove('on')">ادامه خرید</button>
+    </div>
+  </div>`;
+  m.classList.add('on');
+  showToast('سفارش ثبت شد و در پنل فروش ذخیره شد');
+}
 document.addEventListener('DOMContentLoaded', async()=>{ await bootstrapData('buyer'); mount('buyer'); renderHome(); });

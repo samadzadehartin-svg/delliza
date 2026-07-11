@@ -116,6 +116,141 @@ function repairData() {
   if (!Array.isArray(categories())) saveCategories(DEFAULT_CATEGORIES);
 }
 
+
+function esc(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+function orderCode(order) {
+  if (order?.code) return order.code;
+  return 'DLZ-' + String(order?.id || Date.now()).slice(-6);
+}
+
+function instagramProfileUrl() {
+  const s = settings();
+  const direct = String(s.instagramUrl || '').trim();
+  if (direct) return direct;
+  const raw = String(s.instagram || '@dellizabakery').trim();
+  if (/^https?:\/\//i.test(raw)) return raw;
+  const handle = raw.replace('@', '').replace(/\s+/g, '').replace(/^\/+|\/+$/g, '') || 'dellizabakery';
+  return 'https://www.instagram.com/' + encodeURIComponent(handle) + '/';
+}
+
+function orderItemSnapshots(cartItems) {
+  return (cartItems || []).map((item) => {
+    const product = findProduct(item.id) || {};
+    const qty = Math.max(1, Number(item.qty) || 1);
+    const unitPrice = productNumericPrice(product);
+    return {
+      id: Number(item.id),
+      name: product.name || 'محصول حذف‌شده',
+      qty,
+      unitPrice,
+      priceText: productPriceText(product),
+      lineTotal: unitPrice > 0 ? unitPrice * qty : 0,
+      category: product.category || '',
+      categoryTitle: catTitle(product.category),
+      img: product.img || DEFAULT_IMG
+    };
+  });
+}
+
+function orderItems(order) {
+  if (Array.isArray(order?.itemDetails) && order.itemDetails.length) return order.itemDetails;
+  return (order?.items || []).map((item) => {
+    const product = findProduct(item.id) || {};
+    const qty = Math.max(1, Number(item.qty) || 1);
+    const unitPrice = productNumericPrice(product);
+    return {
+      id: Number(item.id),
+      name: product.name || 'محصول حذف‌شده',
+      qty,
+      unitPrice,
+      priceText: productPriceText(product),
+      lineTotal: unitPrice > 0 ? unitPrice * qty : 0,
+      category: product.category || '',
+      categoryTitle: catTitle(product.category),
+      img: product.img || DEFAULT_IMG
+    };
+  });
+}
+
+function orderItemLineText(item) {
+  const qty = faNum(item.qty || 1);
+  const price = Number(item.lineTotal || 0) > 0 ? money(item.lineTotal) : (item.priceText || 'قیمت توافقی');
+  return `${item.name} × ${qty} = ${price}`;
+}
+
+function orderDetailsText(order) {
+  const lines = [
+    'سفارش جدید دلیزا',
+    `کد سفارش: ${orderCode(order)}`,
+    `نام مشتری: ${order?.name || '—'}`,
+    `شماره تماس: ${order?.phone || '—'}`,
+    `آدرس/شهر: ${order?.city || '—'}`,
+    '',
+    'محصولات:'
+  ];
+  orderItems(order).forEach((item) => lines.push('- ' + orderItemLineText(item)));
+  lines.push('', `جمع سفارش: ${money(order?.total || 0)}`);
+  if (order?.note) lines.push(`توضیحات: ${order.note}`);
+  lines.push(`زمان ثبت: ${order?.createdAt ? new Date(order.createdAt).toLocaleString('fa-IR') : '—'}`);
+  return lines.join('\n');
+}
+
+function orderItemsMini(order) {
+  const items = orderItems(order);
+  if (!items.length) return '—';
+  return items.slice(0, 3).map((item) => `${esc(item.name)} × ${faNum(item.qty || 1)}`).join('<br>') + (items.length > 3 ? `<br><small>+${faNum(items.length - 3)} مورد دیگر</small>` : '');
+}
+
+function orderDetailsHtml(order) {
+  const items = orderItems(order);
+  return `<div class="order-details">
+    <div class="grid g2">
+      <div class="card pad"><b>کد سفارش</b><p>${esc(orderCode(order))}</p></div>
+      <div class="card pad"><b>زمان ثبت</b><p>${order?.createdAt ? new Date(order.createdAt).toLocaleString('fa-IR') : '—'}</p></div>
+      <div class="card pad"><b>مشتری</b><p>${esc(order?.name || '—')}<br><small>${esc(order?.phone || '—')}</small></p></div>
+      <div class="card pad"><b>آدرس/شهر</b><p>${esc(order?.city || '—')}</p></div>
+    </div>
+    <h3 style="margin-top:16px">محصولات سفارش</h3>
+    <div class="table-wrap"><table><thead><tr><th>محصول</th><th>تعداد</th><th>قیمت واحد</th><th>جمع</th></tr></thead><tbody>
+      ${items.map((item) => `<tr><td><b>${esc(item.name)}</b><br><small>${esc(item.categoryTitle || '')}</small></td><td>${faNum(item.qty || 1)}</td><td>${esc(item.priceText || money(item.unitPrice || 0))}</td><td>${Number(item.lineTotal || 0) > 0 ? money(item.lineTotal) : '—'}</td></tr>`).join('') || '<tr><td colspan="4">محصولی ثبت نشده است.</td></tr>'}
+    </tbody></table></div>
+    <div class="card pad" style="margin-top:12px"><b>جمع کل:</b> <span class="price">${money(order?.total || 0)}</span></div>
+    <div class="card pad" style="margin-top:12px"><b>توضیحات:</b><p>${esc(order?.note || '—')}</p></div>
+    <textarea class="field" rows="8" readonly style="margin-top:12px;direction:rtl">${esc(orderDetailsText(order))}</textarea>
+  </div>`;
+}
+
+async function copyTextToClipboard(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    showToast('متن سفارش کپی شد');
+    return true;
+  } catch (error) {
+    console.warn('Clipboard failed:', error);
+    return false;
+  }
+}
+
+function copyOrderDetails(id) {
+  const order = orders().find((x) => Number(x.id) === Number(id));
+  if (!order) return;
+  copyTextToClipboard(orderDetailsText(order));
+}
+
+function openInstagramForOrder(id) {
+  const order = orders().find((x) => Number(x.id) === Number(id));
+  if (order) copyTextToClipboard(orderDetailsText(order));
+  window.open(instagramProfileUrl(), '_blank', 'noopener');
+}
+
 function showToast(message) {
   let el = $('toast');
   if (!el) {

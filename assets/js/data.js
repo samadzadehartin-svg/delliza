@@ -1,4 +1,4 @@
-const DATA_VERSION='delliza_product_images_uploaded_2026_07_11_01';
+const DATA_VERSION='delliza_orders_instagram_2026_07_11_01';
 const DEFAULT_IMG='../assets/images/product-default.svg';
 const DEFAULT_CATEGORIES=[
   {
@@ -1584,6 +1584,7 @@ const DEFAULT_SETTINGS={
   "subtitle": "منوی کامل کیک، شیرینی، حلوا، کلاسیک و دسر",
   "phone": "۰۹۰۲۲۱۲۲۲۸۶",
   "address": "تهران، ایران",
-  "instagram": "@Delliza.bakery",
-  "menuVersion": "delliza_product_images_uploaded_2026_07_11_01"
+  "instagram": "@dellizabakery",
+  "instagramUrl": "https://ig.me/m/dellizabakery",
+  "menuVersion": "delliza_orders_instagram_2026_07_11_01"
 };

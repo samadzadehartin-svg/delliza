@@ -2,7 +2,7 @@ backend:
   name: github
   # این خط را بعد از آپلود در GitHub عوض کن:
   # مثال: safaro/delliza-bakery
-  repo: YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME
+  repo: samadzadehartin-svg/delliza
   branch: main
 
 # عکس‌هایی که از پنل آپلود می‌کنی اینجا ذخیره می‌شوند.

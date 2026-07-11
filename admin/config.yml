@@ -1,0 +1,56 @@
+backend:
+  name: github
+  # این خط را بعد از آپلود در GitHub عوض کن:
+  # مثال: safaro/delliza-bakery
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME
+  branch: main
+
+# عکس‌هایی که از پنل آپلود می‌کنی اینجا ذخیره می‌شوند.
+media_folder: "assets/images/uploads"
+public_folder: "assets/images/uploads"
+
+locale: "fa"
+publish_mode: simple
+
+collections:
+  - name: "catalog"
+    label: "کاتالوگ دلیزا"
+    files:
+      - name: "products"
+        label: "محصولات دلیزا"
+        file: "data/products.json"
+        format: "json"
+        fields:
+          - name: "products"
+            label: "محصولات"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.price}} هزار تومان"
+            collapsed: true
+            fields:
+              - { name: "active", label: "نمایش در سایت", widget: "boolean", default: true, required: false }
+              - { name: "id", label: "شناسه انگلیسی محصول", widget: "string", hint: "مثلاً chocolate-mousse-cake؛ تغییرش نده مگر لازم باشد." }
+              - { name: "title", label: "نام فارسی محصول", widget: "string" }
+              - { name: "englishTitle", label: "نام انگلیسی", widget: "string", required: false }
+              - name: "category"
+                label: "دسته‌بندی"
+                widget: "select"
+                options:
+                  - "کیک و چیزکیک"
+                  - "حلوا سینی"
+                  - "حلوا تک‌نفره"
+                  - "کلاسیک"
+                  - "شیرینی و کوکی"
+                  - "دسر"
+              - { name: "price", label: "قیمت به هزار تومان", widget: "number", value_type: "int", min: 0, hint: "مثلاً 144 یعنی ۱۴۴ هزار تومان." }
+              - { name: "badge", label: "برچسب روی محصول", widget: "string", required: false }
+              - { name: "weight", label: "واحد / وزن", widget: "string", required: false }
+              - { name: "image", label: "عکس محصول", widget: "image", required: false }
+              - { name: "description", label: "توضیحات / ترکیبات", widget: "text", required: false }
+              - name: "tags"
+                label: "تگ‌ها"
+                widget: "list"
+                required: false
+                field: { name: "tag", label: "تگ", widget: "string" }
+              - { name: "featured", label: "پیشنهادی", widget: "boolean", default: false, required: false }
+              - { name: "today", label: "ویترین امروز", widget: "boolean", default: false, required: false }
+              - { name: "createdAt", label: "تاریخ ساخت", widget: "datetime", required: false, format: "YYYY-MM-DD" }

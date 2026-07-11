@@ -1,17 +1,5 @@
 (function () {
-  const getProducts = () => {
-    const baseProducts = Array.isArray(window.DELLIZA_PRODUCTS) ? window.DELLIZA_PRODUCTS : [];
-    try {
-      const draft = localStorage.getItem("delliza-products-draft");
-      if (!draft) return baseProducts;
-      const parsed = JSON.parse(draft);
-      return Array.isArray(parsed) ? parsed : baseProducts;
-    } catch (error) {
-      return baseProducts;
-    }
-  };
-
-  const products = getProducts();
+  let products = [];
   const instagramUrl = "https://www.instagram.com/Delliza.bakery";
 
   const state = {
@@ -23,8 +11,6 @@
   const els = {
     navToggle: document.querySelector(".nav-toggle"),
     navLinks: document.querySelector("[data-nav-links]"),
-    categoryStrip: document.getElementById("category-strip"),
-    showcaseGrid: document.getElementById("showcase-grid"),
     categoryChips: document.getElementById("category-chips"),
     productGrid: document.getElementById("product-grid"),
     searchInput: document.getElementById("search-input"),
@@ -37,7 +23,6 @@
   };
 
   const toPersianDigits = (value) => String(value).replace(/\d/g, (digit) => "۰۱۲۳۴۵۶۷۸۹"[Number(digit)]);
-
   const formatPrice = (price) => `${toPersianDigits(price)} هزار تومان`;
 
   const normalize = (value) =>
@@ -47,7 +32,25 @@
       .replace(/[ك]/g, "ک")
       .toLowerCase();
 
-  const uniqueCategories = () => ["همه", ...new Set(products.map((product) => product.category))];
+  const safeText = (value) => String(value || "");
+
+  const loadProducts = async () => {
+    try {
+      const response = await fetch("data/products.json", { cache: "no-store" });
+      if (!response.ok) throw new Error(`products.json ${response.status}`);
+      const data = await response.json();
+      products = Array.isArray(data) ? data : Array.isArray(data.products) ? data.products : [];
+      products = products.filter((product) => product && product.active !== false);
+    } catch (error) {
+      console.error("Could not load products.json", error);
+      products = [];
+      if (els.productGrid) {
+        els.productGrid.innerHTML = `<div class="empty-state inline-error"><strong>محصولات بارگذاری نشد.</strong><p>فایل data/products.json را بررسی کن.</p></div>`;
+      }
+    }
+  };
+
+  const uniqueCategories = () => ["همه", ...new Set(products.map((product) => product.category).filter(Boolean))];
 
   const getCategoryCount = (category) =>
     category === "همه" ? products.length : products.filter((product) => product.category === category).length;
@@ -69,58 +72,39 @@
         return matchesCategory && matchesQuery;
       })
       .sort((a, b) => {
-        if (state.sort === "price-desc") return b.price - a.price;
-        if (state.sort === "price-asc") return a.price - b.price;
-        if (state.sort === "newest") return new Date(b.createdAt) - new Date(a.createdAt);
-        return Number(b.featured) - Number(a.featured) || b.price - a.price;
+        if (state.sort === "price-desc") return Number(b.price || 0) - Number(a.price || 0);
+        if (state.sort === "price-asc") return Number(a.price || 0) - Number(b.price || 0);
+        if (state.sort === "newest") return new Date(b.createdAt || 0) - new Date(a.createdAt || 0);
+        return Number(Boolean(b.featured)) - Number(Boolean(a.featured)) || Number(b.price || 0) - Number(a.price || 0);
       });
   };
 
   const productCard = (product) => `
-    <article class="product-card reveal" data-product-id="${product.id}">
-      <button class="product-image" type="button" data-view-product="${product.id}" aria-label="مشاهده ${product.title}">
-        <img src="${product.image}" alt="${product.title}" loading="lazy" />
+    <article class="product-card reveal" data-product-id="${safeText(product.id)}">
+      <button class="product-image" type="button" data-view-product="${safeText(product.id)}" aria-label="مشاهده ${safeText(product.title)}">
+        <img src="${safeText(product.image)}" alt="${safeText(product.title)}" loading="lazy" />
+        <span>${safeText(product.badge || product.category)}</span>
       </button>
       <div class="product-body">
-        <p class="product-category">${product.category}</p>
-        <h3>${product.title}</h3>
-        <p>${product.description}</p>
+        <div>
+          <p class="product-category">${safeText(product.category)}</p>
+          <h3>${safeText(product.title)}</h3>
+          <small>${safeText(product.englishTitle)}</small>
+        </div>
+        <p>${safeText(product.description)}</p>
         <div class="product-meta">
-          <span>${product.weight}</span>
-          <strong>${formatPrice(product.price)}</strong>
+          <span>${safeText(product.weight)}</span>
+          <strong>${formatPrice(Number(product.price || 0))}</strong>
         </div>
         <div class="product-actions">
-          <button class="btn btn-small btn-dark" type="button" data-view-product="${product.id}">جزئیات</button>
+          <button class="btn btn-small btn-dark" type="button" data-view-product="${safeText(product.id)}">جزئیات</button>
           <a class="btn btn-small btn-light" href="${instagramUrl}" target="_blank" rel="noopener">سفارش</a>
         </div>
       </div>
     </article>`;
 
-  const renderCategoryStrip = () => {
-    if (!els.categoryStrip) return;
-    const categoryVisuals = {
-      "کیک و چیزکیک": "ک",
-      "حلوا سینی": "ح",
-      "حلوا تک‌نفره": "ت",
-      "کلاسیک": "د",
-      "شیرینی و کوکی": "ش",
-      "دسر": "م"
-    };
-
-    els.categoryStrip.innerHTML = uniqueCategories()
-      .filter((category) => category !== "همه")
-      .map(
-        (category) => `
-          <a class="strip-card reveal" href="#products" data-strip-category="${category}">
-            <span aria-hidden="true">${categoryVisuals[category] || "•"}</span>
-            <strong>${category}</strong>
-            <small>${toPersianDigits(getCategoryCount(category))} محصول</small>
-          </a>`
-      )
-      .join("");
-  };
-
   const renderChips = () => {
+    if (!els.categoryChips) return;
     els.categoryChips.innerHTML = uniqueCategories()
       .map(
         (category) => `
@@ -132,44 +116,36 @@
       .join("");
   };
 
-  const renderShowcase = () => {
-    if (!els.showcaseGrid) return;
-    els.showcaseGrid.innerHTML = products
-      .filter((product) => product.today)
-      .slice(0, 4)
-      .map(productCard)
-      .join("");
-  };
-
   const renderProducts = () => {
+    if (!els.productGrid) return;
     const filtered = getFilteredProducts();
     els.productGrid.innerHTML = filtered.map(productCard).join("");
-    els.resultsCount.textContent = `${toPersianDigits(filtered.length)} محصول`;
-    els.emptyState.hidden = filtered.length > 0;
+    if (els.resultsCount) els.resultsCount.textContent = `${toPersianDigits(filtered.length)} محصول`;
+    if (els.emptyState) els.emptyState.hidden = filtered.length > 0;
     renderChips();
     observeReveals();
   };
 
   const openProduct = (id) => {
     const product = products.find((item) => item.id === id);
-    if (!product) return;
+    if (!product || !els.modal || !els.modalContent) return;
 
     els.modalContent.innerHTML = `
       <div class="modal-grid">
         <div class="modal-image">
-          <img src="${product.image}" alt="${product.title}" />
+          <img src="${safeText(product.image)}" alt="${safeText(product.title)}" />
         </div>
         <div class="modal-info">
-          <p class="product-category">${product.category}</p>
-          <h2 id="modal-title">${product.title}</h2>
-          <small>${product.englishTitle}</small>
-          <p>${product.description}</p>
+          <p class="product-category">${safeText(product.category)}</p>
+          <h2 id="modal-title">${safeText(product.title)}</h2>
+          <small>${safeText(product.englishTitle)}</small>
+          <p>${safeText(product.description)}</p>
           <ul class="tag-list">
-            ${(product.tags || []).map((tag) => `<li>${tag}</li>`).join("")}
+            ${(product.tags || []).map((tag) => `<li>${safeText(tag)}</li>`).join("")}
           </ul>
           <div class="modal-price">
-            <span>${product.weight}</span>
-            <strong>${formatPrice(product.price)}</strong>
+            <span>${safeText(product.weight)}</span>
+            <strong>${formatPrice(Number(product.price || 0))}</strong>
           </div>
           <a class="btn btn-primary" href="${instagramUrl}" target="_blank" rel="noopener">سفارش از اینستاگرام</a>
         </div>
@@ -180,6 +156,7 @@
   };
 
   const closeModal = () => {
+    if (!els.modal) return;
     els.modal.close();
     document.body.classList.remove("modal-open");
   };
@@ -207,6 +184,9 @@
   };
 
   const addProductStructuredData = () => {
+    const existing = document.getElementById("product-structured-data");
+    if (existing) existing.remove();
+
     const schema = {
       "@context": "https://schema.org",
       "@type": "ItemList",
@@ -223,7 +203,7 @@
           offers: {
             "@type": "Offer",
             priceCurrency: "IRR",
-            price: product.price * 10000,
+            price: Number(product.price || 0) * 10000,
             availability: "https://schema.org/InStock"
           }
         }
@@ -231,79 +211,63 @@
     };
 
     const script = document.createElement("script");
+    script.id = "product-structured-data";
     script.type = "application/ld+json";
     script.textContent = JSON.stringify(schema);
     document.head.appendChild(script);
   };
 
-  document.addEventListener("click", (event) => {
-    const viewButton = event.target.closest("[data-view-product]");
-    const chip = event.target.closest("[data-category]");
-    const stripCategory = event.target.closest("[data-strip-category]");
-    const closeButton = event.target.closest("[data-close-modal]");
+  const bindEvents = () => {
+    els.navToggle?.addEventListener("click", () => {
+      const isOpen = els.navToggle.getAttribute("aria-expanded") === "true";
+      els.navToggle.setAttribute("aria-expanded", String(!isOpen));
+      els.navLinks?.classList.toggle("open", !isOpen);
+    });
 
-    if (viewButton) {
-      openProduct(viewButton.dataset.viewProduct);
-    }
-
-    if (chip) {
-      state.category = chip.dataset.category;
+    els.searchInput?.addEventListener("input", (event) => {
+      state.query = event.target.value;
       renderProducts();
-    }
+    });
 
-    if (stripCategory) {
-      state.category = stripCategory.dataset.stripCategory;
+    els.sortSelect?.addEventListener("change", (event) => {
+      state.sort = event.target.value;
       renderProducts();
-    }
+    });
 
-    if (closeButton) {
-      closeModal();
-    }
-  });
+    els.categoryChips?.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-category]");
+      if (!button) return;
+      state.category = button.dataset.category;
+      renderProducts();
+    });
 
-  els.modal.addEventListener("click", (event) => {
-    if (event.target === els.modal) closeModal();
-  });
+    els.resetFilters?.addEventListener("click", () => {
+      state.category = "همه";
+      state.query = "";
+      state.sort = "featured";
+      if (els.searchInput) els.searchInput.value = "";
+      if (els.sortSelect) els.sortSelect.value = "featured";
+      renderProducts();
+    });
 
-  els.modal.addEventListener("cancel", () => {
-    document.body.classList.remove("modal-open");
-  });
+    document.addEventListener("click", (event) => {
+      const viewButton = event.target.closest("[data-view-product]");
+      if (viewButton) openProduct(viewButton.dataset.viewProduct);
+      if (event.target.matches("[data-close-modal]")) closeModal();
+    });
 
-  if (els.searchInput) els.searchInput.addEventListener("input", (event) => {
-    state.query = event.target.value;
+    els.modal?.addEventListener("click", (event) => {
+      if (event.target === els.modal) closeModal();
+    });
+  };
+
+  const init = async () => {
+    bindEvents();
+    await loadProducts();
     renderProducts();
-  });
+    addProductStructuredData();
+    observeReveals();
+  };
 
-  if (els.sortSelect) els.sortSelect.addEventListener("change", (event) => {
-    state.sort = event.target.value;
-    renderProducts();
-  });
-
-  if (els.resetFilters) els.resetFilters.addEventListener("click", () => {
-    state.category = "همه";
-    state.query = "";
-    state.sort = "featured";
-    els.searchInput.value = "";
-    els.sortSelect.value = "featured";
-    renderProducts();
-  });
-
-  if (els.navToggle && els.navLinks) els.navToggle.addEventListener("click", () => {
-    const isOpen = els.navToggle.getAttribute("aria-expanded") === "true";
-    els.navToggle.setAttribute("aria-expanded", String(!isOpen));
-    els.navLinks.classList.toggle("is-open", !isOpen);
-  });
-
-  if (els.navLinks) els.navLinks.addEventListener("click", (event) => {
-    if (event.target.matches("a")) {
-      els.navToggle.setAttribute("aria-expanded", "false");
-      els.navLinks.classList.remove("is-open");
-    }
-  });
-
-  renderCategoryStrip();
-  renderShowcase();
-  renderProducts();
-  addProductStructuredData();
-  observeReveals();
+  init();
 })();

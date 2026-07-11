@@ -32,7 +32,7 @@ const DEFAULT_CATEGORIES=[
     "active": true
   }
 ];
-const DEFAULT_PR[
+const DEFAULT_PRODUCTS=[
   {
     "id": 1,
     "name": "کیک براونی",
@@ -1561,8 +1561,6 @@ const DEFAULT_PR[
       "minOrder": true,
       "weight": true
     }
-  }
-]}
   }
 ];
 const DEFAULT_STAFF=[

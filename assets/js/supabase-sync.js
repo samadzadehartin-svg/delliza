@@ -1,11 +1,42 @@
-
 (function () {
   const GLOBAL_KEYS = ['products', 'categories', 'orders', 'staff', 'settings'];
   let client = null;
+  let clientSignature = '';
   let lastError = '';
 
+  function clean(value) {
+    return String(value || '').trim().replace(/^['\"]|['\"]$/g, '');
+  }
+
+  function normalizeSupabaseUrl(rawUrl) {
+    let value = clean(rawUrl);
+    if (!value) return '';
+
+    // اگر کاربر به اشتباه لینک dashboard را وارد کرده باشد:
+    // https://supabase.com/dashboard/project/xxxx
+    const dashboardMatch = value.match(/supabase\.com\/dashboard\/project\/([^/?#]+)/i);
+    if (dashboardMatch && dashboardMatch[1]) {
+      return `https://${dashboardMatch[1]}.supabase.co`;
+    }
+
+    if (!/^https?:\/\//i.test(value)) value = `https://${value}`;
+
+    try {
+      const url = new URL(value);
+      const host = url.hostname;
+      if (host.includes('supabase.co')) return `${url.protocol}//${host}`;
+      return `${url.protocol}//${host}`;
+    } catch (error) {
+      return value.replace(/\/(rest\/v1|auth\/v1|storage\/v1).*/i, '').replace(/\/+$/, '');
+    }
+  }
+
   function cfg() {
-    return window.DELIZA_SUPABASE || {};
+    const c = window.DELIZA_SUPABASE || {};
+    return {
+      url: normalizeSupabaseUrl(c.url),
+      anonKey: clean(c.anonKey)
+    };
   }
 
   function isConfigured() {
@@ -15,7 +46,12 @@
 
   function getClient() {
     if (!isConfigured()) return null;
-    if (!client) client = window.supabase.createClient(cfg().url, cfg().anonKey);
+    const c = cfg();
+    const signature = `${c.url}|${c.anonKey.slice(0, 12)}`;
+    if (!client || clientSignature !== signature) {
+      client = window.supabase.createClient(c.url, c.anonKey);
+      clientSignature = signature;
+    }
     return client;
   }
 
@@ -87,10 +123,11 @@
   }
 
   async function refreshAndRerender(renderName) {
-    await pull();
+    const result = await pull();
     if (renderName && typeof window[renderName] === 'function') window[renderName]();
+    return result;
   }
 
   window.DELIZA_SYNC_KEYS = GLOBAL_KEYS;
-  window.DELIZA_DB = { isConfigured, statusText, pull, push, pushAll, refreshAndRerender };
+  window.DELIZA_DB = { isConfigured, statusText, pull, push, pushAll, refreshAndRerender, normalizeSupabaseUrl };
 })();

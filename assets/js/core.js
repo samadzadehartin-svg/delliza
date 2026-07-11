@@ -23,9 +23,15 @@ function read(key, fallback) {
   }
 }
 
-function write(key, value) {
+function write(key, value, options = {}) {
   try {
     localStorage.setItem(PREFIX + key, JSON.stringify(value));
+    const shouldSync = !options.skipRemote && Array.isArray(window.DELIZA_SYNC_KEYS) && window.DELIZA_SYNC_KEYS.includes(key);
+    if (shouldSync && window.DELIZA_DB?.isConfigured?.()) {
+      window.DELIZA_DB.push(key, value).then((result) => {
+        if (!result?.ok && !options.silent) showToast('ذخیره محلی شد، ولی Supabase خطا داد');
+      });
+    }
     return true;
   } catch (error) {
     alert('ذخیره انجام نشد؛ احتمالاً حجم عکس‌ها زیاد است. بهتر است برای عکس‌ها URL وارد کنید.');
@@ -200,4 +206,23 @@ function loginBox(role, title) {
 function doLogin(role) {
   if (login(role, $('u').value, $('p').value)) location.reload();
   else alert('اطلاعات ورود اشتباه است');
+}
+
+
+async function bootstrapData(role) {
+  seed();
+  if (window.DELIZA_DB?.isConfigured?.()) {
+    const pulled = await window.DELIZA_DB.pull();
+    // اگر دیتابیس تازه ساخته شده باشد، پنل مدیریت داده‌های اولیه را یک‌بار به Supabase می‌فرستد.
+    if (role === 'admin' && pulled.ok && pulled.count === 0) {
+      await window.DELIZA_DB.pushAll();
+    }
+    repairData();
+  }
+}
+
+function supabaseStatusBadge() {
+  const text = window.DELIZA_DB?.statusText?.() || 'Supabase تنظیم نشده؛ داده‌ها محلی هستند.';
+  const cls = window.DELIZA_DB?.isConfigured?.() ? 'green' : 'gray';
+  return `<span class="badge ${cls}" title="${text}">${text}</span>`;
 }

@@ -31,3 +31,37 @@
 ## Deploy روی Vercel
 
 ریپو را در Vercel Import کن. تنظیم خاصی لازم نیست. فایل `vercel.json` صفحه اصلی را به `/buyer/` هدایت می‌کند.
+
+
+## اتصال Supabase
+
+این نسخه می‌تواند محصولات، قیمت‌ها، سفارش‌ها، کاربران فروش و تنظیمات برند را در Supabase ذخیره کند.
+
+۱. در Supabase یک پروژه جدید بساز.
+۲. برو به SQL Editor و فایل زیر را اجرا کن:
+
+`supabase/schema-demo.sql`
+
+۳. برو به Project Settings > API و این دو مقدار را بردار:
+
+- Project URL
+- anon public key
+
+۴. فایل زیر را در پروژه ویرایش کن:
+
+`assets/js/supabase-config.js`
+
+و مقدارها را این‌طوری وارد کن:
+
+```js
+window.DELIZA_SUPABASE = {
+  url: 'https://YOUR-PROJECT.supabase.co',
+  anonKey: 'YOUR_ANON_PUBLIC_KEY'
+};
+```
+
+۵. فایل‌ها را commit کن و روی Vercel deploy کن.
+
+بعد از این، وقتی در پنل مدیریت قیمت محصول را تغییر بدهی، مقدار در Supabase ذخیره می‌شود و صفحه مشتری در مرورگر/دستگاه دیگر هم بعد از Refresh قیمت جدید را می‌خواند.
+
+توجه: این schema برای دمو و شروع سریع است. برای فروش واقعی باید policyها را با Supabase Auth امن‌تر کنیم.

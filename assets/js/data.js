@@ -1,4 +1,4 @@
-const DATA_VERSION='delliza_remove_b2b_b2c_price_update_2026_07_12_01';
+const DATA_VERSION='delliza_images_b2b_removed_prices_2026_07_12_03';
 const DEFAULT_IMG='../assets/images/product-default.svg';
 const DEFAULT_CATEGORIES=[
   {
@@ -1590,5 +1590,5 @@ const DEFAULT_SETTINGS={
   "address": "تهران، ایران",
   "instagram": "@delliza.bakery",
   "instagramUrl": "https://ig.me/m/delliza.bakery",
-  "menuVersion": "delliza_remove_b2b_b2c_price_update_2026_07_12_01"
+  "menuVersion": "delliza_images_b2b_removed_prices_2026_07_12_03"
 };

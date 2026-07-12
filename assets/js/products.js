@@ -367,7 +367,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 585,
     "badge": "سینی ۱ کیلویی",
     "weight": "۱ کیلوگرم",
-    "image": "assets/images/fresh-products/halva.png",
+    "image": "assets/images/fresh-products/halva-pistachio.png",
     "description": "آرد، روغن، شکر، زعفران، پسته",
     "tags": [
       "حلوا سینی",
@@ -387,7 +387,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 385,
     "badge": "سینی ۱ کیلویی",
     "weight": "۱ کیلوگرم",
-    "image": "assets/images/fresh-products/halva.png",
+    "image": "assets/images/fresh-products/halva-arabic.png",
     "description": "آرد، روغن، شکر، شیر خشک، هل",
     "tags": [
       "حلوا سینی",
@@ -427,7 +427,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 275,
     "badge": "سینی ۱ کیلویی",
     "weight": "۱ کیلوگرم",
-    "image": "assets/images/fresh-products/halva.png",
+    "image": "assets/images/fresh-products/halva-saffron.png",
     "description": "آرد، روغن، شکر، گلاب، زعفران",
     "tags": [
       "حلوا سینی",
@@ -447,7 +447,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 335,
     "badge": "سینی ۱ کیلویی",
     "weight": "۱ کیلوگرم",
-    "image": "assets/images/fresh-products/halva.png",
+    "image": "assets/images/fresh-products/halva-three-flour.png",
     "description": "آرد سفید، آرد برنج، آرد نخودچی، روغن، شکر، شربت",
     "tags": [
       "حلوا سینی",
@@ -467,7 +467,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 275,
     "badge": "سینی ۱ کیلویی",
     "weight": "۱ کیلوگرم",
-    "image": "assets/images/fresh-products/halva.png",
+    "image": "assets/images/fresh-products/halva-carrot.png",
     "description": "آرد، روغن، شکر، گلاب، هویج",
     "tags": [
       "حلوا سینی",
@@ -487,7 +487,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 275,
     "badge": "سینی ۱ کیلویی",
     "weight": "۱ کیلوگرم",
-    "image": "assets/images/fresh-products/halva.png",
+    "image": "assets/images/fresh-products/halva-ginger.png",
     "description": "آرد، روغن، شکر، هل، زنجبیل",
     "tags": [
       "حلوا سینی",
@@ -691,10 +691,7 @@ window.DELLIZA_PRODUCTS = [
     "description": "آرد، کره، شیر، تخم‌مرغ، خمیرمایه — قیمت بسته ۱۰ عددی و حداقل سفارش ۱۰ عدد",
     "tags": [
       "کلاسیک",
-      "آرد",
-      "کره",
-      "شیر",
-      "حداقل ۱۰ عدد",
+      "حداقل سفارش ۱۰ عدد",
       "بسته ۱۰ عددی"
     ],
     "featured": true,
@@ -754,10 +751,7 @@ window.DELLIZA_PRODUCTS = [
     "description": "آرد، شیر، تخم‌مرغ، شکر، خمیرمایه — قیمت بسته ۱۰ عددی و حداقل سفارش ۱۰ عدد",
     "tags": [
       "کلاسیک",
-      "آرد",
-      "شیر",
-      "تخم‌مرغ",
-      "حداقل ۱۰ عدد",
+      "حداقل سفارش ۱۰ عدد",
       "بسته ۱۰ عددی"
     ],
     "featured": true,
@@ -1033,7 +1027,7 @@ window.DELLIZA_PRODUCTS = [
     "price": 25,
     "badge": "دسر",
     "weight": "یک عدد",
-    "image": "assets/images/fresh-products/mochi.png",
+    "image": "assets/images/fresh-products/mochi-snickers.png",
     "description": "آرد برنج، نشاسته، شکر، کارامل، شکلات، بادام‌زمینی",
     "tags": [
       "دسر",

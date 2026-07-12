@@ -15,8 +15,21 @@ function productPriceText(product) {
   return money(product?.price || 0);
 }
 
+function productCartPriceText(product) {
+  if (product?.priceMode === 'package') {
+    const qty = Number(product.packageQty || product.minOrder || 1);
+    return `${productPriceText(product)}${qty > 1 ? ` / حداقل ${faNum(qty)} عدد` : ''}`;
+  }
+  return productPriceText(product);
+}
+
 function productNumericPrice(product) {
-  return Number(product?.price || 0);
+  const price = Number(product?.price || 0);
+  if (product?.priceMode === 'package') {
+    const qty = Number(product.packageQty || product.minOrder || 1);
+    if (qty > 1) return price / qty;
+  }
+  return price;
 }
 
 function normalize(value) {
@@ -92,6 +105,7 @@ function repairProduct(product, index = 0) {
     stock: Number(p.stock || 0),
     minOrder: Number(p.minOrder || 1),
     status: p.status || 'active',
+    type: p.type || def.type || 'retail',
     img: p.img || def.img || DEFAULT_IMG,
     gallery: Array.isArray(p.gallery) && p.gallery.length ? p.gallery : [p.img || def.img || DEFAULT_IMG],
     tags: Array.isArray(p.tags) ? p.tags : [],

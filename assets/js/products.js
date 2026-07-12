@@ -684,20 +684,23 @@ window.DELLIZA_PRODUCTS = [
     "title": "کروسان",
     "englishTitle": "Croissant",
     "category": "کلاسیک",
-    "price": 90,
-    "badge": "کلاسیک",
-    "weight": "یک عدد",
+    "price": 990,
+    "badge": "حداقل ۱۰ عدد",
+    "weight": "بسته ۱۰ عددی",
     "image": "assets/images/fresh-products/croissant.png",
-    "description": "آرد، کره، شیر، تخم‌مرغ، خمیرمایه",
+    "description": "آرد، کره، شیر، تخم‌مرغ، خمیرمایه — قیمت بسته ۱۰ عددی و حداقل سفارش ۱۰ عدد",
     "tags": [
       "کلاسیک",
       "آرد",
       "کره",
-      "شیر"
+      "شیر",
+      "حداقل ۱۰ عدد",
+      "بسته ۱۰ عددی"
     ],
     "featured": true,
     "today": true,
-    "createdAt": "2026-07-08"
+    "createdAt": "2026-07-08",
+    "minOrder": 10
   },
   {
     "id": "birthday-cake",
@@ -744,20 +747,23 @@ window.DELLIZA_PRODUCTS = [
     "title": "دونات",
     "englishTitle": "Donut",
     "category": "کلاسیک",
-    "price": 80,
-    "badge": "روزانه",
-    "weight": "یک عدد",
+    "price": 890,
+    "badge": "حداقل ۱۰ عدد",
+    "weight": "بسته ۱۰ عددی",
     "image": "assets/images/fresh-products/donut.png",
-    "description": "آرد، شیر، تخم‌مرغ، شکر، خمیرمایه",
+    "description": "آرد، شیر، تخم‌مرغ، شکر، خمیرمایه — قیمت بسته ۱۰ عددی و حداقل سفارش ۱۰ عدد",
     "tags": [
       "کلاسیک",
       "آرد",
       "شیر",
-      "تخم‌مرغ"
+      "تخم‌مرغ",
+      "حداقل ۱۰ عدد",
+      "بسته ۱۰ عددی"
     ],
     "featured": true,
     "today": true,
-    "createdAt": "2026-07-02"
+    "createdAt": "2026-07-02",
+    "minOrder": 10
   },
   {
     "id": "nokhodchi-sweet",

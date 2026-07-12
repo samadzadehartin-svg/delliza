@@ -277,7 +277,6 @@ function openDashboardProductForm(id) {
         <input id="stock" class="field" type="number" placeholder="موجودی" value="${Number(product?.stock || 0)}">
         <input id="minOrder" class="field" type="number" placeholder="حداقل سفارش" value="${Number(product?.minOrder || 1)}">
         <select id="status" class="field"><option value="active" ${product?.status !== 'inactive' ? 'selected' : ''}>فعال</option><option value="inactive" ${product?.status === 'inactive' ? 'selected' : ''}>غیرفعال</option></select>
-        <select id="type" class="field"><option value="B2C" ${product?.type !== 'B2B' ? 'selected' : ''}>تکی B2C</option><option value="B2B" ${product?.type === 'B2B' ? 'selected' : ''}>عمده B2B</option></select>
         <input id="tags" class="field" placeholder="تگ‌ها با کاما" value="${esc((product?.tags || []).join(','))}">
       </div><textarea id="desc" class="field" rows="3" placeholder="توضیحات">${esc(product?.desc || '')}</textarea><textarea id="ingredients" class="field" rows="2" placeholder="ترکیبات">${esc(product?.ingredients || '')}</textarea></div>
       <div class="form-section"><h3>نمایش بخش‌های محصول</h3><div class="switch-grid">${Object.entries({ ingredients: 'ترکیبات', gallery: 'گالری تصاویر', stock: 'موجودی', minOrder: 'حداقل سفارش', weight: 'وزن محصول' }).map(([key, title]) => `<label class="switch-card"><input id="vis_${key}" type="checkbox" ${visible[key] !== false ? 'checked' : ''}><b>${title}</b><span>در صفحه مشتری نمایش داده شود</span></label>`).join('')}</div></div>
@@ -326,7 +325,7 @@ function saveDashboardProduct(event) {
     stock: Number($('stock').value) || 0,
     minOrder: Number($('minOrder').value) || 1,
     status: $('status').value,
-    type: $('type').value,
+    type: 'retail',
     tags: $('tags').value.split(',').map((value) => value.trim()).filter(Boolean),
     desc: $('desc').value,
     ingredients: $('ingredients').value,

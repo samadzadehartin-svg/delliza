@@ -1,4 +1,4 @@
-const DATA_VERSION='delliza_instagram_delliza_bakery_2026_07_11_02';
+const DATA_VERSION='delliza_remove_b2b_b2c_price_update_2026_07_12_01';
 const DEFAULT_IMG='../assets/images/product-default.svg';
 const DEFAULT_CATEGORIES=[
   {
@@ -43,7 +43,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی",
       "شکلاتی"
@@ -72,7 +72,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -100,7 +100,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی",
       "شکلاتی"
@@ -129,7 +129,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -157,7 +157,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی",
       "شکلاتی"
@@ -186,7 +186,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -214,7 +214,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -242,7 +242,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -270,7 +270,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی",
       "شکلاتی"
@@ -299,7 +299,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -327,7 +327,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -355,7 +355,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -383,7 +383,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی",
       "شکلاتی"
@@ -412,7 +412,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی",
       "زعفرانی"
@@ -441,7 +441,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -469,7 +469,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -497,7 +497,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -525,7 +525,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "تک نفره",
       "زعفرانی"
@@ -554,7 +554,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "تک نفره"
     ],
@@ -582,7 +582,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "تک نفره"
     ],
@@ -610,7 +610,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "تک نفره",
       "پسته‌ای"
@@ -639,7 +639,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "تک نفره"
     ],
@@ -667,7 +667,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "تک نفره"
     ],
@@ -695,7 +695,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "تک نفره"
     ],
@@ -723,7 +723,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "تک نفره"
     ],
@@ -751,7 +751,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "تک نفره"
     ],
@@ -779,7 +779,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی / ۱ کیلویی",
       "زعفرانی"
@@ -808,7 +808,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی / ۱ کیلویی"
     ],
@@ -836,7 +836,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی / ۱ کیلویی"
     ],
@@ -864,7 +864,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی / ۱ کیلویی"
     ],
@@ -892,7 +892,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی / ۱ کیلویی"
     ],
@@ -920,7 +920,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی / ۱ کیلویی",
       "پسته‌ای"
@@ -949,7 +949,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی / ۱ کیلویی"
     ],
@@ -977,7 +977,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی / ۱ کیلویی"
     ],
@@ -999,23 +999,22 @@ const DEFAULT_PRODUCTS=[
     "id": 35,
     "name": "دونات",
     "category": "classic",
-    "flavor": "بیس سفارش ۱۰ عدد",
-    "weight": "عدد",
-    "price": 170000,
+    "flavor": "حداقل سفارش ۱۰ عدد",
+    "weight": "بسته ۱۰ عددی",
+    "price": 890000,
     "stock": 80,
     "minOrder": 10,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
-      "بیس سفارش ۱۰ عدد",
-      "عدد",
-      "بیس سفارش"
+      "حداقل سفارش ۱۰ عدد",
+      "بسته ۱۰ عددی"
     ],
     "img": "../assets/images/products/product-35.jpg",
     "gallery": [
       "../assets/images/products/product-35.jpg"
     ],
-    "desc": "آرد، شیر، تخم‌مرغ، شکر، خمیرمایه — حداقل سفارش ۱۰ عدد",
+    "desc": "آرد، شیر، تخم‌مرغ، شکر، خمیرمایه — قیمت بسته ۱۰ عددی و حداقل سفارش ۱۰ عدد",
     "ingredients": "آرد، شیر، تخم‌مرغ، شکر، خمیرمایه",
     "visible": {
       "ingredients": true,
@@ -1023,29 +1022,31 @@ const DEFAULT_PRODUCTS=[
       "stock": true,
       "minOrder": true,
       "weight": true
-    }
+    },
+    "priceLabel": "۸۹۰٬۰۰۰ تومان / بسته ۱۰ عددی",
+    "priceMode": "package",
+    "packageQty": 10
   },
   {
     "id": 36,
     "name": "کروسان",
     "category": "classic",
-    "flavor": "بیس سفارش ۱۰ عدد",
-    "weight": "عدد",
-    "price": 180000,
+    "flavor": "حداقل سفارش ۱۰ عدد",
+    "weight": "بسته ۱۰ عددی",
+    "price": 990000,
     "stock": 80,
     "minOrder": 10,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
-      "بیس سفارش ۱۰ عدد",
-      "عدد",
-      "بیس سفارش"
+      "حداقل سفارش ۱۰ عدد",
+      "بسته ۱۰ عددی"
     ],
     "img": "../assets/images/products/product-36.jpg",
     "gallery": [
       "../assets/images/products/product-36.jpg"
     ],
-    "desc": "آرد، کره، شیر، تخم‌مرغ، خمیرمایه — حداقل سفارش ۱۰ عدد",
+    "desc": "آرد، کره، شیر، تخم‌مرغ، خمیرمایه — قیمت بسته ۱۰ عددی و حداقل سفارش ۱۰ عدد",
     "ingredients": "آرد، کره، شیر، تخم‌مرغ، خمیرمایه",
     "visible": {
       "ingredients": true,
@@ -1053,7 +1054,10 @@ const DEFAULT_PRODUCTS=[
       "stock": true,
       "minOrder": true,
       "weight": true
-    }
+    },
+    "priceLabel": "۹۹۰٬۰۰۰ تومان / بسته ۱۰ عددی",
+    "priceMode": "package",
+    "packageQty": 10
   },
   {
     "id": 37,
@@ -1065,7 +1069,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "کیلویی",
       "بیس سفارش"
@@ -1095,7 +1099,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [],
     "img": "../assets/images/products/product-38.jpg",
     "gallery": [
@@ -1122,7 +1126,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -1150,7 +1154,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -1178,7 +1182,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -1206,7 +1210,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -1234,7 +1238,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -1262,7 +1266,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -1290,7 +1294,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -1318,7 +1322,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -1346,7 +1350,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -1374,7 +1378,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -1402,7 +1406,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -1430,7 +1434,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -1458,7 +1462,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -1486,7 +1490,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "بیس سفارش ۱۰ عدد",
       "بسته ۱۰ عدد"
@@ -1515,7 +1519,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "بیس سفارش ۱۰ عدد",
       "بسته ۱۰ عدد"
@@ -1544,7 +1548,7 @@ const DEFAULT_PRODUCTS=[
     "stock": 80,
     "minOrder": 1,
     "status": "active",
-    "type": "B2C",
+    "type": "retail",
     "tags": [
       "سینی"
     ],
@@ -1573,7 +1577,7 @@ const DEFAULT_STAFF=[
   },
   {
     "id": "staff-02",
-    "name": "فروش عمده",
+    "name": "کارشناس فروش دوم",
     "username": "staff02",
     "password": "deliza02",
     "active": true
@@ -1586,5 +1590,5 @@ const DEFAULT_SETTINGS={
   "address": "تهران، ایران",
   "instagram": "@delliza.bakery",
   "instagramUrl": "https://ig.me/m/delliza.bakery",
-  "menuVersion": "delliza_instagram_delliza_bakery_2026_07_11_02"
+  "menuVersion": "delliza_remove_b2b_b2c_price_update_2026_07_12_01"
 };

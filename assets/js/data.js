@@ -1,4 +1,4 @@
-const DATA_VERSION='delliza_images_b2b_removed_prices_2026_07_12_03';
+const DATA_VERSION='delliza_ingredients_cleaned_2026_07_14_01';
 const DEFAULT_IMG='../assets/images/product-default.svg';
 const DEFAULT_CATEGORIES=[
   {
@@ -52,8 +52,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-01.jpg"
     ],
-    "desc": "آرد، تخم‌مرغ، کره، شکر، شکلات، پودر کاکائو",
-    "ingredients": "آرد، تخم‌مرغ، کره، شکر، شکلات، پودر کاکائو",
+    "desc": "",
+    "ingredients": "",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -80,8 +80,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-02.jpg"
     ],
-    "desc": "آرد، تخم‌مرغ، شکر، روغن، هویج، گردو، دارچین",
-    "ingredients": "آرد، تخم‌مرغ، شکر، روغن، هویج، گردو، دارچین",
+    "desc": "روغن، هویج، گردو، دارچین",
+    "ingredients": "روغن، هویج، گردو، دارچین",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -109,8 +109,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-03.jpg"
     ],
-    "desc": "آرد، تخم‌مرغ، شیر، شکر، شکلات، پودر کاکائو",
-    "ingredients": "آرد، تخم‌مرغ، شیر، شکر، شکلات، پودر کاکائو",
+    "desc": "شیر",
+    "ingredients": "شیر",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -137,8 +137,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-04.jpg"
     ],
-    "desc": "آرد، تخم‌مرغ، کره، شکر، سیب، دارچین",
-    "ingredients": "آرد، تخم‌مرغ، کره، شکر، سیب، دارچین",
+    "desc": "سیب، دارچین",
+    "ingredients": "سیب، دارچین",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -166,8 +166,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-05.jpg"
     ],
-    "desc": "آرد، تخم‌مرغ، خامه، شکلات، پودر کاکائو، ژلاتین",
-    "ingredients": "آرد، تخم‌مرغ، خامه، شکلات، پودر کاکائو، ژلاتین",
+    "desc": "خامه، ژلاتین",
+    "ingredients": "خامه، ژلاتین",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -194,8 +194,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-06.jpg"
     ],
-    "desc": "آرد، تخم‌مرغ، خامه، شکر، موز، شکلات",
-    "ingredients": "آرد، تخم‌مرغ، خامه، شکر، موز، شکلات",
+    "desc": "خامه، موز",
+    "ingredients": "خامه، موز",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -222,8 +222,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-07.jpg"
     ],
-    "desc": "آرد، تخم‌مرغ، شکر، کره، پودر کاکائو، پنیر خامه‌ای، رنگ طبیعی",
-    "ingredients": "آرد، تخم‌مرغ، شکر، کره، پودر کاکائو، پنیر خامه‌ای، رنگ طبیعی",
+    "desc": "پنیر خامه‌ای، رنگ طبیعی",
+    "ingredients": "پنیر خامه‌ای، رنگ طبیعی",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -250,8 +250,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-08.jpg"
     ],
-    "desc": "آرد، تخم‌مرغ، کره، عسل، خامه، پرتقال",
-    "ingredients": "آرد، تخم‌مرغ، کره، عسل، خامه، پرتقال",
+    "desc": "عسل، خامه، پرتقال",
+    "ingredients": "عسل، خامه، پرتقال",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -279,8 +279,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-09.jpg"
     ],
-    "desc": "آرد، تخم‌مرغ، کره، شکلات، کارامل، بادام‌زمینی",
-    "ingredients": "آرد، تخم‌مرغ، کره، شکلات، کارامل، بادام‌زمینی",
+    "desc": "کارامل، بادام‌زمینی",
+    "ingredients": "کارامل، بادام‌زمینی",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -307,8 +307,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-10.jpg"
     ],
-    "desc": "آرد، تخم‌مرغ، کره، خرما، گردو، دارچین",
-    "ingredients": "آرد، تخم‌مرغ، کره، خرما، گردو، دارچین",
+    "desc": "خرما، گردو، دارچین",
+    "ingredients": "خرما، گردو، دارچین",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -335,8 +335,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-11.jpg"
     ],
-    "desc": "بیسکویت، کره، پنیر خامه‌ای، خامه، لوتوس",
-    "ingredients": "بیسکویت، کره، پنیر خامه‌ای، خامه، لوتوس",
+    "desc": "بیسکویت، پنیر خامه‌ای، خامه، لوتوس",
+    "ingredients": "بیسکویت، پنیر خامه‌ای، خامه، لوتوس",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -363,8 +363,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-12.jpg"
     ],
-    "desc": "آرد، تخم‌مرغ، شیر، کره، شکر، پودر نارگیل",
-    "ingredients": "آرد، تخم‌مرغ، شیر، کره، شکر، پودر نارگیل",
+    "desc": "شیر، پودر نارگیل",
+    "ingredients": "شیر، پودر نارگیل",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -392,8 +392,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-13.jpg"
     ],
-    "desc": "آرد، تخم‌مرغ، خامه، شکر، شکلات، کرم میانی",
-    "ingredients": "آرد، تخم‌مرغ، خامه، شکر، شکلات، کرم میانی",
+    "desc": "خامه، کرم میانی",
+    "ingredients": "خامه، کرم میانی",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -421,8 +421,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-14.jpg"
     ],
-    "desc": "آرد، تخم‌مرغ، شیر، کره، شکر، زعفران",
-    "ingredients": "آرد، تخم‌مرغ، شیر، کره، شکر، زعفران",
+    "desc": "شیر، زعفران",
+    "ingredients": "شیر، زعفران",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -449,8 +449,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-15.jpg"
     ],
-    "desc": "آرد، تخم‌مرغ، کره، شکر، گلابی، دارچین — قیمت برای سفارش سینی",
-    "ingredients": "آرد، تخم‌مرغ، کره، شکر، گلابی، دارچین",
+    "desc": "گلابی، دارچین — قیمت برای سفارش سینی",
+    "ingredients": "گلابی، دارچین",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -477,8 +477,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-16.jpg"
     ],
-    "desc": "آرد، تخم‌مرغ، شیر، خامه، شکر، نسکافه",
-    "ingredients": "آرد، تخم‌مرغ، شیر، خامه، شکر، نسکافه",
+    "desc": "شیر، خامه، نسکافه",
+    "ingredients": "شیر، خامه، نسکافه",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -505,8 +505,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-17.jpg"
     ],
-    "desc": "آرد، تخم‌مرغ، شیر، شکر، قهوه، شکلات",
-    "ingredients": "آرد، تخم‌مرغ، شیر، شکر، قهوه، شکلات",
+    "desc": "شیر، قهوه",
+    "ingredients": "شیر، قهوه",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -534,8 +534,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-18.jpg"
     ],
-    "desc": "آرد، روغن، شکر، گلاب، زعفران",
-    "ingredients": "آرد، روغن، شکر، گلاب، زعفران",
+    "desc": "روغن، گلاب، زعفران",
+    "ingredients": "روغن، گلاب، زعفران",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -562,8 +562,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-19.jpg"
     ],
-    "desc": "آرد سفید، آرد برنج، آرد نخودچی، روغن، شکر، شربت",
-    "ingredients": "آرد سفید، آرد برنج، آرد نخودچی، روغن، شکر، شربت",
+    "desc": "روغن، شربت",
+    "ingredients": "روغن، شربت",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -590,8 +590,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-20.jpg"
     ],
-    "desc": "آرد، کره، خرما، گردو، دارچین",
-    "ingredients": "آرد، کره، خرما، گردو، دارچین",
+    "desc": "خرما، گردو، دارچین",
+    "ingredients": "خرما، گردو، دارچین",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -619,8 +619,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-21.jpg"
     ],
-    "desc": "آرد، روغن، شکر، زعفران، پسته",
-    "ingredients": "آرد، روغن، شکر، زعفران، پسته",
+    "desc": "روغن، زعفران، پسته",
+    "ingredients": "روغن، زعفران، پسته",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -647,8 +647,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-22.jpg"
     ],
-    "desc": "آرد، روغن، شکر، گلاب، هویج",
-    "ingredients": "آرد، روغن، شکر، گلاب، هویج",
+    "desc": "روغن، گلاب، هویج",
+    "ingredients": "روغن، گلاب، هویج",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -675,8 +675,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-23.jpg"
     ],
-    "desc": "آرد، روغن، شکر، شیر خشک، هل",
-    "ingredients": "آرد، روغن، شکر، شیر خشک، هل",
+    "desc": "روغن، شیر خشک، هل",
+    "ingredients": "روغن، شیر خشک، هل",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -703,8 +703,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-24.jpg"
     ],
-    "desc": "آرد، روغن، شکر، هل، زنجبیل",
-    "ingredients": "آرد، روغن، شکر، هل، زنجبیل",
+    "desc": "روغن، هل، زنجبیل",
+    "ingredients": "روغن، هل، زنجبیل",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -731,8 +731,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-25.jpg"
     ],
-    "desc": "آرد، روغن، شکر، ارده، کنجد",
-    "ingredients": "آرد، روغن، شکر، ارده، کنجد",
+    "desc": "روغن، ارده، کنجد",
+    "ingredients": "روغن، ارده، کنجد",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -759,8 +759,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-26.jpg"
     ],
-    "desc": "آرد، کره، شکر، گلاب، شیر",
-    "ingredients": "آرد، کره، شکر، گلاب، شیر",
+    "desc": "گلاب، شیر",
+    "ingredients": "گلاب، شیر",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -788,8 +788,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-27.jpg"
     ],
-    "desc": "آرد، روغن، شکر، گلاب، زعفران",
-    "ingredients": "آرد، روغن، شکر، گلاب، زعفران",
+    "desc": "روغن، گلاب، زعفران",
+    "ingredients": "روغن، گلاب، زعفران",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -816,8 +816,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-28.jpg"
     ],
-    "desc": "آرد سفید، آرد برنج، آرد نخودچی، روغن، شکر، شربت",
-    "ingredients": "آرد سفید، آرد برنج، آرد نخودچی، روغن، شکر، شربت",
+    "desc": "روغن، شربت",
+    "ingredients": "روغن، شربت",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -844,8 +844,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-29.jpg"
     ],
-    "desc": "آرد، روغن، شکر، گلاب، هویج",
-    "ingredients": "آرد، روغن، شکر، گلاب، هویج",
+    "desc": "روغن، گلاب، هویج",
+    "ingredients": "روغن، گلاب، هویج",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -872,8 +872,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-30.jpg"
     ],
-    "desc": "آرد، روغن، شکر، شیر خشک، هل",
-    "ingredients": "آرد، روغن، شکر، شیر خشک، هل",
+    "desc": "روغن، شیر خشک، هل",
+    "ingredients": "روغن، شیر خشک، هل",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -900,8 +900,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-31.jpg"
     ],
-    "desc": "آرد، روغن، شکر، هل، زنجبیل",
-    "ingredients": "آرد، روغن، شکر، هل، زنجبیل",
+    "desc": "روغن، هل، زنجبیل",
+    "ingredients": "روغن، هل، زنجبیل",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -929,8 +929,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-32.jpg"
     ],
-    "desc": "آرد، روغن، شکر، زعفران، پسته",
-    "ingredients": "آرد، روغن، شکر، زعفران، پسته",
+    "desc": "روغن، زعفران، پسته",
+    "ingredients": "روغن، زعفران، پسته",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -957,8 +957,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-33.jpg"
     ],
-    "desc": "آرد، کره، خرما، گردو، دارچین",
-    "ingredients": "آرد، کره، خرما، گردو، دارچین",
+    "desc": "خرما، گردو، دارچین",
+    "ingredients": "خرما، گردو، دارچین",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -985,8 +985,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-34.jpg"
     ],
-    "desc": "آرد، کره، شکر، گلاب، شیر",
-    "ingredients": "آرد، کره، شکر، گلاب، شیر",
+    "desc": "گلاب، شیر",
+    "ingredients": "گلاب، شیر",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1014,8 +1014,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-35.jpg"
     ],
-    "desc": "آرد، شیر، تخم‌مرغ، شکر، خمیرمایه — قیمت بسته ۱۰ عددی و حداقل سفارش ۱۰ عدد",
-    "ingredients": "آرد، شیر، تخم‌مرغ، شکر، خمیرمایه",
+    "desc": "شیر، خمیرمایه — قیمت بسته ۱۰ عددی و حداقل سفارش ۱۰ عدد",
+    "ingredients": "شیر، خمیرمایه",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1046,8 +1046,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-36.jpg"
     ],
-    "desc": "آرد، کره، شیر، تخم‌مرغ، خمیرمایه — قیمت بسته ۱۰ عددی و حداقل سفارش ۱۰ عدد",
-    "ingredients": "آرد، کره، شیر، تخم‌مرغ، خمیرمایه",
+    "desc": "شیر، خمیرمایه — قیمت بسته ۱۰ عددی و حداقل سفارش ۱۰ عدد",
+    "ingredients": "شیر، خمیرمایه",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1078,8 +1078,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-37.jpg"
     ],
-    "desc": "آرد، شیر، تخم‌مرغ، شکر، خمیرمایه — قیمت بر اساس وزن نهایی محاسبه می‌شود",
-    "ingredients": "آرد، شیر، تخم‌مرغ، شکر، خمیرمایه",
+    "desc": "شیر، خمیرمایه — قیمت بر اساس وزن نهایی محاسبه می‌شود",
+    "ingredients": "شیر، خمیرمایه",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1105,8 +1105,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-38.jpg"
     ],
-    "desc": "کیک اسفنجی، خامه، فیلینگ، میوه یا شکلات",
-    "ingredients": "کیک اسفنجی، خامه، فیلینگ، میوه یا شکلات",
+    "desc": "کیک اسفنجی، خامه، فیلینگ",
+    "ingredients": "کیک اسفنجی، خامه، فیلینگ",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1134,8 +1134,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-39.jpg"
     ],
-    "desc": "آرد برنج، روغن، پودر قند، هل، گلاب",
-    "ingredients": "آرد برنج، روغن، پودر قند، هل، گلاب",
+    "desc": "روغن، پودر قند، هل، گلاب",
+    "ingredients": "روغن، پودر قند، هل، گلاب",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1162,8 +1162,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-40.jpg"
     ],
-    "desc": "آرد نخودچی، روغن، پودر قند، هل",
-    "ingredients": "آرد نخودچی، روغن، پودر قند، هل",
+    "desc": "روغن، پودر قند، هل",
+    "ingredients": "روغن، پودر قند، هل",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1190,8 +1190,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-41.jpg"
     ],
-    "desc": "آرد، تخم‌مرغ، کره، شکر، وانیل",
-    "ingredients": "آرد، تخم‌مرغ، کره، شکر، وانیل",
+    "desc": "وانیل",
+    "ingredients": "وانیل",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1218,8 +1218,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-42.jpg"
     ],
-    "desc": "آرد، کره، پودر قند، وانیل، مغز",
-    "ingredients": "آرد، کره، پودر قند، وانیل، مغز",
+    "desc": "پودر قند، وانیل، مغز",
+    "ingredients": "پودر قند، وانیل، مغز",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1246,8 +1246,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-43.jpg"
     ],
-    "desc": "آرد، سفیده تخم‌مرغ، شکر، نارگیل",
-    "ingredients": "آرد، سفیده تخم‌مرغ، شکر، نارگیل",
+    "desc": "نارگیل",
+    "ingredients": "نارگیل",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1274,8 +1274,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-44.jpg"
     ],
-    "desc": "آرد نخودچی، کره، پودر قند، هل",
-    "ingredients": "آرد نخودچی، کره، پودر قند، هل",
+    "desc": "پودر قند، هل",
+    "ingredients": "پودر قند، هل",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1302,8 +1302,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-45.jpg"
     ],
-    "desc": "کره، شکر، عسل، بادام",
-    "ingredients": "کره، شکر، عسل، بادام",
+    "desc": "عسل، بادام",
+    "ingredients": "عسل، بادام",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1358,8 +1358,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-47.jpg"
     ],
-    "desc": "آرد، تخم‌مرغ، کره، شکر قهوه‌ای، شکلات",
-    "ingredients": "آرد، تخم‌مرغ، کره، شکر قهوه‌ای، شکلات",
+    "desc": "",
+    "ingredients": "",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1386,8 +1386,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-48.jpg"
     ],
-    "desc": "خمیر، کره، پنیر، ادویه",
-    "ingredients": "خمیر، کره، پنیر، ادویه",
+    "desc": "خمیر، پنیر، ادویه",
+    "ingredients": "خمیر، پنیر، ادویه",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1414,8 +1414,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-49.jpg"
     ],
-    "desc": "بیسکویت، کره، پودر کاکائو، مغز",
-    "ingredients": "بیسکویت، کره، پودر کاکائو، مغز",
+    "desc": "بیسکویت، مغز",
+    "ingredients": "بیسکویت، مغز",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1442,8 +1442,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-50.jpg"
     ],
-    "desc": "زرده تخم‌مرغ، پودر قند، وانیل",
-    "ingredients": "زرده تخم‌مرغ، پودر قند، وانیل",
+    "desc": "پودر قند، وانیل",
+    "ingredients": "پودر قند، وانیل",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1470,8 +1470,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-51.jpg"
     ],
-    "desc": "سفیده تخم‌مرغ، پودر قند، وانیل",
-    "ingredients": "سفیده تخم‌مرغ، پودر قند، وانیل",
+    "desc": "پودر قند، وانیل",
+    "ingredients": "پودر قند، وانیل",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1499,8 +1499,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-52.jpg"
     ],
-    "desc": "آرد برنج، نشاسته، شکر، کرم — قیمت بسته ۱۰ عددی",
-    "ingredients": "آرد برنج، نشاسته، شکر، کرم",
+    "desc": "نشاسته، کرم — قیمت بسته ۱۰ عددی",
+    "ingredients": "نشاسته، کرم",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1528,8 +1528,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-53.jpg"
     ],
-    "desc": "آرد برنج، نشاسته، شکر، کارامل، شکلات، بادام‌زمینی — قیمت بسته ۱۰ عددی",
-    "ingredients": "آرد برنج، نشاسته، شکر، کارامل، شکلات، بادام‌زمینی",
+    "desc": "نشاسته، کارامل، بادام‌زمینی — قیمت بسته ۱۰ عددی",
+    "ingredients": "نشاسته، کارامل، بادام‌زمینی",
     "visible": {
       "ingredients": true,
       "gallery": true,
@@ -1556,8 +1556,8 @@ const DEFAULT_PRODUCTS=[
     "gallery": [
       "../assets/images/products/product-54.jpg"
     ],
-    "desc": "خامه، شکر، ژلاتین، پوره میوه",
-    "ingredients": "خامه، شکر، ژلاتین، پوره میوه",
+    "desc": "خامه، ژلاتین، پوره میوه",
+    "ingredients": "خامه، ژلاتین، پوره میوه",
     "visible": {
       "ingredients": true,
       "gallery": true,

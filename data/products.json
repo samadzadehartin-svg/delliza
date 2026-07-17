@@ -637,7 +637,6 @@
     },
     {
       "id": "croissant",
-      "title": "کروسان",
       "englishTitle": "Croissant",
       "category": "کلاسیک",
       "price": 990,
@@ -663,7 +662,6 @@
       "category": "کلاسیک",
       "price": 780,
       "badge": "سفارشی",
-      "weight": "هر کیلوگرم",
       "image": "assets/images/fresh-products/mousse-cake.png",
       "description": "کیک اسفنجی، خامه، فیلینگ",
       "tags": [
@@ -679,7 +677,6 @@
     },
     {
       "id": "donut-bites",
-      "title": "دونات بایت",
       "englishTitle": "Donut Bites",
       "category": "کلاسیک",
       "price": 4,
@@ -698,7 +695,6 @@
     },
     {
       "id": "donut",
-      "title": "دونات",
       "englishTitle": "Donut",
       "category": "کلاسیک",
       "price": 890,
@@ -724,7 +720,6 @@
       "category": "شیرینی و کوکی",
       "price": 420,
       "badge": "کیلویی",
-      "weight": "هر کیلوگرم",
       "image": "assets/images/fresh-products/cookies.png",
       "description": "روغن، پودر قند، هل",
       "tags": [
@@ -744,7 +739,6 @@
       "category": "شیرینی و کوکی",
       "price": 450,
       "badge": "کیلویی",
-      "weight": "هر کیلوگرم",
       "image": "assets/images/fresh-products/cookies.png",
       "description": "پودر قند، هل",
       "tags": [
@@ -763,7 +757,6 @@
       "category": "شیرینی و کوکی",
       "price": 350,
       "badge": "کیلویی",
-      "weight": "هر کیلوگرم",
       "image": "assets/images/fresh-products/cookies.png",
       "description": "روغن، پودر قند، هل، گلاب",
       "tags": [
@@ -783,7 +776,6 @@
       "category": "شیرینی و کوکی",
       "price": 390,
       "badge": "کیلویی",
-      "weight": "هر کیلوگرم",
       "image": "assets/images/fresh-products/cookies.png",
       "description": "پودر قند، وانیل",
       "tags": [
@@ -803,7 +795,6 @@
       "category": "شیرینی و کوکی",
       "price": 320,
       "badge": "کیلویی",
-      "weight": "هر کیلوگرم",
       "image": "assets/images/fresh-products/cookies.png",
       "description": "",
       "tags": [
@@ -821,7 +812,6 @@
       "category": "شیرینی و کوکی",
       "price": 320,
       "badge": "کیلویی",
-      "weight": "هر کیلوگرم",
       "image": "assets/images/fresh-products/cookies.png",
       "description": "نارگیل",
       "tags": [
@@ -839,7 +829,6 @@
       "category": "شیرینی و کوکی",
       "price": 250,
       "badge": "کیلویی",
-      "weight": "هر کیلوگرم",
       "image": "assets/images/fresh-products/cookies.png",
       "description": "جو دوسر، عسل، مغزها، میوه خشک",
       "tags": [
@@ -860,7 +849,6 @@
       "category": "شیرینی و کوکی",
       "price": 310,
       "badge": "کیلویی",
-      "weight": "هر کیلوگرم",
       "image": "assets/images/fresh-products/cookies.png",
       "description": "خمیر، پنیر، ادویه",
       "tags": [
@@ -880,7 +868,6 @@
       "category": "شیرینی و کوکی",
       "price": 180,
       "badge": "کیلویی",
-      "weight": "هر کیلوگرم",
       "image": "assets/images/fresh-products/cookies.png",
       "description": "وانیل",
       "tags": [
@@ -898,7 +885,6 @@
       "category": "شیرینی و کوکی",
       "price": 180,
       "badge": "کیلویی",
-      "weight": "هر کیلوگرم",
       "image": "assets/images/fresh-products/cookies.png",
       "description": "بیسکویت، مغز",
       "tags": [
@@ -917,7 +903,6 @@
       "category": "شیرینی و کوکی",
       "price": 175,
       "badge": "کیلویی",
-      "weight": "هر کیلوگرم",
       "image": "assets/images/fresh-products/cookies.png",
       "description": "پودر قند، وانیل",
       "tags": [
@@ -937,7 +922,6 @@
       "category": "شیرینی و کوکی",
       "price": 180,
       "badge": "کیلویی",
-      "weight": "هر کیلوگرم",
       "image": "assets/images/fresh-products/cookies.png",
       "description": "پودر قند، وانیل، مغز",
       "tags": [
@@ -956,7 +940,6 @@
       "category": "شیرینی و کوکی",
       "price": 150,
       "badge": "کیلویی",
-      "weight": "هر کیلوگرم",
       "image": "assets/images/fresh-products/cookies.png",
       "description": "عسل، بادام",
       "tags": [

@@ -4,18 +4,8 @@
 // =============================================
 
 const PRODUCTS = [
-  // دونات‌ها
-  { id: 'donut-plain', title_fa: 'دونات ساده', title_en: 'Plain Donut', category: 'دونات', price: 40000, unit: 'هر رینگ (۸ اسلایسی)', badge: '', image: 'assets/images/products/product-35.jpg', description: 'دونات ساده و خوشمزه', tags: ['دونات', 'ساده'], featured: false, today: true },
-  { id: 'donut-cream', title_fa: 'دونات کرمفیل', title_en: 'Cream-filled Donut', category: 'دونات', price: 60000, unit: 'هر رینگ (۸ اسلایسی)', badge: '', image: 'assets/images/products/product-35.jpg', description: 'دونات با کرم وانیلی', tags: ['دونات', 'کرمفیل'], featured: false, today: true },
-  { id: 'donut-chocolate', title_fa: 'دونات روکش شکلاتی', title_en: 'Chocolate Donut', category: 'دونات', price: 90000, unit: 'هر رینگ (۸ اسلایسی)', badge: '', image: 'assets/images/products/product-35.jpg', description: 'دونات با روکش شکلات', tags: ['دونات', 'شکلات'], featured: false, today: true },
   
-  // کروسان‌ها
-  { id: 'croissant-plain', title_fa: 'کروسان ساده', title_en: 'Plain Croissant', category: 'کروسان', price: 90000, unit: 'هر رینگ (۸ اسلایسی)', badge: '', image: 'assets/images/products/product-36.jpg', description: 'کروسان فرانسوی', tags: ['کروسان', 'ساده'], featured: false, today: true },
-  { id: 'croissant-cream', title_fa: 'کروسان کرم‌دار', title_en: 'Cream Croissant', category: 'کروسان', price: 120000, unit: 'هر رینگ (۸ اسلایسی)', badge: '', image: 'assets/images/products/product-36.jpg', description: 'کروسان با کرم وانیلی', tags: ['کروسان', 'کرم'], featured: false, today: true },
-  { id: 'croissant-chocolate', title_fa: 'کروسان کرم‌دار + روکش شکلات و مغز', title_en: 'Chocolate Croissant', category: 'کروسان', price: 150000, unit: 'هر رینگ (۸ اسلایسی)', badge: 'ویژه', image: 'assets/images/products/product-36.jpg', description: 'کروسان مجلسی با روکش شکلات', tags: ['کروسان', 'شکلات', 'مغز'], featured: true, today: true },
   
-  // رول دارچینی
-  { id: 'cinnamon-roll', title_fa: 'رول دارچینی', title_en: 'Cinnamon Roll', category: 'رول', price: 79000, unit: 'هر رینگ (۸ اسلایسی)', badge: 'محبوب', image: 'assets/images/products/product-04.jpg', description: 'رول دارچینی با پودر قند', tags: ['دارچین', 'رول'], featured: true, today: true },
   
   // کیک‌ها
   { id: 'mocha-cake', title_fa: 'کیک موکا', title_en: 'Mocha Cake', category: 'کیک', price: 980000, unit: 'هر رینگ (۸ اسلایسی)', badge: '', image: 'assets/images/products/product-17.jpg', description: 'کیک با طعم موکا', tags: ['موکا', 'کیک'], featured: false, today: true },

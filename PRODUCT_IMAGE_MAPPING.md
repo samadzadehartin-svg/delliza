@@ -36,9 +36,6 @@ DATA_VERSION: delliza_product_images_uploaded_2026_07_11_01
 32. حلوای پسته‌ای (تاپینگ) -> ../assets/images/products/product-32.jpg
 33. حلوای خرمایی گردویی -> ../assets/images/products/product-33.jpg
 34. حلوای شیر -> ../assets/images/products/product-34.jpg
-35. دونات -> ../assets/images/products/product-35.jpg
-36. کروسان -> ../assets/images/products/product-36.jpg
-37. دونات بایت -> ../assets/images/products/product-37.jpg
 38. کیک تولد -> ../assets/images/products/product-38.jpg
 39. شیرینی برنجی -> ../assets/images/products/product-39.jpg
 40. شیرینی نخودچی -> ../assets/images/products/product-40.jpg

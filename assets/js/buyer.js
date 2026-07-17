@@ -40,7 +40,6 @@ function renderHome(){
         <div class="hero-copy">
           <span class="badge pink">کاتالوگ آنلاین دلیزا</span>
           <h1>شیرینی‌های دست‌ساز برای لحظه‌های خوشمزه</h1>
-          <p>مشاهده و ثبت سفارش کیک، شیرینی، دونات، کوکی، حلوا و دسرهای دلیزا با دسته‌بندی کامل و قیمت به‌روز.</p>
           <div class="actions"><a class="btn" href="#products">مشاهده محصولات</a><button class="soft" onclick="openCart()">سبد سفارش</button></div>
         </div>
         <div class="hero-showcase">

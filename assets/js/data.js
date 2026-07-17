@@ -997,7 +997,6 @@ const DEFAULT_PRODUCTS=[
   },
   {
     "id": 35,
-    "name": "دونات",
     "category": "classic",
     "flavor": "حداقل سفارش ۱۰ عدد",
     "weight": "بسته ۱۰ عددی",
@@ -1029,7 +1028,6 @@ const DEFAULT_PRODUCTS=[
   },
   {
     "id": 36,
-    "name": "کروسان",
     "category": "classic",
     "flavor": "حداقل سفارش ۱۰ عدد",
     "weight": "بسته ۱۰ عددی",
@@ -1061,7 +1059,6 @@ const DEFAULT_PRODUCTS=[
   },
   {
     "id": 37,
-    "name": "دونات بایت",
     "category": "classic",
     "flavor": "کیلویی",
     "weight": "کیلویی",

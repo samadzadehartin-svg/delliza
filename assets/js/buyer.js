@@ -40,6 +40,7 @@ function renderHome(){
         <div class="hero-copy">
           <span class="badge pink">کاتالوگ آنلاین دلیزا</span>
           <h1>شیرینی‌های دست‌ساز برای لحظه‌های خوشمزه</h1>
+          <p>مشاهده و ثبت سفارش کیک، شیرینی، دونات، کوکی، حلوا و دسرهای دلیزا با دسته‌بندی کامل و قیمت به‌روز.</p>
           <div class="actions"><a class="btn" href="#products">مشاهده محصولات</a><button class="soft" onclick="openCart()">سبد سفارش</button></div>
         </div>
         <div class="hero-showcase">
@@ -73,7 +74,7 @@ function filterProducts(){
 function openProduct(id){
   const p=findProduct(id); if(!p) return;
   const m=$('productModal');
-  m.innerHTML=`<div class="modal-card card pad"><div class="row sticky-head"><h2>${p.name}</h2><button class="soft" onclick="$('productModal').classList.remove('on')">بستن</button></div><div class="grid g2"><img class="product-img modal-product-img" src="${p.img}" alt="${p.name}"><div><span class="badge pink">${catTitle(p.category)}</span><h3 class="price">${productPriceText(p)}</h3><p>${p.desc||''}</p>${p.visible?.ingredients!==false?`<p><b>ترکیبات:</b> ${p.ingredients||'—'}</p>`:''}${p.visible?.weight!==false?`<p><b>وزن:</b> ${p.weight||'—'}</p>`:''}${p.visible?.minOrder!==false?`<p><b>حداقل سفارش:</b> ${faNum(p.minOrder||1)}</p>`:''}${p.visible?.stock!==false?`<p><b>موجودی:</b> ${faNum(p.stock||0)}</p>`:''}<button class="btn" onclick="addCart(${p.id})">افزودن سفارش</button></div></div>${p.visible?.gallery!==false?`<div class="gallery-preview" style="margin-top:14px">${(p.gallery||[]).map(x=>`<img src="${x}">`).join('')}</div>`:''}</div>`;
+  m.innerHTML=`<div class="modal-card card pad"><div class="row sticky-head"><h2>${p.name}</h2><button class="soft" onclick="$('productModal').classList.remove('on')">بستن</button></div><div class="grid g2"><img class="product-img modal-product-img" src="${p.img}" alt="${p.name}"><div><span class="badge pink">${catTitle(p.category)}</span><h3 class="price">${productPriceText(p)}</h3><p>${p.desc||''}</p>${p.visible?.weight!==false?`<p><b>وزن:</b> ${p.weight||'—'}</p>`:''}${p.visible?.minOrder!==false?`<p><b>حداقل سفارش:</b> ${faNum(p.minOrder||1)}</p>`:''}${p.visible?.stock!==false?`<p><b>موجودی:</b> ${faNum(p.stock||0)}</p>`:''}<button class="btn" onclick="addCart(${p.id})">افزودن سفارش</button></div></div>${p.visible?.gallery!==false?`<div class="gallery-preview" style="margin-top:14px">${(p.gallery||[]).map(x=>`<img src="${x}">`).join('')}</div>`:''}</div>`;
   m.classList.add('on');
 }
 

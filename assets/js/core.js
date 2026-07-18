@@ -110,7 +110,7 @@ function repairProduct(product, index = 0) {
     gallery: Array.isArray(p.gallery) && p.gallery.length ? p.gallery : [p.img || def.img || DEFAULT_IMG],
     tags: Array.isArray(p.tags) ? p.tags : [],
     visible: {
-      ingredients: true,
+      ingredients: false,
       gallery: true,
       stock: true,
       minOrder: true,

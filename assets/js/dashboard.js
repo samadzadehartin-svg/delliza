@@ -255,7 +255,7 @@ function dashboardProductTable(list) {
 }
 
 function dashboardVisibleDefault() {
-  return { ingredients: true, gallery: true, stock: true, minOrder: true, weight: true };
+  return { gallery: true, stock: true, minOrder: true, weight: true };
 }
 
 function openDashboardProductForm(id) {
@@ -278,8 +278,8 @@ function openDashboardProductForm(id) {
         <input id="minOrder" class="field" type="number" placeholder="حداقل سفارش" value="${Number(product?.minOrder || 1)}">
         <select id="status" class="field"><option value="active" ${product?.status !== 'inactive' ? 'selected' : ''}>فعال</option><option value="inactive" ${product?.status === 'inactive' ? 'selected' : ''}>غیرفعال</option></select>
         <input id="tags" class="field" placeholder="تگ‌ها با کاما" value="${esc((product?.tags || []).join(','))}">
-      </div><textarea id="desc" class="field" rows="3" placeholder="توضیحات">${esc(product?.desc || '')}</textarea><textarea id="ingredients" class="field" rows="2" placeholder="ترکیبات">${esc(product?.ingredients || '')}</textarea></div>
-      <div class="form-section"><h3>نمایش بخش‌های محصول</h3><div class="switch-grid">${Object.entries({ ingredients: 'ترکیبات', gallery: 'گالری تصاویر', stock: 'موجودی', minOrder: 'حداقل سفارش', weight: 'وزن محصول' }).map(([key, title]) => `<label class="switch-card"><input id="vis_${key}" type="checkbox" ${visible[key] !== false ? 'checked' : ''}><b>${title}</b><span>در صفحه مشتری نمایش داده شود</span></label>`).join('')}</div></div>
+      </div><textarea id="desc" class="field" rows="3" placeholder="توضیحات">${esc(product?.desc || '')}</textarea></div>
+      <div class="form-section"><h3>نمایش بخش‌های محصول</h3><div class="switch-grid">${Object.entries({ gallery: 'گالری تصاویر', stock: 'موجودی', minOrder: 'حداقل سفارش', weight: 'وزن محصول' }).map(([key, title]) => `<label class="switch-card"><input id="vis_${key}" type="checkbox" ${visible[key] !== false ? 'checked' : ''}><b>${title}</b><span>در صفحه مشتری نمایش داده شود</span></label>`).join('')}</div></div>
       <div class="form-section"><h3>تصاویر</h3><input id="img" class="field" dir="ltr" placeholder="URL عکس اصلی" value="${esc(product?.img || '')}"><input class="field" type="file" accept="image/*" onchange="uploadDashboardMainImage(this.files)"><textarea id="gallery" class="field" dir="ltr" rows="4" placeholder="هر خط یک URL">${esc((product?.gallery || []).join('\n'))}</textarea><input class="field" type="file" accept="image/*" multiple onchange="uploadDashboardGallery(this.files)"><div id="galleryPreview" class="gallery-preview"></div></div>
       <button class="btn" type="submit">ذخیره محصول</button>
     </form>
@@ -328,11 +328,11 @@ function saveDashboardProduct(event) {
     type: 'retail',
     tags: $('tags').value.split(',').map((value) => value.trim()).filter(Boolean),
     desc: $('desc').value,
-    ingredients: $('ingredients').value,
+    ingredients: '',
     img: $('img').value || gallery[0] || DEFAULT_IMG,
     gallery: gallery.length ? gallery : [$('img').value || DEFAULT_IMG],
     visible: {
-      ingredients: $('vis_ingredients').checked,
+      ingredients: false,
       gallery: $('vis_gallery').checked,
       stock: $('vis_stock').checked,
       minOrder: $('vis_minOrder').checked,

@@ -23,8 +23,7 @@
   };
 
   const toPersianDigits = (value) => String(value).replace(/\d/g, (digit) => "۰۱۲۳۴۵۶۷۸۹"[Number(digit)]);
-  const formatPrice = (price) => Number(price || 0).toLocaleString('fa-IR') + ' تومان';
-  const productPriceText = (product) => product?.priceLabel || formatPrice(Number(product?.price || 0));
+  const formatPrice = (price) => `${toPersianDigits(price)} هزار تومان`;
 
   const normalize = (value) =>
     String(value || "")
@@ -95,7 +94,7 @@
         <p>${safeText(product.description)}</p>
         <div class="product-meta">
           <span>${safeText(product.weight)}</span>
-          <strong>${productPriceText(product)}</strong>
+          <strong>${formatPrice(Number(product.price || 0))}</strong>
         </div>
         <div class="product-actions">
           <button class="btn btn-small btn-dark" type="button" data-view-product="${safeText(product.id)}">جزئیات</button>
@@ -146,7 +145,7 @@
           </ul>
           <div class="modal-price">
             <span>${safeText(product.weight)}</span>
-            <strong>${productPriceText(product)}</strong>
+            <strong>${formatPrice(Number(product.price || 0))}</strong>
           </div>
           <a class="btn btn-primary" href="${instagramUrl}" target="_blank" rel="noopener">سفارش از اینستاگرام</a>
         </div>

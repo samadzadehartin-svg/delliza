@@ -1,5 +1,5 @@
--- Delliza: remove B2B/B2C display data, update uploaded product images, and fix donut/croissant package prices.
--- Run this in Supabase SQL Editor if the site still shows old images/prices after deploy.
+-- Delliza: remove B2B/B2C display data, update uploaded product images including milk/date-walnut halva, and fix donut/croissant package prices.
+-- Run this in Supabase SQL Editor if the site still shows old images/prices after deploy. This also updates حلوای شیر and حلوای خرمایی گردویی images.
 
 begin;
 
@@ -20,7 +20,7 @@ set value = (
           'tags', jsonb_build_array('حداقل سفارش ۱۰ عدد','بسته ۱۰ عددی'),
           'img','../assets/images/products/product-35.jpg',
           'gallery', jsonb_build_array('../assets/images/products/product-35.jpg'),
-          'desc','آرد، شیر، تخم‌مرغ، شکر، خمیرمایه — قیمت بسته ۱۰ عددی و حداقل سفارش ۱۰ عدد'
+          'desc',''
         )
       when (item->>'id')::int = 36 then
         (item - 'type') || jsonb_build_object(
@@ -35,9 +35,9 @@ set value = (
           'tags', jsonb_build_array('حداقل سفارش ۱۰ عدد','بسته ۱۰ عددی'),
           'img','../assets/images/products/product-36.jpg',
           'gallery', jsonb_build_array('../assets/images/products/product-36.jpg'),
-          'desc','آرد، کره، شیر، تخم‌مرغ، خمیرمایه — قیمت بسته ۱۰ عددی و حداقل سفارش ۱۰ عدد'
+          'desc',''
         )
-      when (item->>'id')::int in (27,28,29,30,31,32,52,53,54) then
+      when (item->>'id')::int in (27,28,29,30,31,32,33,34,52,53,54) then
         (item - 'type') || jsonb_build_object(
           'type','retail',
           'img', '../assets/images/products/product-' || lpad((item->>'id'), 2, '0') || '.jpg',
@@ -52,7 +52,7 @@ set value = (
 where key = 'products';
 
 update public.app_data
-set value = jsonb_set(value, '{menuVersion}', to_jsonb('delliza_images_b2b_removed_prices_2026_07_12_03'::text), true),
+set value = jsonb_set(value, '{menuVersion}', to_jsonb('delliza_images_b2b_removed_prices_halva_milk_date_2026_07_12_04'::text), true),
     updated_at = now()
 where key = 'settings';
 

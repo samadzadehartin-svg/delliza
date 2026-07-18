@@ -1,281 +1,142 @@
 {
   "products": [
     {
-      "id": "cake-ouchkelman",
-      "title": "کیک اوچکلمان",
-      "englishTitle": "Ouchkelman Cake",
-      "category": "کیک و چیزکیک",
-      "price": 144,
-      "badge": "پرفروش",
+      "id": "donut-plain",
+      "title": "دونات ساده",
+      "englishTitle": "Plain Donut",
+      "category": "دونات",
+      "price": 40000,
+      "priceLabel": "قیمت هر عدد: ۴۰٬۰۰۰ تومان",
+      "badge": "دونات",
       "weight": "یک عدد",
-      "image": "assets/images/fresh-products/layered-cake.png",
-      "description": "خامه، کرم میانی",
+      "image": "assets/images/fresh-products/donut-new.png",
+      "description": "دونات ساده",
       "tags": [
-        "کیک و چیزکیک",
-        "خامه"
+        "دونات"
       ],
       "featured": true,
       "today": true,
-      "createdAt": "2026-07-01",
+      "createdAt": "2026-07-18",
       "active": true
     },
     {
-      "id": "chocolate-mousse-cake",
-      "title": "کیک موس شکلاتی",
-      "englishTitle": "Chocolate Mousse Cake",
-      "category": "کیک و چیزکیک",
-      "price": 161,
+      "id": "donut-creamfill",
+      "title": "دونات کرمفیل",
+      "englishTitle": "Cream Filled Donut",
+      "category": "دونات",
+      "price": 60000,
+      "priceLabel": "قیمت هر عدد: ۶۰٬۰۰۰ تومان",
+      "badge": "کرمفیل",
+      "weight": "یک عدد",
+      "image": "assets/images/fresh-products/donut-new.png",
+      "description": "دونات کرمفیل",
+      "tags": [
+        "دونات",
+        "کرمفیل"
+      ],
+      "featured": true,
+      "today": true,
+      "createdAt": "2026-07-18",
+      "active": true
+    },
+    {
+      "id": "donut-chocolate",
+      "title": "دونات روکش شکلاتی",
+      "englishTitle": "Chocolate Coated Donut",
+      "category": "دونات",
+      "price": 90000,
+      "priceLabel": "قیمت هر عدد: ۹۰٬۰۰۰ تومان",
+      "badge": "شکلاتی",
+      "weight": "یک عدد",
+      "image": "assets/images/fresh-products/donut-new.png",
+      "description": "دونات با روکش شکلاتی",
+      "tags": [
+        "دونات",
+        "شکلاتی"
+      ],
+      "featured": true,
+      "today": true,
+      "createdAt": "2026-07-18",
+      "active": true
+    },
+    {
+      "id": "croissant-plain",
+      "title": "کروسان ساده",
+      "englishTitle": "Plain Croissant",
+      "category": "کروسان",
+      "price": 90000,
+      "priceLabel": "قیمت هر عدد: ۹۰٬۰۰۰ تومان",
+      "badge": "کروسان",
+      "weight": "یک عدد",
+      "image": "assets/images/fresh-products/croissant-new.png",
+      "description": "کروسان ساده",
+      "tags": [
+        "کروسان"
+      ],
+      "featured": true,
+      "today": true,
+      "createdAt": "2026-07-18",
+      "active": true
+    },
+    {
+      "id": "croissant-cream",
+      "title": "کروسان کرم‌دار",
+      "englishTitle": "Cream Croissant",
+      "category": "کروسان",
+      "price": 120000,
+      "priceLabel": "قیمت هر عدد: ۱۲۰٬۰۰۰ تومان",
+      "badge": "کرم‌دار",
+      "weight": "یک عدد",
+      "image": "assets/images/fresh-products/croissant-new.png",
+      "description": "کروسان کرم‌دار",
+      "tags": [
+        "کروسان",
+        "کرم‌دار"
+      ],
+      "featured": true,
+      "today": true,
+      "createdAt": "2026-07-18",
+      "active": true
+    },
+    {
+      "id": "croissant-cream-chocolate-nuts",
+      "title": "کروسان کرم‌دار با روکش شکلات و مغزهای آجیلی",
+      "englishTitle": "Cream Chocolate Nuts Croissant",
+      "category": "کروسان",
+      "price": 150000,
+      "priceLabel": "قیمت هر عدد: ۱۵۰٬۰۰۰ تومان",
       "badge": "ویژه",
       "weight": "یک عدد",
-      "image": "assets/images/fresh-products/mousse-cake.png",
-      "description": "خامه، ژلاتین",
+      "image": "assets/images/fresh-products/croissant-new.png",
+      "description": "کروسان کرم‌دار با روکش شکلات و مغزهای آجیلی",
       "tags": [
-        "کیک و چیزکیک",
-        "خامه"
+        "کروسان",
+        "شکلات",
+        "مغزها"
       ],
       "featured": true,
       "today": true,
-      "createdAt": "2026-07-02",
+      "createdAt": "2026-07-18",
       "active": true
     },
     {
-      "id": "pear-cake",
-      "title": "کیک گلابی",
-      "englishTitle": "Pear Cake",
-      "category": "کیک و چیزکیک",
-      "price": 85,
-      "badge": "خانگی",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/pear-cake.png",
-      "description": "گلابی، دارچین",
-      "tags": [
-        "کیک و چیزکیک"
-      ],
-      "featured": true,
-      "today": true,
-      "createdAt": "2026-07-03",
-      "active": true
-    },
-    {
-      "id": "lotus-cheesecake",
-      "title": "چیزکیک لوتوس",
-      "englishTitle": "Lotus Cheesecake",
-      "category": "کیک و چیزکیک",
-      "price": 129,
-      "badge": "محبوب",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/lotus-cheesecake.png",
-      "description": "بیسکویت، پنیر خامه‌ای، خامه، لوتوس",
-      "tags": [
-        "کیک و چیزکیک",
-        "بیسکویت",
-        "پنیر خامه‌ای"
-      ],
-      "featured": true,
-      "today": true,
-      "createdAt": "2026-07-04",
-      "active": true
-    },
-    {
-      "id": "brownie-cake",
-      "title": "کیک براونی",
-      "englishTitle": "Brownie Cake",
-      "category": "کیک و چیزکیک",
-      "price": 75,
-      "badge": "شکلاتی",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/mousse-cake.png",
-      "description": "",
-      "tags": [
-        "کیک و چیزکیک"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-05",
-      "active": true
-    },
-    {
-      "id": "saffron-cake",
-      "title": "کیک زعفرانی",
-      "englishTitle": "Saffron Cake",
-      "category": "کیک و چیزکیک",
-      "price": 78,
-      "badge": "زعفرانی",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/layered-cake.png",
-      "description": "شیر، زعفران",
-      "tags": [
-        "کیک و چیزکیک",
-        "شیر"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-06",
-      "active": true
-    },
-    {
-      "id": "apple-cinnamon-streusel",
-      "title": "استرول کیک سیب و دارچین",
-      "englishTitle": "Apple Cinnamon Streusel Cake",
-      "category": "کیک و چیزکیک",
-      "price": 66,
+      "id": "cinnamon-roll",
+      "title": "رول دارچینی",
+      "englishTitle": "Cinnamon Roll",
+      "category": "کلاسیک",
+      "price": 79000,
+      "priceLabel": "قیمت هر عدد: ۷۹٬۰۰۰ تومان",
       "badge": "دارچینی",
       "weight": "یک عدد",
-      "image": "assets/images/fresh-products/lotus-cheesecake.png",
-      "description": "سیب، دارچین",
+      "image": "assets/images/product-sweets.svg",
+      "description": "رول دارچینی",
       "tags": [
-        "کیک و چیزکیک"
-      ],
-      "featured": true,
-      "today": false,
-      "createdAt": "2026-07-07",
-      "active": true
-    },
-    {
-      "id": "wet-chocolate-cake",
-      "title": "کیک خیس شکلاتی",
-      "englishTitle": "Wet Chocolate Cake",
-      "category": "کیک و چیزکیک",
-      "price": 71,
-      "badge": "شکلاتی",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/pear-cake.png",
-      "description": "شیر",
-      "tags": [
-        "کیک و چیزکیک",
-        "شیر"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-08",
-      "active": true
-    },
-    {
-      "id": "snickers-chocolate-base",
-      "title": "پایه کیک شکلاتی اسنیکرز",
-      "englishTitle": "Snickers Chocolate Cake Base",
-      "category": "کیک و چیزکیک",
-      "price": 52,
-      "badge": "کاراملی",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/mousse-cake.png",
-      "description": "کارامل، بادام‌زمینی",
-      "tags": [
-        "کیک و چیزکیک"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-09",
-      "active": true
-    },
-    {
-      "id": "carrot-walnut-cake",
-      "title": "کیک هویج و گردو",
-      "englishTitle": "Carrot Walnut Cake",
-      "category": "کیک و چیزکیک",
-      "price": 56,
-      "badge": "کلاسیک",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/layered-cake.png",
-      "description": "روغن، هویج، گردو، دارچین",
-      "tags": [
-        "کیک و چیزکیک"
-      ],
-      "featured": true,
-      "today": false,
-      "createdAt": "2026-07-01",
-      "active": true
-    },
-    {
-      "id": "date-cake",
-      "title": "کیک دیت خرمایی",
-      "englishTitle": "Date Cake",
-      "category": "کیک و چیزکیک",
-      "price": 39,
-      "badge": "خرمایی",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/lotus-cheesecake.png",
-      "description": "خرما، گردو، دارچین",
-      "tags": [
-        "کیک و چیزکیک"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-02",
-      "active": true
-    },
-    {
-      "id": "orange-medovik-cake",
-      "title": "کیک مدوویک پرتقالی",
-      "englishTitle": "Orange Medovik Cake",
-      "category": "کیک و چیزکیک",
-      "price": 52,
-      "badge": "عسلی",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/pear-cake.png",
-      "description": "عسل، خامه، پرتقال",
-      "tags": [
-        "کیک و چیزکیک"
-      ],
-      "featured": true,
-      "today": false,
-      "createdAt": "2026-07-03",
-      "active": true
-    },
-    {
-      "id": "banana-truffle-cake",
-      "title": "کیک ترافل موز",
-      "englishTitle": "Banana Truffle Cake",
-      "category": "کیک و چیزکیک",
-      "price": 34,
-      "badge": "موزی",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/mousse-cake.png",
-      "description": "خامه، موز",
-      "tags": [
-        "کیک و چیزکیک",
-        "خامه"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-04",
-      "active": true
-    },
-    {
-      "id": "red-velvet-cake",
-      "title": "کیک ردولوت",
-      "englishTitle": "Red Velvet Cake",
-      "category": "کیک و چیزکیک",
-      "price": 38,
-      "badge": "ردولوت",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/layered-cake.png",
-      "description": "پنیر خامه‌ای، رنگ طبیعی",
-      "tags": [
-        "کیک و چیزکیک"
-      ],
-      "featured": true,
-      "today": false,
-      "createdAt": "2026-07-05",
-      "active": true
-    },
-    {
-      "id": "sand-cake",
-      "title": "کیک شنی",
-      "englishTitle": "Sand Cake",
-      "category": "کیک و چیزکیک",
-      "price": 32,
-      "badge": "روزانه",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/lotus-cheesecake.png",
-      "description": "شیر، پودر نارگیل",
-      "tags": [
-        "کیک و چیزکیک",
-        "شیر"
+        "دارچین",
+        "رول"
       ],
       "featured": true,
       "today": true,
-      "createdAt": "2026-07-06",
+      "createdAt": "2026-07-18",
       "active": true
     },
     {
@@ -283,730 +144,286 @@
       "title": "کیک موکا",
       "englishTitle": "Mocha Cake",
       "category": "کیک و چیزکیک",
-      "price": 33,
-      "badge": "قهوه‌ای",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/pear-cake.png",
-      "description": "شیر، قهوه",
+      "price": 980000,
+      "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۹۸۰٬۰۰۰ تومان",
+      "badge": "رینگ ۸ اسلایسی",
+      "weight": "هر رینگ (۸ اسلایسی)",
+      "image": "assets/images/products/product-17.jpg",
+      "description": "کیک با طعم موکا — وزن تقریبی رینگ: ۱.۲۰۰ کیلوگرم",
       "tags": [
-        "کیک و چیزکیک",
-        "شیر"
+        "کیک",
+        "موکا"
       ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-07",
+      "featured": true,
+      "today": true,
+      "createdAt": "2026-07-18",
+      "active": true
+    },
+    {
+      "id": "apple-cinnamon",
+      "title": "سیب دارچین",
+      "englishTitle": "Apple Cinnamon Cake",
+      "category": "کیک و چیزکیک",
+      "price": 1600000,
+      "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۱٬۶۰۰٬۰۰۰ تومان",
+      "badge": "پرطرفدار",
+      "weight": "هر رینگ (۸ اسلایسی)",
+      "image": "assets/images/products/product-04.jpg",
+      "description": "کیک سیب و دارچین — وزن تقریبی رینگ: ۱.۵۰۰ کیلوگرم",
+      "tags": [
+        "کیک",
+        "سیب",
+        "دارچین"
+      ],
+      "featured": true,
+      "today": true,
+      "createdAt": "2026-07-18",
+      "active": true
+    },
+    {
+      "id": "carrot-walnut",
+      "title": "هویج گردو",
+      "englishTitle": "Carrot Walnut Cake",
+      "category": "کیک و چیزکیک",
+      "price": 860000,
+      "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۸۶۰٬۰۰۰ تومان",
+      "badge": "کلاسیک",
+      "weight": "هر رینگ (۸ اسلایسی)",
+      "image": "assets/images/products/product-02.jpg",
+      "description": "کیک هویج و گردو — وزن تقریبی رینگ: ۱.۲۰۰ کیلوگرم",
+      "tags": [
+        "کیک",
+        "هویج",
+        "گردو"
+      ],
+      "featured": true,
+      "today": true,
+      "createdAt": "2026-07-18",
+      "active": true
+    },
+    {
+      "id": "brownie",
+      "title": "براونی",
+      "englishTitle": "Brownie",
+      "category": "کیک و چیزکیک",
+      "price": 1600000,
+      "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۱٬۶۰۰٬۰۰۰ تومان",
+      "badge": "محبوب",
+      "weight": "هر رینگ (۸ اسلایسی)",
+      "image": "assets/images/fresh-products/brownie-new.png",
+      "description": "براونی شکلاتی — وزن تقریبی رینگ: ۱.۴۳۰ کیلوگرم",
+      "tags": [
+        "کیک",
+        "براونی",
+        "شکلاتی"
+      ],
+      "featured": true,
+      "today": true,
+      "createdAt": "2026-07-18",
+      "active": true
+    },
+    {
+      "id": "ochkatman",
+      "title": "اوچکاتمان",
+      "englishTitle": "Ochkatman",
+      "category": "کیک و چیزکیک",
+      "price": 930000,
+      "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۹۳۰٬۰۰۰ تومان",
+      "badge": "رینگ ۸ اسلایسی",
+      "weight": "هر رینگ (۸ اسلایسی)",
+      "image": "assets/images/products/product-13.jpg",
+      "description": "کیک اوچکاتمان — وزن تقریبی رینگ: ۱.۶۰۰ کیلوگرم",
+      "tags": [
+        "کیک",
+        "اوچکاتمان"
+      ],
+      "featured": true,
+      "today": true,
+      "createdAt": "2026-07-18",
       "active": true
     },
     {
       "id": "nescafe-cake",
-      "title": "کیک نسکافه‌ای",
+      "title": "کیک نسکافه",
       "englishTitle": "Nescafe Cake",
       "category": "کیک و چیزکیک",
-      "price": 32,
+      "price": 970000,
+      "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۹۷۰٬۰۰۰ تومان",
       "badge": "قهوه‌ای",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/mousse-cake.png",
-      "description": "شیر، خامه، نسکافه",
+      "weight": "هر رینگ (۸ اسلایسی)",
+      "image": "assets/images/products/product-16.jpg",
+      "description": "کیک با طعم نسکافه — وزن تقریبی رینگ: ۱.۳۳۰ کیلوگرم",
       "tags": [
-        "کیک و چیزکیک",
-        "شیر"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-08",
-      "active": true
-    },
-    {
-      "id": "milk-halva-tray",
-      "title": "حلوای شیر",
-      "englishTitle": "Milk Halva Tray",
-      "category": "حلوا سینی",
-      "price": 405,
-      "badge": "سینی ۱ کیلویی",
-      "weight": "۱ کیلوگرم",
-      "image": "assets/images/fresh-products/halva.png",
-      "description": "گلاب، شیر",
-      "tags": [
-        "حلوا سینی"
-      ],
-      "featured": true,
-      "today": false,
-      "createdAt": "2026-07-09",
-      "active": true
-    },
-    {
-      "id": "pistachio-halva-tray",
-      "title": "حلوای پسته‌ای تاپینگ",
-      "englishTitle": "Pistachio Halva Tray",
-      "category": "حلوا سینی",
-      "price": 585,
-      "badge": "سینی ۱ کیلویی",
-      "weight": "۱ کیلوگرم",
-      "image": "assets/images/fresh-products/halva-pistachio.png",
-      "description": "روغن، زعفران، پسته",
-      "tags": [
-        "حلوا سینی",
-        "روغن"
-      ],
-      "featured": true,
-      "today": false,
-      "createdAt": "2026-07-01",
-      "active": true
-    },
-    {
-      "id": "arabic-halva-tray",
-      "title": "حلوای عربی",
-      "englishTitle": "Arabic Halva Tray",
-      "category": "حلوا سینی",
-      "price": 385,
-      "badge": "سینی ۱ کیلویی",
-      "weight": "۱ کیلوگرم",
-      "image": "assets/images/fresh-products/halva-arabic.png",
-      "description": "روغن، شیر خشک، هل",
-      "tags": [
-        "حلوا سینی",
-        "روغن"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-02",
-      "active": true
-    },
-    {
-      "id": "date-walnut-halva-tray",
-      "title": "حلوای خرمایی گردویی",
-      "englishTitle": "Date Walnut Halva Tray",
-      "category": "حلوا سینی",
-      "price": 395,
-      "badge": "سینی ۱ کیلویی",
-      "weight": "۱ کیلوگرم",
-      "image": "assets/images/fresh-products/halva.png",
-      "description": "خرما، گردو، دارچین",
-      "tags": [
-        "حلوا سینی",
-        "خرما"
-      ],
-      "featured": true,
-      "today": false,
-      "createdAt": "2026-07-03",
-      "active": true
-    },
-    {
-      "id": "saffron-nazri-halva-tray",
-      "title": "حلوای زعفرانی نذری",
-      "englishTitle": "Saffron Halva Tray",
-      "category": "حلوا سینی",
-      "price": 275,
-      "badge": "سینی ۱ کیلویی",
-      "weight": "۱ کیلوگرم",
-      "image": "assets/images/fresh-products/halva-saffron.png",
-      "description": "روغن، گلاب، زعفران",
-      "tags": [
-        "حلوا سینی",
-        "روغن"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-04",
-      "active": true
-    },
-    {
-      "id": "three-flour-halva-tray",
-      "title": "حلوای سه آرد",
-      "englishTitle": "Three Flour Halva Tray",
-      "category": "حلوا سینی",
-      "price": 335,
-      "badge": "سینی ۱ کیلویی",
-      "weight": "۱ کیلوگرم",
-      "image": "assets/images/fresh-products/halva-three-flour.png",
-      "description": "روغن، شربت",
-      "tags": [
-        "حلوا سینی"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-05",
-      "active": true
-    },
-    {
-      "id": "carrot-halva-tray",
-      "title": "حلوای هویج",
-      "englishTitle": "Carrot Halva Tray",
-      "category": "حلوا سینی",
-      "price": 275,
-      "badge": "سینی ۱ کیلویی",
-      "weight": "۱ کیلوگرم",
-      "image": "assets/images/fresh-products/halva-carrot.png",
-      "description": "روغن، گلاب، هویج",
-      "tags": [
-        "حلوا سینی",
-        "روغن"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-06",
-      "active": true
-    },
-    {
-      "id": "ginger-halva-tray",
-      "title": "حلوای زنجبیلی",
-      "englishTitle": "Ginger Halva Tray",
-      "category": "حلوا سینی",
-      "price": 275,
-      "badge": "سینی ۱ کیلویی",
-      "weight": "۱ کیلوگرم",
-      "image": "assets/images/fresh-products/halva-ginger.png",
-      "description": "روغن، هل، زنجبیل",
-      "tags": [
-        "حلوا سینی",
-        "روغن"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-07",
-      "active": true
-    },
-    {
-      "id": "milk-halva-single",
-      "title": "حلوای شیر تک‌نفره",
-      "englishTitle": "Milk Halva Single",
-      "category": "حلوا تک‌نفره",
-      "price": 16,
-      "badge": "تک‌نفره",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/halva.png",
-      "description": "گلاب، شیر",
-      "tags": [
-        "حلوا تک‌نفره"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-08",
-      "active": true
-    },
-    {
-      "id": "pistachio-halva-single",
-      "title": "حلوای پسته‌ای تاپینگ تک‌نفره",
-      "englishTitle": "Pistachio Halva Single",
-      "category": "حلوا تک‌نفره",
-      "price": 18,
-      "badge": "تک‌نفره",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/halva.png",
-      "description": "روغن، زعفران، پسته",
-      "tags": [
-        "حلوا تک‌نفره",
-        "روغن"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-09",
-      "active": true
-    },
-    {
-      "id": "date-walnut-halva-single",
-      "title": "حلوای خرمایی گردویی تک‌نفره",
-      "englishTitle": "Date Walnut Halva Single",
-      "category": "حلوا تک‌نفره",
-      "price": 15,
-      "badge": "تک‌نفره",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/halva.png",
-      "description": "خرما، گردو، دارچین",
-      "tags": [
-        "حلوا تک‌نفره",
-        "خرما"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-01",
-      "active": true
-    },
-    {
-      "id": "sesame-halva-single",
-      "title": "حلوای کنجدی تک‌نفره",
-      "englishTitle": "Sesame Halva Single",
-      "category": "حلوا تک‌نفره",
-      "price": 16,
-      "badge": "تک‌نفره",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/halva.png",
-      "description": "روغن، ارده، کنجد",
-      "tags": [
-        "حلوا تک‌نفره",
-        "روغن"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-02",
-      "active": true
-    },
-    {
-      "id": "saffron-halva-single",
-      "title": "حلوای زعفرانی تک‌نفره",
-      "englishTitle": "Saffron Halva Single",
-      "category": "حلوا تک‌نفره",
-      "price": 14,
-      "badge": "تک‌نفره",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/halva.png",
-      "description": "روغن، گلاب، زعفران",
-      "tags": [
-        "حلوا تک‌نفره",
-        "روغن"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-03",
-      "active": true
-    },
-    {
-      "id": "arabic-halva-single",
-      "title": "حلوای عربی تک‌نفره",
-      "englishTitle": "Arabic Halva Single",
-      "category": "حلوا تک‌نفره",
-      "price": 15,
-      "badge": "تک‌نفره",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/halva.png",
-      "description": "روغن، شیر خشک، هل",
-      "tags": [
-        "حلوا تک‌نفره",
-        "روغن"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-04",
-      "active": true
-    },
-    {
-      "id": "three-flour-halva-single",
-      "title": "حلوای سه آرد تک‌نفره",
-      "englishTitle": "Three Flour Halva Single",
-      "category": "حلوا تک‌نفره",
-      "price": 14,
-      "badge": "تک‌نفره",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/halva.png",
-      "description": "روغن، شربت",
-      "tags": [
-        "حلوا تک‌نفره"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-05",
-      "active": true
-    },
-    {
-      "id": "ginger-halva-single",
-      "title": "حلوای زنجبیلی تک‌نفره",
-      "englishTitle": "Ginger Halva Single",
-      "category": "حلوا تک‌نفره",
-      "price": 14,
-      "badge": "تک‌نفره",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/halva.png",
-      "description": "روغن، هل، زنجبیل",
-      "tags": [
-        "حلوا تک‌نفره",
-        "روغن"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-06",
-      "active": true
-    },
-    {
-      "id": "carrot-halva-single",
-      "title": "حلوای هویج تک‌نفره",
-      "englishTitle": "Carrot Halva Single",
-      "category": "حلوا تک‌نفره",
-      "price": 14,
-      "badge": "تک‌نفره",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/halva.png",
-      "description": "روغن، گلاب، هویج",
-      "tags": [
-        "حلوا تک‌نفره",
-        "روغن"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-07",
-      "active": true
-    },
-    {
-      "id": "croissant",
-      "englishTitle": "Croissant",
-      "category": "کلاسیک",
-      "price": 990,
-      "badge": "حداقل ۱۰ عدد",
-      "weight": "بسته ۱۰ عددی",
-      "image": "assets/images/fresh-products/croissant.png",
-      "description": "شیر، خمیرمایه — قیمت بسته ۱۰ عددی و حداقل سفارش ۱۰ عدد",
-      "tags": [
-        "کلاسیک",
-        "حداقل سفارش ۱۰ عدد",
-        "بسته ۱۰ عددی"
+        "کیک",
+        "نسکافه"
       ],
       "featured": true,
       "today": true,
-      "createdAt": "2026-07-08",
-      "active": true,
-      "minOrder": 10
+      "createdAt": "2026-07-18",
+      "active": true
     },
     {
-      "id": "birthday-cake",
-      "title": "کیک تولد",
-      "englishTitle": "Birthday Cake",
-      "category": "کلاسیک",
-      "price": 780,
-      "badge": "سفارشی",
-      "image": "assets/images/fresh-products/mousse-cake.png",
-      "description": "کیک اسفنجی، خامه، فیلینگ",
+      "id": "snickers-cake",
+      "title": "اسنیکرز",
+      "englishTitle": "Snickers Cake",
+      "category": "کیک و چیزکیک",
+      "price": 1730000,
+      "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۱٬۷۳۰٬۰۰۰ تومان",
+      "badge": "ویژه",
+      "weight": "هر رینگ (۸ اسلایسی)",
+      "image": "assets/images/products/product-09.jpg",
+      "description": "کیک با طعم اسنیکرز — وزن تقریبی رینگ: ۲.۵۰۰ کیلوگرم",
       "tags": [
-        "کلاسیک",
-        "کیک اسفنجی",
-        "خامه",
-        "فیلینگ"
+        "کیک",
+        "اسنیکرز",
+        "کارامل"
       ],
       "featured": true,
       "today": true,
-      "createdAt": "2026-07-09",
+      "createdAt": "2026-07-18",
       "active": true
     },
     {
-      "id": "donut-bites",
-      "englishTitle": "Donut Bites",
-      "category": "کلاسیک",
-      "price": 4,
-      "badge": "مینی",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/donut.png",
-      "description": "شیر، خمیرمایه",
+      "id": "lotus-cheesecake",
+      "title": "چیزکیک لوتوس",
+      "englishTitle": "Lotus Cheesecake",
+      "category": "کیک و چیزکیک",
+      "price": 1740000,
+      "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۱٬۷۴۰٬۰۰۰ تومان",
+      "badge": "پرطرفدار",
+      "weight": "هر رینگ (۸ اسلایسی)",
+      "image": "assets/images/products/product-11.jpg",
+      "description": "چیزکیک با بیسکوییت لوتوس — وزن تقریبی رینگ: ۱.۴۱۰ کیلوگرم",
       "tags": [
-        "کلاسیک",
-        "شیر"
+        "چیزکیک",
+        "لوتوس"
       ],
       "featured": true,
       "today": true,
-      "createdAt": "2026-07-01",
+      "createdAt": "2026-07-18",
       "active": true
     },
     {
-      "id": "donut",
-      "englishTitle": "Donut",
-      "category": "کلاسیک",
-      "price": 890,
-      "badge": "حداقل ۱۰ عدد",
-      "weight": "بسته ۱۰ عددی",
-      "image": "assets/images/fresh-products/donut.png",
-      "description": "شیر، خمیرمایه — قیمت بسته ۱۰ عددی و حداقل سفارش ۱۰ عدد",
+      "id": "moist-cake",
+      "title": "کیک خیس",
+      "englishTitle": "Moist Cake",
+      "category": "کیک و چیزکیک",
+      "price": 860000,
+      "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۸۶۰٬۰۰۰ تومان",
+      "badge": "شکلاتی",
+      "weight": "هر رینگ (۸ اسلایسی)",
+      "image": "assets/images/products/product-03.jpg",
+      "description": "کیک خیس شکلاتی — وزن تقریبی رینگ: ۱.۴۵۰ کیلوگرم",
       "tags": [
-        "کلاسیک",
-        "حداقل سفارش ۱۰ عدد",
-        "بسته ۱۰ عددی"
+        "کیک",
+        "خیس",
+        "شکلاتی"
       ],
       "featured": true,
       "today": true,
-      "createdAt": "2026-07-02",
-      "active": true,
-      "minOrder": 10
-    },
-    {
-      "id": "nokhodchi-sweet",
-      "title": "شیرینی نخودچی",
-      "englishTitle": "Nokhodchi Sweet",
-      "category": "شیرینی و کوکی",
-      "price": 420,
-      "badge": "کیلویی",
-      "image": "assets/images/fresh-products/cookies.png",
-      "description": "روغن، پودر قند، هل",
-      "tags": [
-        "شیرینی و کوکی",
-        "روغن",
-        "پودر قند"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-03",
+      "createdAt": "2026-07-18",
       "active": true
     },
     {
-      "id": "boshtook-sweet",
-      "title": "شیرینی بوشتوک",
-      "englishTitle": "Boshtook Sweet",
-      "category": "شیرینی و کوکی",
-      "price": 450,
-      "badge": "کیلویی",
-      "image": "assets/images/fresh-products/cookies.png",
-      "description": "پودر قند، هل",
+      "id": "sandy-cake",
+      "title": "کیک شنی (نارگیلی)",
+      "englishTitle": "Sandy Coconut Cake",
+      "category": "کیک و چیزکیک",
+      "price": 834000,
+      "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۸۳۴٬۰۰۰ تومان",
+      "badge": "نارگیلی",
+      "weight": "هر رینگ (۸ اسلایسی)",
+      "image": "assets/images/products/product-12.jpg",
+      "description": "کیک شنی نارگیلی — وزن تقریبی رینگ: ۱.۳۲۰ کیلوگرم",
       "tags": [
-        "شیرینی و کوکی",
-        "پودر قند"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-04",
-      "active": true
-    },
-    {
-      "id": "berenji-sweet",
-      "title": "شیرینی برنجی",
-      "englishTitle": "Berenji Sweet",
-      "category": "شیرینی و کوکی",
-      "price": 350,
-      "badge": "کیلویی",
-      "image": "assets/images/fresh-products/cookies.png",
-      "description": "روغن، پودر قند، هل، گلاب",
-      "tags": [
-        "شیرینی و کوکی",
-        "روغن",
-        "پودر قند"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-05",
-      "active": true
-    },
-    {
-      "id": "zardeh-puff-sweet",
-      "title": "شیرینی پفکی زرده‌ای",
-      "englishTitle": "Yolk Puff Sweet",
-      "category": "شیرینی و کوکی",
-      "price": 390,
-      "badge": "کیلویی",
-      "image": "assets/images/fresh-products/cookies.png",
-      "description": "پودر قند، وانیل",
-      "tags": [
-        "شیرینی و کوکی",
-        "پودر قند",
-        "وانیل"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-06",
-      "active": true
-    },
-    {
-      "id": "american-cookie",
-      "title": "کوکی آمریکایی",
-      "englishTitle": "American Cookie",
-      "category": "شیرینی و کوکی",
-      "price": 320,
-      "badge": "کیلویی",
-      "image": "assets/images/fresh-products/cookies.png",
-      "description": "",
-      "tags": [
-        "شیرینی و کوکی"
+        "کیک",
+        "شنی",
+        "نارگیل"
       ],
       "featured": true,
       "today": true,
-      "createdAt": "2026-07-07",
+      "createdAt": "2026-07-18",
       "active": true
     },
     {
-      "id": "coconut-strip",
-      "title": "تسمه‌ای نارگیلی",
-      "englishTitle": "Coconut Strip Sweet",
-      "category": "شیرینی و کوکی",
-      "price": 320,
-      "badge": "کیلویی",
-      "image": "assets/images/fresh-products/cookies.png",
-      "description": "نارگیل",
+      "id": "date-cake",
+      "title": "کیک دیت (خرمایی)",
+      "englishTitle": "Date Cake",
+      "category": "کیک و چیزکیک",
+      "price": 1350000,
+      "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۱٬۳۵۰٬۰۰۰ تومان",
+      "badge": "خرمایی",
+      "weight": "هر رینگ (۸ اسلایسی)",
+      "image": "assets/images/products/product-10.jpg",
+      "description": "کیک خرمایی — وزن تقریبی رینگ: ۱.۱۳۰ کیلوگرم",
       "tags": [
-        "شیرینی و کوکی"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-08",
-      "active": true
-    },
-    {
-      "id": "granola",
-      "title": "گرانول",
-      "englishTitle": "Granola",
-      "category": "شیرینی و کوکی",
-      "price": 250,
-      "badge": "کیلویی",
-      "image": "assets/images/fresh-products/cookies.png",
-      "description": "جو دوسر، عسل، مغزها، میوه خشک",
-      "tags": [
-        "شیرینی و کوکی",
-        "جو دوسر",
-        "عسل",
-        "مغزها"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-09",
-      "active": true
-    },
-    {
-      "id": "cheese-cigar",
-      "title": "سیگارت چیسی",
-      "englishTitle": "Cheese Cigar",
-      "category": "شیرینی و کوکی",
-      "price": 310,
-      "badge": "کیلویی",
-      "image": "assets/images/fresh-products/cookies.png",
-      "description": "خمیر، پنیر، ادویه",
-      "tags": [
-        "شیرینی و کوکی",
-        "خمیر",
-        "پنیر"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-01",
-      "active": true
-    },
-    {
-      "id": "homemade-sweet",
-      "title": "شیرینی خونگی",
-      "englishTitle": "Homemade Sweet",
-      "category": "شیرینی و کوکی",
-      "price": 180,
-      "badge": "کیلویی",
-      "image": "assets/images/fresh-products/cookies.png",
-      "description": "وانیل",
-      "tags": [
-        "شیرینی و کوکی"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-02",
-      "active": true
-    },
-    {
-      "id": "bisco-calika",
-      "title": "بیسکو کالیکا",
-      "englishTitle": "Bisco Calika",
-      "category": "شیرینی و کوکی",
-      "price": 180,
-      "badge": "کیلویی",
-      "image": "assets/images/fresh-products/cookies.png",
-      "description": "بیسکویت، مغز",
-      "tags": [
-        "شیرینی و کوکی",
-        "بیسکویت"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-03",
-      "active": true
-    },
-    {
-      "id": "white-puff-sweet",
-      "title": "شیرینی پفکی سفیده‌ای",
-      "englishTitle": "White Puff Sweet",
-      "category": "شیرینی و کوکی",
-      "price": 175,
-      "badge": "کیلویی",
-      "image": "assets/images/fresh-products/cookies.png",
-      "description": "پودر قند، وانیل",
-      "tags": [
-        "شیرینی و کوکی",
-        "پودر قند",
-        "وانیل"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-04",
-      "active": true
-    },
-    {
-      "id": "gheytooni-sweet",
-      "title": "شیرینی قیطونی",
-      "englishTitle": "Gheytooni Sweet",
-      "category": "شیرینی و کوکی",
-      "price": 180,
-      "badge": "کیلویی",
-      "image": "assets/images/fresh-products/cookies.png",
-      "description": "پودر قند، وانیل، مغز",
-      "tags": [
-        "شیرینی و کوکی",
-        "پودر قند"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-05",
-      "active": true
-    },
-    {
-      "id": "almond-honey-sweet",
-      "title": "عسلی بادامی",
-      "englishTitle": "Almond Honey Sweet",
-      "category": "شیرینی و کوکی",
-      "price": 150,
-      "badge": "کیلویی",
-      "image": "assets/images/fresh-products/cookies.png",
-      "description": "عسل، بادام",
-      "tags": [
-        "شیرینی و کوکی",
-        "عسل"
-      ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-06",
-      "active": true
-    },
-    {
-      "id": "snickers-caramel-mochi",
-      "title": "موچی با فیلینگ اسنیکرز کارامل",
-      "englishTitle": "Snickers Caramel Mochi",
-      "category": "دسر",
-      "price": 25,
-      "badge": "دسر",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/mochi-snickers.png",
-      "description": "نشاسته، کارامل، بادام‌زمینی",
-      "tags": [
-        "دسر",
-        "نشاسته"
+        "کیک",
+        "خرما",
+        "دیت"
       ],
       "featured": true,
       "today": true,
-      "createdAt": "2026-07-07",
+      "createdAt": "2026-07-18",
       "active": true
     },
     {
-      "id": "fruit-mousse",
-      "title": "موس میوه",
-      "englishTitle": "Fruit Mousse",
-      "category": "دسر",
-      "price": 25,
-      "badge": "دسر",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/fruit-mousse.png",
-      "description": "خامه، ژلاتین، پوره میوه",
+      "id": "banana-cake",
+      "title": "کیک موز",
+      "englishTitle": "Banana Cake",
+      "category": "کیک و چیزکیک",
+      "price": 792000,
+      "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۷۹۲٬۰۰۰ تومان",
+      "badge": "موزی",
+      "weight": "هر رینگ (۸ اسلایسی)",
+      "image": "assets/images/products/product-06.jpg",
+      "description": "کیک موز — وزن تقریبی رینگ: ۱.۲۸۰ کیلوگرم",
       "tags": [
-        "دسر",
-        "خامه",
-        "ژلاتین"
+        "کیک",
+        "موز"
       ],
       "featured": true,
       "today": true,
-      "createdAt": "2026-07-08",
+      "createdAt": "2026-07-18",
       "active": true
     },
     {
-      "id": "plain-mochi",
-      "title": "موچی ساده",
-      "englishTitle": "Plain Mochi",
-      "category": "دسر",
-      "price": 20,
-      "badge": "دسر",
-      "weight": "یک عدد",
-      "image": "assets/images/fresh-products/mochi.png",
-      "description": "نشاسته، کرم",
+      "id": "chocolate-mousse",
+      "title": "موس شکلاتی",
+      "englishTitle": "Chocolate Mousse",
+      "category": "کیک و چیزکیک",
+      "price": 1100000,
+      "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۱٬۱۰۰٬۰۰۰ تومان",
+      "badge": "مجلس",
+      "weight": "هر رینگ (۸ اسلایسی)",
+      "image": "assets/images/products/product-05.jpg",
+      "description": "موس شکلاتی — وزن تقریبی رینگ: ۱.۳۱۵ کیلوگرم",
       "tags": [
-        "دسر",
-        "نشاسته"
+        "موس",
+        "شکلات"
       ],
-      "featured": false,
-      "today": false,
-      "createdAt": "2026-07-09",
+      "featured": true,
+      "today": true,
+      "createdAt": "2026-07-18",
+      "active": true
+    },
+    {
+      "id": "red-velvet",
+      "title": "ردولوت",
+      "englishTitle": "Red Velvet",
+      "category": "کیک و چیزکیک",
+      "price": 995000,
+      "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۹۹۵٬۰۰۰ تومان",
+      "badge": "کلاسیک",
+      "weight": "هر رینگ (۸ اسلایسی)",
+      "image": "assets/images/products/product-07.jpg",
+      "description": "کیک ردولوت — وزن تقریبی رینگ: ۱.۵۰۰ کیلوگرم",
+      "tags": [
+        "کیک",
+        "ردولوت"
+      ],
+      "featured": true,
+      "today": true,
+      "createdAt": "2026-07-18",
       "active": true
     }
   ]

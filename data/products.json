@@ -9,7 +9,7 @@
       "priceLabel": "قیمت هر عدد: ۴۰٬۰۰۰ تومان",
       "badge": "دونات",
       "weight": "یک عدد",
-      "image": "assets/images/fresh-products/donut-new.png",
+      "image": "assets/images/fresh-products/assigned-2026-07-18/donut-plain.jpg",
       "description": "دونات ساده",
       "tags": [
         "دونات"
@@ -28,7 +28,7 @@
       "priceLabel": "قیمت هر عدد: ۶۰٬۰۰۰ تومان",
       "badge": "کرمفیل",
       "weight": "یک عدد",
-      "image": "assets/images/fresh-products/donut-new.png",
+      "image": "assets/images/fresh-products/assigned-2026-07-18/donut-creamfill.jpg",
       "description": "دونات کرمفیل",
       "tags": [
         "دونات",
@@ -48,7 +48,7 @@
       "priceLabel": "قیمت هر عدد: ۹۰٬۰۰۰ تومان",
       "badge": "شکلاتی",
       "weight": "یک عدد",
-      "image": "assets/images/fresh-products/donut-new.png",
+      "image": "assets/images/fresh-products/assigned-2026-07-18/donut-chocolate.jpg",
       "description": "دونات با روکش شکلاتی",
       "tags": [
         "دونات",
@@ -68,7 +68,7 @@
       "priceLabel": "قیمت هر عدد: ۹۰٬۰۰۰ تومان",
       "badge": "کروسان",
       "weight": "یک عدد",
-      "image": "assets/images/fresh-products/croissant-new.png",
+      "image": "assets/images/fresh-products/assigned-2026-07-18/croissant-plain.jpg",
       "description": "کروسان ساده",
       "tags": [
         "کروسان"
@@ -87,7 +87,7 @@
       "priceLabel": "قیمت هر عدد: ۱۲۰٬۰۰۰ تومان",
       "badge": "کرم‌دار",
       "weight": "یک عدد",
-      "image": "assets/images/fresh-products/croissant-new.png",
+      "image": "assets/images/fresh-products/assigned-2026-07-18/croissant-cream.jpg",
       "description": "کروسان کرم‌دار",
       "tags": [
         "کروسان",
@@ -107,7 +107,7 @@
       "priceLabel": "قیمت هر عدد: ۱۵۰٬۰۰۰ تومان",
       "badge": "ویژه",
       "weight": "یک عدد",
-      "image": "assets/images/fresh-products/croissant-new.png",
+      "image": "assets/images/fresh-products/assigned-2026-07-18/croissant-cream-chocolate-nuts.jpg",
       "description": "کروسان کرم‌دار با روکش شکلات و مغزهای آجیلی",
       "tags": [
         "کروسان",
@@ -128,7 +128,7 @@
       "priceLabel": "قیمت هر عدد: ۷۹٬۰۰۰ تومان",
       "badge": "دارچینی",
       "weight": "یک عدد",
-      "image": "assets/images/product-sweets.svg",
+      "image": "assets/images/fresh-products/assigned-2026-07-18/cinnamon-roll.jpg",
       "description": "رول دارچینی",
       "tags": [
         "دارچین",
@@ -148,7 +148,7 @@
       "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۹۸۰٬۰۰۰ تومان",
       "badge": "رینگ ۸ اسلایسی",
       "weight": "هر رینگ (۸ اسلایسی)",
-      "image": "assets/images/products/product-17.jpg",
+      "image": "assets/images/fresh-products/assigned-2026-07-18/mocha-cake.jpg",
       "description": "کیک با طعم موکا — وزن تقریبی رینگ: ۱.۲۰۰ کیلوگرم",
       "tags": [
         "کیک",
@@ -168,7 +168,7 @@
       "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۱٬۶۰۰٬۰۰۰ تومان",
       "badge": "پرطرفدار",
       "weight": "هر رینگ (۸ اسلایسی)",
-      "image": "assets/images/products/product-04.jpg",
+      "image": "assets/images/fresh-products/assigned-2026-07-18/apple-cinnamon.jpg",
       "description": "کیک سیب و دارچین — وزن تقریبی رینگ: ۱.۵۰۰ کیلوگرم",
       "tags": [
         "کیک",
@@ -189,7 +189,7 @@
       "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۸۶۰٬۰۰۰ تومان",
       "badge": "کلاسیک",
       "weight": "هر رینگ (۸ اسلایسی)",
-      "image": "assets/images/products/product-02.jpg",
+      "image": "assets/images/fresh-products/assigned-2026-07-18/carrot-walnut.jpg",
       "description": "کیک هویج و گردو — وزن تقریبی رینگ: ۱.۲۰۰ کیلوگرم",
       "tags": [
         "کیک",
@@ -210,7 +210,7 @@
       "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۱٬۶۰۰٬۰۰۰ تومان",
       "badge": "محبوب",
       "weight": "هر رینگ (۸ اسلایسی)",
-      "image": "assets/images/fresh-products/brownie-new.png",
+      "image": "assets/images/fresh-products/assigned-2026-07-18/brownie.jpg",
       "description": "براونی شکلاتی — وزن تقریبی رینگ: ۱.۴۳۰ کیلوگرم",
       "tags": [
         "کیک",
@@ -231,7 +231,7 @@
       "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۹۳۰٬۰۰۰ تومان",
       "badge": "رینگ ۸ اسلایسی",
       "weight": "هر رینگ (۸ اسلایسی)",
-      "image": "assets/images/products/product-13.jpg",
+      "image": "assets/images/fresh-products/assigned-2026-07-18/ochkatman.jpg",
       "description": "کیک اوچکاتمان — وزن تقریبی رینگ: ۱.۶۰۰ کیلوگرم",
       "tags": [
         "کیک",
@@ -251,7 +251,7 @@
       "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۹۷۰٬۰۰۰ تومان",
       "badge": "قهوه‌ای",
       "weight": "هر رینگ (۸ اسلایسی)",
-      "image": "assets/images/products/product-16.jpg",
+      "image": "assets/images/fresh-products/assigned-2026-07-18/nescafe-cake.jpg",
       "description": "کیک با طعم نسکافه — وزن تقریبی رینگ: ۱.۳۳۰ کیلوگرم",
       "tags": [
         "کیک",
@@ -271,7 +271,7 @@
       "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۱٬۷۳۰٬۰۰۰ تومان",
       "badge": "ویژه",
       "weight": "هر رینگ (۸ اسلایسی)",
-      "image": "assets/images/products/product-09.jpg",
+      "image": "assets/images/fresh-products/assigned-2026-07-18/snickers-cake.jpg",
       "description": "کیک با طعم اسنیکرز — وزن تقریبی رینگ: ۲.۵۰۰ کیلوگرم",
       "tags": [
         "کیک",
@@ -292,7 +292,7 @@
       "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۱٬۷۴۰٬۰۰۰ تومان",
       "badge": "پرطرفدار",
       "weight": "هر رینگ (۸ اسلایسی)",
-      "image": "assets/images/products/product-11.jpg",
+      "image": "assets/images/fresh-products/assigned-2026-07-18/lotus-cheesecake.jpg",
       "description": "چیزکیک با بیسکوییت لوتوس — وزن تقریبی رینگ: ۱.۴۱۰ کیلوگرم",
       "tags": [
         "چیزکیک",
@@ -312,7 +312,7 @@
       "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۸۶۰٬۰۰۰ تومان",
       "badge": "شکلاتی",
       "weight": "هر رینگ (۸ اسلایسی)",
-      "image": "assets/images/products/product-03.jpg",
+      "image": "assets/images/fresh-products/assigned-2026-07-18/moist-cake.jpg",
       "description": "کیک خیس شکلاتی — وزن تقریبی رینگ: ۱.۴۵۰ کیلوگرم",
       "tags": [
         "کیک",
@@ -333,7 +333,7 @@
       "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۸۳۴٬۰۰۰ تومان",
       "badge": "نارگیلی",
       "weight": "هر رینگ (۸ اسلایسی)",
-      "image": "assets/images/products/product-12.jpg",
+      "image": "assets/images/fresh-products/assigned-2026-07-18/sandy-cake.jpg",
       "description": "کیک شنی نارگیلی — وزن تقریبی رینگ: ۱.۳۲۰ کیلوگرم",
       "tags": [
         "کیک",
@@ -354,7 +354,7 @@
       "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۱٬۳۵۰٬۰۰۰ تومان",
       "badge": "خرمایی",
       "weight": "هر رینگ (۸ اسلایسی)",
-      "image": "assets/images/products/product-10.jpg",
+      "image": "assets/images/fresh-products/assigned-2026-07-18/date-cake.jpg",
       "description": "کیک خرمایی — وزن تقریبی رینگ: ۱.۱۳۰ کیلوگرم",
       "tags": [
         "کیک",
@@ -375,7 +375,7 @@
       "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۷۹۲٬۰۰۰ تومان",
       "badge": "موزی",
       "weight": "هر رینگ (۸ اسلایسی)",
-      "image": "assets/images/products/product-06.jpg",
+      "image": "assets/images/fresh-products/assigned-2026-07-18/banana-cake.jpg",
       "description": "کیک موز — وزن تقریبی رینگ: ۱.۲۸۰ کیلوگرم",
       "tags": [
         "کیک",
@@ -395,7 +395,7 @@
       "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۱٬۱۰۰٬۰۰۰ تومان",
       "badge": "مجلس",
       "weight": "هر رینگ (۸ اسلایسی)",
-      "image": "assets/images/products/product-05.jpg",
+      "image": "assets/images/fresh-products/assigned-2026-07-18/chocolate-mousse.jpg",
       "description": "موس شکلاتی — وزن تقریبی رینگ: ۱.۳۱۵ کیلوگرم",
       "tags": [
         "موس",
@@ -415,7 +415,7 @@
       "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۹۹۵٬۰۰۰ تومان",
       "badge": "کلاسیک",
       "weight": "هر رینگ (۸ اسلایسی)",
-      "image": "assets/images/products/product-07.jpg",
+      "image": "assets/images/fresh-products/assigned-2026-07-18/red-velvet.jpg",
       "description": "کیک ردولوت — وزن تقریبی رینگ: ۱.۵۰۰ کیلوگرم",
       "tags": [
         "کیک",

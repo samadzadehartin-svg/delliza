@@ -13,7 +13,7 @@ const PRODUCTS = [
     "unit": "یک عدد",
     "priceLabel": "قیمت هر عدد: ۴۰٬۰۰۰ تومان",
     "badge": "دونات",
-    "image": "assets/images/fresh-products/donut.png",
+    "image": "assets/images/fresh-products/assigned-2026-07-18/donut-plain.jpg",
     "description": "دونات ساده",
     "tags": [
       "دونات"
@@ -30,7 +30,7 @@ const PRODUCTS = [
     "unit": "یک عدد",
     "priceLabel": "قیمت هر عدد: ۶۰٬۰۰۰ تومان",
     "badge": "کرمفیل",
-    "image": "assets/images/fresh-products/donut.png",
+    "image": "assets/images/fresh-products/assigned-2026-07-18/donut-creamfill.jpg",
     "description": "دونات کرمفیل",
     "tags": [
       "دونات",
@@ -48,7 +48,7 @@ const PRODUCTS = [
     "unit": "یک عدد",
     "priceLabel": "قیمت هر عدد: ۹۰٬۰۰۰ تومان",
     "badge": "شکلاتی",
-    "image": "assets/images/fresh-products/donut.png",
+    "image": "assets/images/fresh-products/assigned-2026-07-18/donut-chocolate.jpg",
     "description": "دونات با روکش شکلاتی",
     "tags": [
       "دونات",
@@ -66,7 +66,7 @@ const PRODUCTS = [
     "unit": "یک عدد",
     "priceLabel": "قیمت هر عدد: ۹۰٬۰۰۰ تومان",
     "badge": "کروسان",
-    "image": "assets/images/fresh-products/croissant.png",
+    "image": "assets/images/fresh-products/assigned-2026-07-18/croissant-plain.jpg",
     "description": "کروسان ساده",
     "tags": [
       "کروسان"
@@ -83,7 +83,7 @@ const PRODUCTS = [
     "unit": "یک عدد",
     "priceLabel": "قیمت هر عدد: ۱۲۰٬۰۰۰ تومان",
     "badge": "کرم‌دار",
-    "image": "assets/images/fresh-products/croissant.png",
+    "image": "assets/images/fresh-products/assigned-2026-07-18/croissant-cream.jpg",
     "description": "کروسان کرم‌دار",
     "tags": [
       "کروسان",
@@ -101,7 +101,7 @@ const PRODUCTS = [
     "unit": "یک عدد",
     "priceLabel": "قیمت هر عدد: ۱۵۰٬۰۰۰ تومان",
     "badge": "ویژه",
-    "image": "assets/images/fresh-products/croissant.png",
+    "image": "assets/images/fresh-products/assigned-2026-07-18/croissant-cream-chocolate-nuts.jpg",
     "description": "کروسان کرم‌دار با روکش شکلات و مغزهای آجیلی",
     "tags": [
       "کروسان",
@@ -120,7 +120,7 @@ const PRODUCTS = [
     "unit": "یک عدد",
     "priceLabel": "قیمت هر عدد: ۷۹٬۰۰۰ تومان",
     "badge": "دارچینی",
-    "image": "assets/images/product-sweets.svg",
+    "image": "assets/images/fresh-products/assigned-2026-07-18/cinnamon-roll.jpg",
     "description": "رول دارچینی",
     "tags": [
       "دارچین",
@@ -138,7 +138,7 @@ const PRODUCTS = [
     "unit": "هر رینگ (۸ اسلایسی)",
     "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۹۸۰٬۰۰۰ تومان",
     "badge": "رینگ ۸ اسلایسی",
-    "image": "assets/images/products/product-17.jpg",
+    "image": "assets/images/fresh-products/assigned-2026-07-18/mocha-cake.jpg",
     "description": "کیک با طعم موکا",
     "tags": [
       "کیک",
@@ -156,7 +156,7 @@ const PRODUCTS = [
     "unit": "هر رینگ (۸ اسلایسی)",
     "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۱٬۶۰۰٬۰۰۰ تومان",
     "badge": "پرطرفدار",
-    "image": "assets/images/products/product-04.jpg",
+    "image": "assets/images/fresh-products/assigned-2026-07-18/apple-cinnamon.jpg",
     "description": "کیک سیب و دارچین",
     "tags": [
       "کیک",
@@ -175,7 +175,7 @@ const PRODUCTS = [
     "unit": "هر رینگ (۸ اسلایسی)",
     "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۸۶۰٬۰۰۰ تومان",
     "badge": "کلاسیک",
-    "image": "assets/images/products/product-02.jpg",
+    "image": "assets/images/fresh-products/assigned-2026-07-18/carrot-walnut.jpg",
     "description": "کیک هویج و گردو",
     "tags": [
       "کیک",
@@ -194,7 +194,7 @@ const PRODUCTS = [
     "unit": "هر رینگ (۸ اسلایسی)",
     "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۱٬۶۰۰٬۰۰۰ تومان",
     "badge": "محبوب",
-    "image": "assets/images/products/product-01.jpg",
+    "image": "assets/images/fresh-products/assigned-2026-07-18/brownie.jpg",
     "description": "براونی شکلاتی",
     "tags": [
       "کیک",
@@ -213,7 +213,7 @@ const PRODUCTS = [
     "unit": "هر رینگ (۸ اسلایسی)",
     "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۹۳۰٬۰۰۰ تومان",
     "badge": "رینگ ۸ اسلایسی",
-    "image": "assets/images/products/product-13.jpg",
+    "image": "assets/images/fresh-products/assigned-2026-07-18/ochkatman.jpg",
     "description": "کیک اوچکاتمان",
     "tags": [
       "کیک",
@@ -231,7 +231,7 @@ const PRODUCTS = [
     "unit": "هر رینگ (۸ اسلایسی)",
     "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۹۷۰٬۰۰۰ تومان",
     "badge": "قهوه‌ای",
-    "image": "assets/images/products/product-16.jpg",
+    "image": "assets/images/fresh-products/assigned-2026-07-18/nescafe-cake.jpg",
     "description": "کیک با طعم نسکافه",
     "tags": [
       "کیک",
@@ -249,7 +249,7 @@ const PRODUCTS = [
     "unit": "هر رینگ (۸ اسلایسی)",
     "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۱٬۷۳۰٬۰۰۰ تومان",
     "badge": "ویژه",
-    "image": "assets/images/products/product-09.jpg",
+    "image": "assets/images/fresh-products/assigned-2026-07-18/snickers-cake.jpg",
     "description": "کیک با طعم اسنیکرز",
     "tags": [
       "کیک",
@@ -268,7 +268,7 @@ const PRODUCTS = [
     "unit": "هر رینگ (۸ اسلایسی)",
     "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۱٬۷۴۰٬۰۰۰ تومان",
     "badge": "پرطرفدار",
-    "image": "assets/images/products/product-11.jpg",
+    "image": "assets/images/fresh-products/assigned-2026-07-18/lotus-cheesecake.jpg",
     "description": "چیزکیک با بیسکوییت لوتوس",
     "tags": [
       "چیزکیک",
@@ -286,7 +286,7 @@ const PRODUCTS = [
     "unit": "هر رینگ (۸ اسلایسی)",
     "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۸۶۰٬۰۰۰ تومان",
     "badge": "شکلاتی",
-    "image": "assets/images/products/product-03.jpg",
+    "image": "assets/images/fresh-products/assigned-2026-07-18/moist-cake.jpg",
     "description": "کیک خیس شکلاتی",
     "tags": [
       "کیک",
@@ -305,7 +305,7 @@ const PRODUCTS = [
     "unit": "هر رینگ (۸ اسلایسی)",
     "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۸۳۴٬۰۰۰ تومان",
     "badge": "نارگیلی",
-    "image": "assets/images/products/product-12.jpg",
+    "image": "assets/images/fresh-products/assigned-2026-07-18/sandy-cake.jpg",
     "description": "کیک شنی نارگیلی",
     "tags": [
       "کیک",
@@ -324,7 +324,7 @@ const PRODUCTS = [
     "unit": "هر رینگ (۸ اسلایسی)",
     "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۱٬۳۵۰٬۰۰۰ تومان",
     "badge": "خرمایی",
-    "image": "assets/images/products/product-10.jpg",
+    "image": "assets/images/fresh-products/assigned-2026-07-18/date-cake.jpg",
     "description": "کیک خرمایی",
     "tags": [
       "کیک",
@@ -343,7 +343,7 @@ const PRODUCTS = [
     "unit": "هر رینگ (۸ اسلایسی)",
     "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۷۹۲٬۰۰۰ تومان",
     "badge": "موزی",
-    "image": "assets/images/products/product-06.jpg",
+    "image": "assets/images/fresh-products/assigned-2026-07-18/banana-cake.jpg",
     "description": "کیک موز",
     "tags": [
       "کیک",
@@ -361,7 +361,7 @@ const PRODUCTS = [
     "unit": "هر رینگ (۸ اسلایسی)",
     "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۱٬۱۰۰٬۰۰۰ تومان",
     "badge": "مجلس",
-    "image": "assets/images/products/product-05.jpg",
+    "image": "assets/images/fresh-products/assigned-2026-07-18/chocolate-mousse.jpg",
     "description": "موس شکلاتی",
     "tags": [
       "موس",
@@ -379,7 +379,7 @@ const PRODUCTS = [
     "unit": "هر رینگ (۸ اسلایسی)",
     "priceLabel": "قیمت هر رینگ (۸ اسلایسی): ۹۹۵٬۰۰۰ تومان",
     "badge": "کلاسیک",
-    "image": "assets/images/products/product-07.jpg",
+    "image": "assets/images/fresh-products/assigned-2026-07-18/red-velvet.jpg",
     "description": "کیک ردولوت",
     "tags": [
       "کیک",

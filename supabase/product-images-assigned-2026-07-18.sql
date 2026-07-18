@@ -1,6 +1,14 @@
-const DATA_VERSION='delliza_images_assigned_2026_07_18_02';
-const DEFAULT_IMG='../assets/images/product-default.svg';
-const DEFAULT_CATEGORIES=[
+-- Delliza product image assignment update - 2026-07-18
+-- این فایل فقط داده‌های منو/تصاویر را در app_data آپدیت می‌کند و سفارش‌ها را حذف یا تغییر نمی‌دهد.
+
+create table if not exists public.app_data (
+  key text primary key,
+  value jsonb not null,
+  updated_at timestamptz not null default now()
+);
+
+insert into public.app_data (key, value, updated_at) values
+('categories', $json$[
   {
     "id": "cake",
     "title": "کیک و چیزکیک",
@@ -21,8 +29,8 @@ const DEFAULT_CATEGORIES=[
     "title": "کلاسیک",
     "active": true
   }
-];
-const DEFAULT_PRODUCTS=[
+]$json$::jsonb, now()),
+('products', $json$[
   {
     "id": 1,
     "name": "دونات ساده",
@@ -701,24 +709,8 @@ const DEFAULT_PRODUCTS=[
     "featured": true,
     "today": true
   }
-];
-const DEFAULT_STAFF=[
-  {
-    "id": "staff-01",
-    "name": "کارشناس فروش",
-    "username": "staff123",
-    "password": "staff123",
-    "active": true
-  },
-  {
-    "id": "staff-02",
-    "name": "کارشناس فروش دوم",
-    "username": "staff02",
-    "password": "deliza02",
-    "active": true
-  }
-];
-const DEFAULT_SETTINGS={
+]$json$::jsonb, now()),
+('settings', $json${
   "brand": "دلیزا",
   "subtitle": "منوی قیمت‌گذاری رینگ و محصولات منتخب با تصاویر جدید",
   "phone": "۰۹۰۲۲۱۲۲۲۸۶",
@@ -726,4 +718,7 @@ const DEFAULT_SETTINGS={
   "instagram": "@delliza.bakery",
   "instagramUrl": "https://ig.me/m/delliza.bakery",
   "menuVersion": "delliza_images_assigned_2026_07_18_02"
-};
+}$json$::jsonb, now())
+on conflict (key) do update set
+  value = excluded.value,
+  updated_at = now();

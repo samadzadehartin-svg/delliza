@@ -1,4 +1,4 @@
--- Delliza update: WhatsApp/SMS after order + delivery fee 90,000 - 2026-07-18
+-- Delliza update: WhatsApp/SMS after order + packaging fee 90,000 - 2026-07-18
 -- این فایل فقط تنظیمات عمومی app_data را آپدیت می‌کند و سفارش‌ها را حذف یا تغییر نمی‌دهد.
 
 create table if not exists public.app_data (

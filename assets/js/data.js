@@ -1,4 +1,4 @@
-const DATA_VERSION='delliza_delivery_fee_whatsapp_sms_2026_07_18_01';
+const DATA_VERSION='delliza_packaging_fee_label_2026_07_18_01';
 const DEFAULT_IMG='../assets/images/product-default.svg';
 const DEFAULT_CATEGORIES=[
   {
@@ -753,7 +753,7 @@ const DEFAULT_STAFF=[
 ];
 const DEFAULT_SETTINGS={
   "brand": "دلیزا",
-  "subtitle": "منوی دلیزا با ارسال واتساپ/پیامک و هزینه ارسال",
+  "subtitle": "",
   "phone": "۰۹۰۲۲۱۲۲۲۸۶",
   "whatsapp": "09022122286",
   "sms": "09022122286",
@@ -762,5 +762,5 @@ const DEFAULT_SETTINGS={
   "address": "تهران، ایران",
   "instagram": "@delliza.bakery",
   "instagramUrl": "https://ig.me/m/delliza.bakery",
-  "menuVersion": "delliza_delivery_fee_whatsapp_sms_2026_07_18_01"
+  "menuVersion": "delliza_packaging_fee_label_2026_07_18_01"
 };

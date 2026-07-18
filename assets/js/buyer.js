@@ -1,146 +1,351 @@
-let cart = read('cart', []);
-function saveCart(){ write('cart', cart); renderCartDock(); }
-function addCart(id){ const p=findProduct(id); if(!p) return; const it=cart.find(x=>x.id===id); if(it) it.qty++; else cart.push({id, qty:Math.max(1, p.minOrder||1)}); saveCart(); showToast('به سفارش اضافه شد'); }
-function removeCart(id){ cart=cart.filter(x=>x.id!==id); saveCart(); renderCart(); }
-function qtyCart(id,q){ const it=cart.find(x=>x.id===id); const p=findProduct(id); const min=Math.max(1, Number(p?.minOrder)||1); if(it){ it.qty=Math.max(min, Number(q)||min); saveCart(); renderCart(); } }
+// Buyer page: catalog, cart and order submission.
 
-function productCard(p){
+let cart = read('cart', []);
+
+function saveCart() {
+  write('cart', cart, { skipRemote: true, silent: true });
+  renderCartDock();
+}
+
+function addCart(id) {
+  const product = findProduct(id);
+  if (!product) return;
+
+  const item = cart.find((cartItem) => String(cartItem.id) === String(id));
+  if (item) item.qty += 1;
+  else cart.push({ id: product.id, qty: Math.max(1, product.minOrder || 1) });
+
+  saveCart();
+  showToast('به سفارش اضافه شد');
+}
+
+function removeCart(id) {
+  cart = cart.filter((item) => String(item.id) !== String(id));
+  saveCart();
+  renderCart();
+}
+
+function qtyCart(id, qty) {
+  const item = cart.find((cartItem) => String(cartItem.id) === String(id));
+  const product = findProduct(id);
+  const minQty = Math.max(1, Number(product?.minOrder) || 1);
+
+  if (item) {
+    item.qty = Math.max(minQty, Number(qty) || minQty);
+    saveCart();
+    renderCart();
+  }
+}
+
+function activeProducts() {
+  return products().filter((product) => product.status === 'active');
+}
+
+function productCard(product) {
+  const id = JSON.stringify(product.id);
+  const visibleWeight = product.weight && product.visible?.weight !== false;
+  const tagHtml = (product.tags || [])
+    .slice(0, 2)
+    .map((tag) => `<span>${esc(tag)}</span>`)
+    .join('');
+
   return `<article class="card product-card">
-    <button class="product-image-btn" onclick="openProduct(${p.id})" aria-label="مشاهده ${p.name}">
-      <img class="product-img" src="${p.img||DEFAULT_IMG}" alt="${p.name}" loading="lazy">
+    <button class="product-image-btn" onclick='openProduct(${id})' aria-label="مشاهده ${esc(product.name)}">
+      <img class="product-img" src="${esc(product.img || DEFAULT_IMG)}" alt="${esc(product.name)}" loading="lazy">
     </button>
     <div class="product-body">
-      <div class="row"><span class="badge pink">${catTitle(p.category)}</span><span class="badge ${p.stock>0?'green':'gray'}">${p.stock>0?'موجود':'ناموجود'}</span></div>
-      <h3 class="product-title">${p.name}</h3>
-      <div class="meta">${p.weight&&p.visible?.weight!==false?`<span>${p.weight}</span>`:''}${(p.tags||[]).slice(0,2).map(t=>`<span>${t}</span>`).join('')}</div>
-      <p class="small desc-line">${p.desc||''}</p>
-      <div class="row"><b class="price">${productPriceText(p)}</b><button class="btn" onclick="addCart(${p.id})">افزودن</button></div>
-      <button class="soft" style="width:100%;margin-top:8px" onclick="openProduct(${p.id})">جزئیات محصول</button>
+      <div class="row">
+        <span class="badge pink">${esc(catTitle(product.category))}</span>
+        <span class="badge ${product.stock > 0 ? 'green' : 'gray'}">${product.stock > 0 ? 'موجود' : 'ناموجود'}</span>
+      </div>
+      <h3 class="product-title">${esc(product.name)}</h3>
+      <div class="meta">${visibleWeight ? `<span>${esc(product.weight)}</span>` : ''}${tagHtml}</div>
+      <p class="small desc-line">${esc(product.desc || '')}</p>
+      <div class="row">
+        <b class="price">${productPriceText(product)}</b>
+        <button class="btn" onclick='addCart(${id})'>افزودن</button>
+      </div>
+      <button class="soft" style="width:100%;margin-top:8px" onclick='openProduct(${id})'>جزئیات محصول</button>
     </div>
   </article>`;
 }
 
-function categoryStrip(cats){
-  return `<div class="category-strip">${cats.map(c=>`<button class="cat-pill" onclick="selectCategory('${c.id}')">${c.title}</button>`).join('')}</div>`;
+function categoryStrip(categoryList) {
+  return `<div class="category-strip">${categoryList
+    .map((category) => `<button class="cat-pill" onclick="selectCategory('${esc(category.id)}')">${esc(category.title)}</button>`)
+    .join('')}</div>`;
 }
 
-function selectCategory(id){
+function selectCategory(id) {
   $('cat').value = id;
   filterProducts();
-  document.getElementById('products')?.scrollIntoView({behavior:'smooth', block:'start'});
+  document.getElementById('products')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-function renderHome(){
-  const s=settings();
-  const cats=categories().filter(c=>c.active!==false);
-  const featured=products().filter(p=>p.status==='active').slice(0,4);
-  $('app').innerHTML=`
-    <section class="hero">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <span class="badge pink">کاتالوگ آنلاین دلیزا</span>
-          <h1>شیرینی‌های دست‌ساز برای لحظه‌های خوشمزه</h1>
-          <div class="actions"><a class="btn" href="#products">مشاهده محصولات</a><button class="soft" onclick="openCart()">سبد سفارش</button></div>
-        </div>
-        <div class="hero-showcase">
-          ${featured.map(p=>`<img src="${p.img}" alt="${p.name}">`).join('')}
+function renderHome() {
+  const categoryList = categories().filter((category) => category.active !== false);
+  const featured = activeProducts().slice(0, 4);
+
+  $('app').innerHTML = `<section class="hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="badge pink">کاتالوگ آنلاین دلیزا</span>
+        <h1>شیرینی‌های دست‌ساز برای لحظه‌های خوشمزه</h1>
+        <div class="actions">
+          <a class="btn" href="#products">مشاهده محصولات</a>
+          <button class="soft" onclick="openCart()">سبد سفارش</button>
         </div>
       </div>
-    </section>
-    ${categoryStrip(cats)}
-    <section id="products" class="card pad products-shell">
-      <div class="row wrap"><div><span class="badge">محصولات</span><h2>انتخاب محصول</h2><p class="small">همه محصولات دلیزا در این بخش قابل مشاهده و سفارش هستند.</p></div></div>
-      <div class="filters"><input id="q" class="field" placeholder="جستجوی محصول..." oninput="filterProducts()"><select id="cat" class="field" onchange="filterProducts()"><option value="all">همه دسته‌ها</option>${cats.map(c=>`<option value="${c.id}">${c.title}</option>`).join('')}</select><select id="sort" class="field" onchange="filterProducts()"><option value="default">پیش‌فرض</option><option value="asc">ارزان‌تر</option><option value="desc">گران‌تر</option></select><label class="soft"><input id="stockOnly" type="checkbox" onchange="filterProducts()"> فقط موجود</label></div>
-      <div id="resultMeta" class="small"></div>
-      <div id="grid" class="grid g3"></div>
-    </section>
-    <div id="productModal" class="modal"></div><div id="cartModal" class="modal"></div><div id="cartDock" class="cart-dock row"></div>`;
-  filterProducts(); renderCartDock();
+      <div class="hero-showcase">
+        ${featured.map((product) => `<img src="${esc(product.img)}" alt="${esc(product.name)}">`).join('')}
+      </div>
+    </div>
+  </section>
+
+  ${categoryStrip(categoryList)}
+
+  <section id="products" class="card pad products-shell">
+    <div class="row wrap">
+      <div>
+        <span class="badge">محصولات</span>
+        <h2>انتخاب محصول</h2>
+        <p class="small">همه محصولات دلیزا در این بخش قابل مشاهده و سفارش هستند.</p>
+      </div>
+    </div>
+
+    <div class="filters">
+      <input id="q" class="field" placeholder="جستجوی محصول..." oninput="filterProducts()">
+      <select id="cat" class="field" onchange="filterProducts()">
+        <option value="all">همه دسته‌ها</option>
+        ${categoryList.map((category) => `<option value="${esc(category.id)}">${esc(category.title)}</option>`).join('')}
+      </select>
+      <select id="sort" class="field" onchange="filterProducts()">
+        <option value="default">پیش‌فرض</option>
+        <option value="asc">ارزان‌تر</option>
+        <option value="desc">گران‌تر</option>
+      </select>
+      <label class="soft"><input id="stockOnly" type="checkbox" onchange="filterProducts()"> فقط موجود</label>
+    </div>
+
+    <div id="resultMeta" class="small"></div>
+    <div id="grid" class="grid g3"></div>
+  </section>
+
+  <div id="productModal" class="modal"></div>
+  <div id="cartModal" class="modal"></div>
+  <div id="cartDock" class="cart-dock row"></div>`;
+
+  filterProducts();
+  renderCartDock();
 }
 
-function filterProducts(){
-  const q=normalize($('q')?.value||''), cat=$('cat')?.value||'all', sort=$('sort')?.value||'default', stock=$('stockOnly')?.checked;
-  let list=products().filter(p=>p.status==='active');
-  if(q) list=list.filter(p=>normalize([p.name,p.flavor,p.desc,p.ingredients,...(p.tags||[])].join(' ')).includes(q));
-  if(cat!=='all') list=list.filter(p=>p.category===cat);
-  if(stock) list=list.filter(p=>p.stock>0);
-  if(sort==='asc') list.sort((a,b)=>a.price-b.price);
-  if(sort==='desc') list.sort((a,b)=>b.price-a.price);
+function filterProducts() {
+  const query = normalize($('q')?.value || '');
+  const category = $('cat')?.value || 'all';
+  const sort = $('sort')?.value || 'default';
+  const stockOnly = $('stockOnly')?.checked;
+
+  let list = activeProducts();
+  if (query) {
+    list = list.filter((product) => normalize([
+      product.name,
+      product.flavor,
+      product.desc,
+      product.ingredients,
+      ...(product.tags || [])
+    ].join(' ')).includes(query));
+  }
+  if (category !== 'all') list = list.filter((product) => product.category === category);
+  if (stockOnly) list = list.filter((product) => product.stock > 0);
+  if (sort === 'asc') list.sort((a, b) => Number(a.price || 0) - Number(b.price || 0));
+  if (sort === 'desc') list.sort((a, b) => Number(b.price || 0) - Number(a.price || 0));
+
   $('resultMeta').textContent = `${faNum(list.length)} محصول نمایش داده شد`;
-  $('grid').innerHTML=list.map(productCard).join('')||'<div class="card pad">محصولی پیدا نشد.</div>';
+  $('grid').innerHTML = list.map(productCard).join('') || '<div class="card pad">محصولی پیدا نشد.</div>';
 }
 
-function openProduct(id){
-  const p=findProduct(id); if(!p) return;
-  const m=$('productModal');
-  m.innerHTML=`<div class="modal-card card pad"><div class="row sticky-head"><h2>${p.name}</h2><button class="soft" onclick="$('productModal').classList.remove('on')">بستن</button></div><div class="grid g2"><img class="product-img modal-product-img" src="${p.img}" alt="${p.name}"><div><span class="badge pink">${catTitle(p.category)}</span><h3 class="price">${productPriceText(p)}</h3><p>${p.desc||''}</p>${p.visible?.ingredients!==false?`<p><b>ترکیبات:</b> ${p.ingredients||'—'}</p>`:''}${p.visible?.weight!==false?`<p><b>وزن:</b> ${p.weight||'—'}</p>`:''}${p.visible?.minOrder!==false?`<p><b>حداقل سفارش:</b> ${faNum(p.minOrder||1)}</p>`:''}${p.visible?.stock!==false?`<p><b>موجودی:</b> ${faNum(p.stock||0)}</p>`:''}<button class="btn" onclick="addCart(${p.id})">افزودن سفارش</button></div></div>${p.visible?.gallery!==false?`<div class="gallery-preview" style="margin-top:14px">${(p.gallery||[]).map(x=>`<img src="${x}">`).join('')}</div>`:''}</div>`;
-  m.classList.add('on');
+function openProduct(id) {
+  const product = findProduct(id);
+  if (!product) return;
+
+  const modal = $('productModal');
+  const galleryHtml = (product.gallery || [])
+    .map((src) => `<img src="${esc(src)}" alt="${esc(product.name)}">`)
+    .join('');
+  const idJson = JSON.stringify(product.id);
+
+  modal.innerHTML = `<div class="modal-card card pad">
+    <div class="row sticky-head">
+      <h2>${esc(product.name)}</h2>
+      <button class="soft" onclick="document.getElementById('productModal').classList.remove('on')">بستن</button>
+    </div>
+
+    <div class="grid g2">
+      <img class="product-img modal-product-img" src="${esc(product.img)}" alt="${esc(product.name)}">
+      <div>
+        <span class="badge pink">${esc(catTitle(product.category))}</span>
+        <h3 class="price">${productPriceText(product)}</h3>
+        <p>${esc(product.desc || '')}</p>
+        ${product.visible?.ingredients !== false ? `<p><b>ترکیبات:</b> ${esc(product.ingredients || '—')}</p>` : ''}
+        ${product.visible?.weight !== false ? `<p><b>وزن:</b> ${esc(product.weight || '—')}</p>` : ''}
+        ${product.visible?.minOrder !== false ? `<p><b>حداقل سفارش:</b> ${faNum(product.minOrder || 1)}</p>` : ''}
+        ${product.visible?.stock !== false ? `<p><b>موجودی:</b> ${faNum(product.stock || 0)}</p>` : ''}
+        <button class="btn" onclick='addCart(${idJson})'>افزودن سفارش</button>
+      </div>
+    </div>
+
+    ${product.visible?.gallery !== false ? `<div class="gallery-preview" style="margin-top:14px">${galleryHtml}</div>` : ''}
+  </div>`;
+  modal.classList.add('on');
 }
 
-function renderCartDock(){ const n=cart.reduce((s,x)=>s+x.qty,0); const d=$('cartDock'); if(!d)return; d.classList.toggle('on',n>0); d.innerHTML=`<b>${faNum(n)} آیتم سفارش</b><button class="btn" onclick="openCart()">تکمیل سفارش</button>`; }
-function openCart(){ const m=$('cartModal'); m.innerHTML=`<div class="modal-card card pad"><div class="row sticky-head"><h2>سبد سفارش</h2><button class="soft" onclick="$('cartModal').classList.remove('on')">بستن</button></div><div id="cartBox"></div></div>`; m.classList.add('on'); renderCart(); }
-function renderCart(){
-  const box=$('cartBox');
-  if(!box)return;
-  const rows=cart.map(it=>{
-    const p=findProduct(it.id);
-    return p?`<div class="card pad row wrap"><div><b>${p.name}</b><p class="small">${productCartPriceText(p)} × <input class="field" style="width:90px" type="number" min="${Number(p.minOrder)||1}" value="${it.qty}" onchange="qtyCart(${it.id},this.value)"></p></div><b class="price">${productNumericPrice(p)>0?money(productNumericPrice(p)*it.qty):productPriceText(p)}</b><button class="danger" onclick="removeCart(${it.id})">حذف</button></div>`:'';
-  }).join('');
-  const subtotal=cart.reduce((s,it)=>{const p=findProduct(it.id); return s+(p?productNumericPrice(p)*it.qty:0)},0);
-  const deliveryFee=cart.length?DELIVERY_FEE:0;
-  const total=subtotal+deliveryFee;
-  box.innerHTML=(rows||'<p>سبد سفارش خالی است.</p>')+`<div class="card pad"><h3>ثبت اطلاعات مشتری</h3><div class="grid g2"><input id="customerName" class="field" placeholder="نام مشتری"><input id="customerPhone" class="field" placeholder="شماره تماس"><input id="customerCity" class="field" placeholder="شهر/آدرس"><textarea id="customerNote" class="field" placeholder="توضیحات سفارش"></textarea></div><div class="card pad invoice-summary" style="margin:12px 0;background:var(--soft)"><div class="row"><span>جمع محصولات:</span><b>${money(subtotal)}</b></div><div class="row"><span>هزینه ارسال:</span><b>${money(deliveryFee)}</b></div><div class="row"><b>جمع کل فاکتور:</b><span class="price">${money(total)}</span></div></div><div class="row"><button class="btn" onclick="submitOrder()">ثبت سفارش</button></div></div>`;
+function cartCount() {
+  return cart.reduce((sum, item) => sum + Number(item.qty || 0), 0);
 }
-function submitOrder(){
-  if(!cart.length) return alert('سبد خالی است');
-  const name=$('customerName').value.trim(), phone=$('customerPhone').value.trim();
-  if(!name||!phone) return alert('نام و شماره تماس را وارد کنید');
 
-  const itemDetails=orderItemSnapshots(cart);
-  const subtotal=itemDetails.reduce((sum,item)=>sum+Number(item.lineTotal||0),0);
-  const deliveryFee=DELIVERY_FEE;
-  const total=subtotal+deliveryFee;
-  const id=Date.now();
-  const order={
+function renderCartDock() {
+  const dock = $('cartDock');
+  if (!dock) return;
+
+  const count = cartCount();
+  dock.classList.toggle('on', count > 0);
+  dock.innerHTML = `<b>${faNum(count)} آیتم سفارش</b><button class="btn" onclick="openCart()">تکمیل سفارش</button>`;
+}
+
+function openCart() {
+  const modal = $('cartModal');
+  modal.innerHTML = `<div class="modal-card card pad">
+    <div class="row sticky-head"><h2>سبد سفارش</h2><button class="soft" onclick="document.getElementById('cartModal').classList.remove('on')">بستن</button></div>
+    <div id="cartBox"></div>
+  </div>`;
+  modal.classList.add('on');
+  renderCart();
+}
+
+function cartTotals() {
+  const subtotal = cart.reduce((sum, item) => {
+    const product = findProduct(item.id);
+    return sum + (product ? productNumericPrice(product) * Number(item.qty || 1) : 0);
+  }, 0);
+  const deliveryFee = cart.length ? DELIVERY_FEE : 0;
+  return { subtotal, deliveryFee, total: subtotal + deliveryFee };
+}
+
+function cartRow(item) {
+  const product = findProduct(item.id);
+  if (!product) return '';
+
+  const idJson = JSON.stringify(item.id);
+  const lineTotal = productNumericPrice(product) * Number(item.qty || 1);
+
+  return `<div class="card pad row wrap">
+    <div>
+      <b>${esc(product.name)}</b>
+      <p class="small">${productCartPriceText(product)} × <input class="field" style="width:90px" type="number" min="${Number(product.minOrder) || 1}" value="${Number(item.qty) || 1}" onchange='qtyCart(${idJson},this.value)'></p>
+    </div>
+    <b class="price">${productNumericPrice(product) > 0 ? money(lineTotal) : productPriceText(product)}</b>
+    <button class="danger" onclick='removeCart(${idJson})'>حذف</button>
+  </div>`;
+}
+
+function renderCart() {
+  const box = $('cartBox');
+  if (!box) return;
+
+  const rows = cart.map(cartRow).join('');
+  const totals = cartTotals();
+
+  box.innerHTML = (rows || '<p>سبد سفارش خالی است.</p>') + `<div class="card pad">
+    <h3>ثبت اطلاعات مشتری</h3>
+    <div class="grid g2">
+      <input id="customerName" class="field" placeholder="نام مشتری">
+      <input id="customerPhone" class="field" placeholder="شماره تماس">
+      <input id="customerCity" class="field" placeholder="شهر/آدرس">
+      <textarea id="customerNote" class="field" placeholder="توضیحات سفارش"></textarea>
+    </div>
+
+    <div class="card pad invoice-summary" style="margin:12px 0;background:var(--soft)">
+      <div class="row"><span>جمع محصولات:</span><b>${money(totals.subtotal)}</b></div>
+      <div class="row"><span>${SERVICE_FEE_LABEL}:</span><b>${money(totals.deliveryFee)}</b></div>
+      <div class="row"><b>جمع کل فاکتور:</b><span class="price">${money(totals.total)}</span></div>
+    </div>
+
+    <div class="row"><button class="btn" onclick="submitOrder()">ثبت سفارش</button></div>
+  </div>`;
+}
+
+function submitOrder() {
+  if (!cart.length) return alert('سبد خالی است');
+
+  const name = $('customerName').value.trim();
+  const phone = $('customerPhone').value.trim();
+  if (!name || !phone) return alert('نام و شماره تماس را وارد کنید');
+
+  const itemDetails = orderItemSnapshots(cart);
+  const subtotal = itemDetails.reduce((sum, item) => sum + Number(item.lineTotal || 0), 0);
+  const deliveryFee = DELIVERY_FEE;
+  const total = subtotal + deliveryFee;
+  const id = Date.now();
+
+  const order = {
     id,
-    code:'DLZ-'+String(id).slice(-6),
+    code: `DLZ-${String(id).slice(-6)}`,
     name,
     phone,
-    city:$('customerCity').value.trim(),
-    note:$('customerNote').value.trim(),
-    items:cart.map(x=>({id:Number(x.id),qty:Number(x.qty)||1})),
+    city: $('customerCity').value.trim(),
+    note: $('customerNote').value.trim(),
+    items: cart.map((item) => ({ id: item.id, qty: Number(item.qty) || 1 })),
     itemDetails,
     subtotal,
     deliveryFee,
     total,
-    contactTarget:'whatsapp_sms',
-    status:'در انتظار تماس',
-    source:'website',
-    createdAt:new Date().toISOString(),
-    updatedAt:new Date().toISOString()
+    contactTarget: 'whatsapp_sms',
+    status: 'در انتظار تماس',
+    source: 'website',
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString()
   };
 
-  if(!saveOrders([order,...orders()])) return;
-  cart=[];
+  if (!saveOrders([order, ...orders()])) return;
+
+  cart = [];
   saveCart();
   showOrderSuccess(order);
   copyTextToClipboard(orderDetailsText(order));
 }
 
-function showOrderSuccess(order){
-  const m=$('cartModal');
-  m.innerHTML=`<div class="modal-card card pad">
-    <div class="row sticky-head"><h2>سفارش ثبت شد</h2><button class="soft" onclick="$('cartModal').classList.remove('on')">بستن</button></div>
-    <div class="card pad"><p>سفارش شما با کد <b>${esc(orderCode(order))}</b> ثبت شد و جزئیات آن در پنل فروش ذخیره شد.</p><p class="small">برای ارسال جزئیات سفارش به دلیزا، یکی از گزینه‌های واتساپ یا پیامک را انتخاب کنید. متن سفارش هم کپی شده است.</p>${contactLinksHtml(orderDetailsText(order), 'order-contact-actions')}</div>
+function showOrderSuccess(order) {
+  const modal = $('cartModal');
+  const idJson = JSON.stringify(order.id);
+
+  modal.innerHTML = `<div class="modal-card card pad">
+    <div class="row sticky-head">
+      <h2>سفارش ثبت شد</h2>
+      <button class="soft" onclick="document.getElementById('cartModal').classList.remove('on')">بستن</button>
+    </div>
+
+    <div class="card pad">
+      <p>سفارش شما با کد <b>${esc(orderCode(order))}</b> ثبت شد و جزئیات آن در پنل فروش ذخیره شد.</p>
+      <p class="small">برای ارسال جزئیات سفارش به دلیزا، یکی از گزینه‌های واتساپ یا پیامک را انتخاب کنید. متن سفارش هم کپی شده است.</p>
+      ${contactLinksHtml(orderDetailsText(order), 'order-contact-actions')}
+    </div>
+
     ${orderDetailsHtml(order)}
+
     <div class="actions" style="margin-top:14px">
-      <button class="btn" onclick="openWhatsAppForOrder(${order.id})">ارسال در واتساپ</button>
-      <button class="soft" onclick="openSmsForOrder(${order.id})">ارسال پیامک</button>
-      <button class="soft" onclick="copyOrderDetails(${order.id})">کپی جزئیات سفارش</button>
-      <button class="soft" onclick="$('cartModal').classList.remove('on')">ادامه خرید</button>
+      <button class="btn" onclick='openWhatsAppForOrder(${idJson})'>ارسال در واتساپ</button>
+      <button class="soft" onclick='openSmsForOrder(${idJson})'>ارسال پیامک</button>
+      <button class="soft" onclick='copyOrderDetails(${idJson})'>کپی جزئیات سفارش</button>
+      <button class="soft" onclick="document.getElementById('cartModal').classList.remove('on')">ادامه خرید</button>
     </div>
   </div>`;
-  m.classList.add('on');
+
+  modal.classList.add('on');
   showToast('سفارش ثبت شد و در پنل فروش ذخیره شد');
 }
-document.addEventListener('DOMContentLoaded', async()=>{ await bootstrapData('buyer'); mount('buyer'); renderHome(); });
+
+document.addEventListener('DOMContentLoaded', async () => {
+  await bootstrapData('buyer');
+  mount('buyer');
+  renderHome();
+});

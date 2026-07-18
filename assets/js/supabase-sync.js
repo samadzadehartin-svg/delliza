@@ -1,55 +1,55 @@
+// Safe Supabase sync for Delliza.
+// Default bulk updates intentionally exclude orders and staff.
+
 (function () {
   const GLOBAL_KEYS = ['products', 'categories', 'orders', 'staff', 'settings'];
+  const SAFE_UPDATE_KEYS = ['products', 'categories', 'settings'];
+
   let client = null;
   let clientSignature = '';
   let lastError = '';
 
   function clean(value) {
-    return String(value || '').trim().replace(/^['\"]|['\"]$/g, '');
+    return String(value || '').trim().replace(/^["']|["']$/g, '');
   }
 
   function normalizeSupabaseUrl(rawUrl) {
     let value = clean(rawUrl);
     if (!value) return '';
 
-    // اگر کاربر به اشتباه لینک dashboard را وارد کرده باشد:
-    // https://supabase.com/dashboard/project/xxxx
     const dashboardMatch = value.match(/supabase\.com\/dashboard\/project\/([^/?#]+)/i);
-    if (dashboardMatch && dashboardMatch[1]) {
-      return `https://${dashboardMatch[1]}.supabase.co`;
-    }
+    if (dashboardMatch?.[1]) return `https://${dashboardMatch[1]}.supabase.co`;
 
     if (!/^https?:\/\//i.test(value)) value = `https://${value}`;
 
     try {
       const url = new URL(value);
-      const host = url.hostname;
-      if (host.includes('supabase.co')) return `${url.protocol}//${host}`;
-      return `${url.protocol}//${host}`;
-    } catch (error) {
+      return `${url.protocol}//${url.hostname}`;
+    } catch {
       return value.replace(/\/(rest\/v1|auth\/v1|storage\/v1).*/i, '').replace(/\/+$/, '');
     }
   }
 
   function cfg() {
-    const c = window.DELIZA_SUPABASE || {};
+    const config = window.DELIZA_SUPABASE || {};
     return {
-      url: normalizeSupabaseUrl(c.url),
-      anonKey: clean(c.anonKey)
+      url: normalizeSupabaseUrl(config.url),
+      anonKey: clean(config.anonKey)
     };
   }
 
   function isConfigured() {
-    const c = cfg();
-    return Boolean(c.url && c.anonKey && window.supabase && window.supabase.createClient);
+    const config = cfg();
+    return Boolean(config.url && config.anonKey && window.supabase?.createClient);
   }
 
   function getClient() {
     if (!isConfigured()) return null;
-    const c = cfg();
-    const signature = `${c.url}|${c.anonKey.slice(0, 12)}`;
+
+    const config = cfg();
+    const signature = `${config.url}|${config.anonKey.slice(0, 12)}`;
     if (!client || clientSignature !== signature) {
-      client = window.supabase.createClient(c.url, c.anonKey);
+      client = window.supabase.createClient(config.url, config.anonKey);
       clientSignature = signature;
     }
     return client;
@@ -63,9 +63,11 @@
   async function pull(keys = GLOBAL_KEYS) {
     const db = getClient();
     if (!db) return { ok: false, count: 0, error: 'not_configured' };
+
     try {
       const { data, error } = await db.from('app_data').select('key,value').in('key', keys);
       if (error) throw error;
+
       let count = 0;
       (data || []).forEach((row) => {
         if (row && keys.includes(row.key) && typeof write === 'function') {
@@ -73,6 +75,7 @@
           count += 1;
         }
       });
+
       lastError = '';
       return { ok: true, count };
     } catch (error) {
@@ -84,8 +87,10 @@
 
   async function push(key, value) {
     if (!GLOBAL_KEYS.includes(key)) return { ok: true, skipped: true };
+
     const db = getClient();
     if (!db) return { ok: false, error: 'not_configured' };
+
     try {
       const { error } = await db.from('app_data').upsert({
         key,
@@ -93,6 +98,7 @@
         updated_at: new Date().toISOString()
       }, { onConflict: 'key' });
       if (error) throw error;
+
       lastError = '';
       return { ok: true };
     } catch (error) {
@@ -102,24 +108,43 @@
     }
   }
 
-  async function pushAll() {
+  async function pushKeys(keys = SAFE_UPDATE_KEYS) {
     const db = getClient();
     if (!db) return { ok: false, error: 'not_configured' };
-    const rows = GLOBAL_KEYS.map((key) => ({
-      key,
-      value: read(key, key === 'orders' ? [] : null),
-      updated_at: new Date().toISOString()
-    })).filter((row) => row.value !== null);
+
+    const safeKeys = [...new Set(keys)].filter((key) => GLOBAL_KEYS.includes(key));
+    const rows = safeKeys
+      .map((key) => ({
+        key,
+        value: read(key, null),
+        updated_at: new Date().toISOString()
+      }))
+      .filter((row) => row.value !== null);
+
     try {
+      if (!rows.length) return { ok: true, count: 0 };
       const { error } = await db.from('app_data').upsert(rows, { onConflict: 'key' });
       if (error) throw error;
+
       lastError = '';
       return { ok: true, count: rows.length };
     } catch (error) {
       lastError = error?.message || String(error);
-      console.warn('[Delliza Supabase] pushAll failed:', error);
+      console.warn('[Delliza Supabase] pushKeys failed:', safeKeys, error);
       return { ok: false, error: lastError };
     }
+  }
+
+  async function pushAll(options = {}) {
+    const keys = Array.isArray(options.keys) && options.keys.length
+      ? options.keys
+      : [
+        ...SAFE_UPDATE_KEYS,
+        ...(options.includeOrders ? ['orders'] : []),
+        ...(options.includeStaff ? ['staff'] : [])
+      ];
+
+    return pushKeys(keys);
   }
 
   async function refreshAndRerender(renderName) {
@@ -131,6 +156,7 @@
   async function currentUser() {
     const db = getClient();
     if (!db) return null;
+
     const { data, error } = await db.auth.getUser();
     if (error) {
       lastError = error.message || String(error);
@@ -142,6 +168,7 @@
   async function roleForUser(userId) {
     const db = getClient();
     if (!db || !userId) return null;
+
     const { data, error } = await db
       .from('user_roles')
       .select('role,display_name,active')
@@ -160,16 +187,23 @@
   async function ensureRole(requiredRole) {
     const db = getClient();
     if (!db) return { ok: false, error: 'not_configured' };
+
     try {
       const user = await currentUser();
       if (!user) return { ok: false, error: 'not_signed_in' };
+
       const profile = await roleForUser(user.id);
       if (!profile || profile.active === false) return { ok: false, user, error: 'role_not_active' };
-      if (!roleIsAllowed(requiredRole, profile.role)) {
-        return { ok: false, user, profile, error: 'role_not_allowed' };
-      }
+      if (!roleIsAllowed(requiredRole, profile.role)) return { ok: false, user, profile, error: 'role_not_allowed' };
+
       lastError = '';
-      return { ok: true, user, profile, role: profile.role, displayName: profile.display_name || user.email };
+      return {
+        ok: true,
+        user,
+        profile,
+        role: profile.role,
+        displayName: profile.display_name || user.email
+      };
     } catch (error) {
       lastError = error?.message || String(error);
       console.warn('[Delliza Supabase] ensureRole failed:', error);
@@ -180,14 +214,20 @@
   async function signInWithRole(requiredRole, email, password) {
     const db = getClient();
     if (!db) return { ok: false, error: 'not_configured' };
+
     try {
-      const { error } = await db.auth.signInWithPassword({ email: String(email || '').trim(), password });
+      const { error } = await db.auth.signInWithPassword({
+        email: String(email || '').trim(),
+        password
+      });
       if (error) throw error;
+
       const result = await ensureRole(requiredRole);
       if (!result.ok) {
         await db.auth.signOut();
         return result;
       }
+
       lastError = '';
       return result;
     } catch (error) {
@@ -200,6 +240,7 @@
   async function signOut() {
     const db = getClient();
     if (!db) return { ok: true, skipped: true };
+
     try {
       const { error } = await db.auth.signOut();
       if (error) throw error;
@@ -212,5 +253,18 @@
   }
 
   window.DELIZA_SYNC_KEYS = GLOBAL_KEYS;
-  window.DELIZA_DB = { isConfigured, statusText, pull, push, pushAll, refreshAndRerender, normalizeSupabaseUrl, currentUser, ensureRole, signInWithRole, signOut };
+  window.DELIZA_DB = {
+    isConfigured,
+    statusText,
+    pull,
+    push,
+    pushKeys,
+    pushAll,
+    refreshAndRerender,
+    normalizeSupabaseUrl,
+    currentUser,
+    ensureRole,
+    signInWithRole,
+    signOut
+  };
 })();

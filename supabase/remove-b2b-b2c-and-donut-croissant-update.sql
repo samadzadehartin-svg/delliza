@@ -18,7 +18,7 @@ set value = (
           'packageQty',10,
           'minOrder',10,
           'tags', jsonb_build_array('حداقل سفارش ۱۰ عدد','بسته ۱۰ عددی'),
-          'desc',''
+          'desc','آرد، شیر، تخم‌مرغ، شکر، خمیرمایه — قیمت بسته ۱۰ عددی و حداقل سفارش ۱۰ عدد'
         )
       when item->>'name' = 'کروسان' then
         (item - 'type') || jsonb_build_object(
@@ -31,7 +31,7 @@ set value = (
           'packageQty',10,
           'minOrder',10,
           'tags', jsonb_build_array('حداقل سفارش ۱۰ عدد','بسته ۱۰ عددی'),
-          'desc',''
+          'desc','آرد، کره، شیر، تخم‌مرغ، خمیرمایه — قیمت بسته ۱۰ عددی و حداقل سفارش ۱۰ عدد'
         )
       else
         (item - 'type') || jsonb_build_object('type','retail')

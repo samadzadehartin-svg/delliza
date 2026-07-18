@@ -84,7 +84,7 @@ function selectCategory(id) {
 
 function renderHome() {
   const categoryList = categories().filter((category) => category.active !== false);
-  const featured = activeProducts().slice(0, 4);
+  const topImages = heroImages();
 
   $('app').innerHTML = `<section class="hero">
     <div class="hero-grid">
@@ -97,7 +97,7 @@ function renderHome() {
         </div>
       </div>
       <div class="hero-showcase">
-        ${featured.map((product) => `<img src="${esc(product.img)}" alt="${esc(product.name)}">`).join('')}
+        ${topImages.map((src, index) => `<img src="${esc(src)}" alt="تصویر منتخب دلیزا ${faNum(index + 1)}">`).join('')}
       </div>
     </div>
   </section>

@@ -759,6 +759,12 @@ const DEFAULT_SETTINGS={
   "sms": "09022122286",
   "deliveryFee": 90000,
   "orderContactMode": "whatsapp_sms",
+  "heroImages": [
+    "../assets/images/fresh-products/assigned-2026-07-18/donut-plain.jpg",
+    "../assets/images/fresh-products/assigned-2026-07-18/donut-creamfill.jpg",
+    "../assets/images/fresh-products/assigned-2026-07-18/croissant-creamfill-chocolate-nuts.jpg",
+    "../assets/images/fresh-products/assigned-2026-07-18/birthday-cake.jpg"
+  ],
   "address": "تهران، ایران",
   "instagram": "@delliza.bakery",
   "instagramUrl": "https://ig.me/m/delliza.bakery",

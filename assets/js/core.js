@@ -121,6 +121,20 @@ function saveSettings(value) { return write('settings', value); }
 function findProduct(id) { return products().find((product) => String(product.id) === String(id)); }
 function catTitle(id) { return categories().find((category) => category.id === id)?.title || id || '—'; }
 
+function heroImages() {
+  const configured = Array.isArray(settings().heroImages) ? settings().heroImages : [];
+  const defaults = products()
+    .filter((product) => product.status === 'active')
+    .slice(0, 4)
+    .map((product) => product.img || DEFAULT_IMG);
+
+  const merged = [...configured, ...defaults]
+    .map((src) => String(src || '').trim())
+    .filter(Boolean);
+
+  return [...new Set(merged)].slice(0, 4);
+}
+
 // -----------------------------------------------------------------------------
 // Products
 // -----------------------------------------------------------------------------

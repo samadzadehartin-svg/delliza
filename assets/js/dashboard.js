@@ -219,13 +219,66 @@ function dashboardFilteredProducts() {
     return categoryOk && (!q || normalize([p.name, p.flavor, p.tags?.join(' ')].join(' ')).includes(q));
   });
 }
+function dashboardProductGlobalIndex(id) {
+  return products().findIndex((product) => String(product.id) === String(id));
+}
+
+function dashboardProductPositionText(id) {
+  const index = dashboardProductGlobalIndex(id);
+  return index >= 0 ? faNum(index + 1) : '—';
+}
+
+function moveDashboardProduct(id, direction) {
+  if (!dashboardIsAdmin()) return alert('جابجایی محصول فقط برای مدیر فعال است.');
+  const list = products();
+  const index = list.findIndex((product) => String(product.id) === String(id));
+  if (index < 0) return;
+
+  const targetIndex = Math.max(0, Math.min(list.length - 1, index + Number(direction || 0)));
+  if (targetIndex === index) return;
+
+  const [item] = list.splice(index, 1);
+  list.splice(targetIndex, 0, { ...item, updatedAt: new Date().toISOString() });
+  if (!saveProducts(list)) return;
+  showToast('ترتیب محصول در لیست فروش تغییر کرد');
+  renderDashboard();
+}
+
+function setDashboardProductPosition(id, value) {
+  if (!dashboardIsAdmin()) return alert('جابجایی محصول فقط برای مدیر فعال است.');
+  const list = products();
+  const index = list.findIndex((product) => String(product.id) === String(id));
+  if (index < 0) return;
+
+  const targetIndex = Math.max(0, Math.min(list.length - 1, (Number(value) || 1) - 1));
+  if (targetIndex === index) return;
+
+  const [item] = list.splice(index, 1);
+  list.splice(targetIndex, 0, { ...item, updatedAt: new Date().toISOString() });
+  if (!saveProducts(list)) return;
+  showToast(`محصول به ردیف ${faNum(targetIndex + 1)} منتقل شد`);
+  renderDashboard();
+}
+
+function placeDashboardProduct(list, id, rawPosition) {
+  const index = list.findIndex((product) => String(product.id) === String(id));
+  if (index < 0) return list;
+
+  const targetIndex = Math.max(0, Math.min(list.length - 1, (Number(rawPosition) || index + 1) - 1));
+  if (targetIndex === index) return list;
+
+  const [item] = list.splice(index, 1);
+  list.splice(targetIndex, 0, item);
+  return list;
+}
+
 
 function renderDashboardProducts() {
   const list = dashboardFilteredProducts();
   return `
     <section class="card pad dashboard-section-card">
       <div class="row wrap dashboard-section-head">
-        <div><h2>محصولات</h2><p class="small">${dashboardIsAdmin() ? 'قیمت، موجودی، تصویر و وضعیت نمایش محصول' : 'نمایش موجودی و اطلاعات محصولات؛ ویرایش فقط برای مدیر فعال است.'}</p></div>
+        <div><h2>محصولات</h2><p class="small">${dashboardIsAdmin() ? 'قیمت، موجودی، تصویر، وضعیت نمایش و ترتیب محصول در لیست فروش' : 'نمایش موجودی و ترتیب محصولات؛ ویرایش فقط برای مدیر فعال است.'}</p></div>
         <div class="actions">${dashboardIsAdmin() ? '<button class="btn" onclick="openDashboardProductForm()"><i class="fa-solid fa-plus"></i> افزودن محصول</button>' : '<span class="badge gray">دسترسی فقط خواندنی</span>'}</div>
       </div>
       <div class="dashboard-filters">
@@ -241,16 +294,31 @@ function renderDashboardProducts() {
 
 function dashboardProductTable(list) {
   const actionsHeader = dashboardIsAdmin() ? '<th>عملیات</th>' : '';
-  return `<table class="dashboard-table"><thead><tr><th>تصویر</th><th>نام</th><th>دسته</th><th>قیمت</th><th>موجودی</th><th>وضعیت</th>${actionsHeader}</tr></thead><tbody>
-    ${list.map((p) => `<tr>
-      <td><img class="product-thumb" src="${esc(p.img || DEFAULT_IMG)}" alt="${esc(p.name)}"></td>
-      <td><b>${esc(p.name)}</b><br><small>${esc(p.flavor || p.weight || '')}</small></td>
-      <td>${esc(catTitle(p.category))}</td>
-      <td><b>${productPriceText(p)}</b></td>
-      <td>${faNum(p.stock || 0)}</td>
-      <td><span class="badge ${p.status === 'active' ? 'green' : 'gray'}">${p.status === 'active' ? 'فعال' : 'غیرفعال'}</span></td>
-      ${dashboardIsAdmin() ? `<td><div class="actions"><button class="btn" onclick="openDashboardProductForm(${Number(p.id)})">ویرایش</button><button class="soft" onclick="toggleDashboardProduct(${Number(p.id)})">${p.status === 'active' ? 'غیرفعال' : 'فعال'}</button></div></td>` : ''}
-    </tr>`).join('') || `<tr><td colspan="${dashboardIsAdmin() ? 7 : 6}"><div class="dashboard-empty">محصولی پیدا نشد.</div></td></tr>`}
+  const totalProducts = products().length;
+  return `<table class="dashboard-table"><thead><tr><th>تصویر</th><th>ترتیب فروش</th><th>نام</th><th>دسته</th><th>قیمت</th><th>موجودی</th><th>وضعیت</th>${actionsHeader}</tr></thead><tbody>
+    ${list.map((p) => {
+      const id = JSON.stringify(p.id);
+      const position = dashboardProductGlobalIndex(p.id) + 1;
+      return `<tr>
+        <td><img class="product-thumb" src="${esc(p.img || DEFAULT_IMG)}" alt="${esc(p.name)}"></td>
+        <td>
+          <div class="sales-order-cell">
+            <span class="badge pink">ردیف ${dashboardProductPositionText(p.id)}</span>
+            ${dashboardIsAdmin() ? `<div class="sales-order-controls">
+              <button class="soft" type="button" onclick='moveDashboardProduct(${id},-1)' ${position <= 1 ? 'disabled' : ''} title="انتقال به بالا"><i class="fa-solid fa-arrow-up"></i></button>
+              <button class="soft" type="button" onclick='moveDashboardProduct(${id},1)' ${position >= totalProducts ? 'disabled' : ''} title="انتقال به پایین"><i class="fa-solid fa-arrow-down"></i></button>
+            </div>
+            <input class="field sales-order-input" type="number" min="1" max="${totalProducts}" value="${position}" onchange='setDashboardProductPosition(${id},this.value)' aria-label="شماره ردیف در لیست فروش">` : ''}
+          </div>
+        </td>
+        <td><b>${esc(p.name)}</b><br><small>${esc(p.flavor || p.weight || '')}</small></td>
+        <td>${esc(catTitle(p.category))}</td>
+        <td><b>${productPriceText(p)}</b></td>
+        <td>${faNum(p.stock || 0)}</td>
+        <td><span class="badge ${p.status === 'active' ? 'green' : 'gray'}">${p.status === 'active' ? 'فعال' : 'غیرفعال'}</span></td>
+        ${dashboardIsAdmin() ? `<td><div class="actions"><button class="btn" onclick='openDashboardProductForm(${id})'>ویرایش</button><button class="soft" onclick='toggleDashboardProduct(${id})'>${p.status === 'active' ? 'غیرفعال' : 'فعال'}</button></div></td>` : ''}
+      </tr>`;
+    }).join('') || `<tr><td colspan="${dashboardIsAdmin() ? 8 : 7}"><div class="dashboard-empty">محصولی پیدا نشد.</div></td></tr>`}
   </tbody></table>`;
 }
 
@@ -261,6 +329,7 @@ function dashboardVisibleDefault() {
 function openDashboardProductForm(id) {
   if (!dashboardIsAdmin()) return alert('ویرایش محصول فقط برای مدیر فعال است.');
   const product = id ? findProduct(id) : null;
+  const productPosition = product ? dashboardProductGlobalIndex(product.id) + 1 : products().length + 1;
   const visible = { ...dashboardVisibleDefault(), ...(product?.visible || {}) };
   const modal = $('productModal');
   modal.innerHTML = `<div class="modal-card card pad">
@@ -271,6 +340,7 @@ function openDashboardProductForm(id) {
         <input id="name" class="field" required placeholder="نام محصول" value="${esc(product?.name || '')}">
         <select id="category" class="field">${categories().map((c) => `<option value="${esc(c.id)}" ${product?.category === c.id ? 'selected' : ''}>${esc(c.title)}</option>`).join('')}</select>
         <input id="flavor" class="field" placeholder="طعم" value="${esc(product?.flavor || '')}">
+        <input id="displayOrder" class="field" type="number" min="1" max="${Math.max(1, products().length + (product ? 0 : 1))}" placeholder="جایگاه در لیست فروش" value="${productPosition}">
         <input id="weight" class="field" placeholder="وزن" value="${esc(product?.weight || '')}">
         <input id="price" class="field" type="number" placeholder="قیمت عددی" value="${Number(product?.price || 0)}">
         <input id="priceLabel" class="field" placeholder="متن قیمت جایگزین" value="${esc(product?.priceLabel || '')}">
@@ -341,9 +411,10 @@ function saveDashboardProduct(event) {
     updatedAt: new Date().toISOString()
   };
   const list = products();
-  const index = list.findIndex((product) => Number(product.id) === id);
+  const index = list.findIndex((product) => String(product.id) === String(id));
   if (index >= 0) list[index] = item;
   else list.push(item);
+  placeDashboardProduct(list, id, $('displayOrder')?.value);
   if (!saveProducts(list)) return;
   $('productModal').classList.remove('on');
   showToast('محصول ذخیره شد');
@@ -352,9 +423,61 @@ function saveDashboardProduct(event) {
 
 function toggleDashboardProduct(id) {
   if (!dashboardIsAdmin()) return alert('ویرایش محصول فقط برای مدیر فعال است.');
-  saveProducts(products().map((p) => Number(p.id) === Number(id) ? { ...p, status: p.status === 'active' ? 'inactive' : 'active', updatedAt: new Date().toISOString() } : p));
+  saveProducts(products().map((p) => String(p.id) === String(id) ? { ...p, status: p.status === 'active' ? 'inactive' : 'active', updatedAt: new Date().toISOString() } : p));
   showToast('وضعیت محصول تغییر کرد');
   renderDashboard();
+}
+
+
+function dashboardHeroImagesForEditor() {
+  const current = settings();
+  const configured = Array.isArray(current.heroImages) ? current.heroImages : [];
+  const defaults = products()
+    .filter((product) => product.status === 'active')
+    .slice(0, 4)
+    .map((product) => product.img || DEFAULT_IMG);
+
+  return Array.from({ length: 4 }, (_, index) => configured[index] || defaults[index] || '');
+}
+
+function dashboardHeroImageRows() {
+  return dashboardHeroImagesForEditor().map((src, index) => `<div class="hero-image-admin-row">
+    <div class="hero-image-preview"><img id="heroImagePreview${index}" src="${esc(src || DEFAULT_IMG)}" alt="عکس بالای سایت ${faNum(index + 1)}"></div>
+    <div class="hero-image-fields">
+      <label class="small">عکس بالای سایت ${faNum(index + 1)}</label>
+      <input id="heroImage${index}" class="field" dir="ltr" value="${esc(src)}" placeholder="URL یا انتخاب فایل از پایین" oninput="renderDashboardHeroPreview(${index})">
+      <div class="actions">
+        <input class="field" type="file" accept="image/*" onchange="uploadDashboardHeroImage(${index},this.files)">
+        <button class="soft" type="button" onclick="clearDashboardHeroImage(${index})">خالی کردن</button>
+      </div>
+    </div>
+  </div>`).join('');
+}
+
+function renderDashboardHeroPreview(index) {
+  const input = $(`heroImage${index}`);
+  const preview = $(`heroImagePreview${index}`);
+  if (input && preview) preview.src = input.value || DEFAULT_IMG;
+}
+
+function renderDashboardHeroPreviews() {
+  for (let index = 0; index < 4; index += 1) renderDashboardHeroPreview(index);
+}
+
+function uploadDashboardHeroImage(index, files) {
+  const file = [...(files || [])][0];
+  if (!file) return;
+  resizeImageFile(file, 1200, .78).then((url) => {
+    const input = $(`heroImage${index}`);
+    if (input && url) input.value = url;
+    renderDashboardHeroPreview(index);
+  });
+}
+
+function clearDashboardHeroImage(index) {
+  const input = $(`heroImage${index}`);
+  if (input) input.value = '';
+  renderDashboardHeroPreview(index);
 }
 
 function renderDashboardSettings() {
@@ -373,6 +496,13 @@ function renderDashboardSettings() {
       </div>
       <button class="btn" style="margin-top:12px" onclick="saveDashboardSettings()">ذخیره تنظیمات</button>
     </section>
+
+    <section class="card pad dashboard-section-card">
+      <div class="dashboard-section-head"><h2>ویرایش عکس‌های بالای سایت</h2><p class="small">این ۴ عکس در بالای صفحه مشتری نمایش داده می‌شوند. می‌توانی URL وارد کنی یا فایل عکس انتخاب کنی.</p></div>
+      <div class="hero-image-admin-grid">${dashboardHeroImageRows()}</div>
+      <button class="btn" style="margin-top:12px" onclick="saveDashboardSettings()">ذخیره عکس‌های بالا</button>
+    </section>
+
     <section class="card pad dashboard-section-card">
       <h2>کاربران و سطح دسترسی</h2>
       <p class="small">کاربران از Supabase Authentication ساخته می‌شوند. نقش‌های <b>admin</b> و <b>staff</b> در جدول <b>user_roles</b> تعیین می‌شوند. مدیر همه بخش‌ها را می‌بیند و فروشنده فقط سفارش‌ها و فهرست محصولات را مشاهده می‌کند.</p>
@@ -382,14 +512,20 @@ function renderDashboardSettings() {
 
 function saveDashboardSettings() {
   if (!dashboardIsAdmin()) return;
+  const heroImageList = [0, 1, 2, 3]
+    .map((index) => $(`heroImage${index}`)?.value?.trim())
+    .filter(Boolean);
+
   saveSettings({
     ...settings(),
-    brand: $('brand').value,
-    subtitle: $('subtitle').value,
-    phone: $('phone').value,
-    instagram: $('instagram').value,
-    instagramUrl: $('instagramUrl').value.trim(),
-    address: $('address').value
+    brand: $('brand')?.value || settings().brand,
+    subtitle: $('subtitle')?.value || '',
+    phone: $('phone')?.value || settings().phone,
+    instagram: $('instagram')?.value || settings().instagram,
+    instagramUrl: $('instagramUrl')?.value?.trim() || '',
+    address: $('address')?.value || settings().address,
+    heroImages: heroImageList,
+    menuVersion: DATA_VERSION
   });
   showToast('تنظیمات ذخیره شد');
   renderDashboard();

@@ -1,4 +1,4 @@
-const DATA_VERSION='delliza_contact_buttons_2026_07_18_01';
+const DATA_VERSION='delliza_delivery_fee_whatsapp_sms_2026_07_18_01';
 const DEFAULT_IMG='../assets/images/product-default.svg';
 const DEFAULT_CATEGORIES=[
   {
@@ -753,12 +753,14 @@ const DEFAULT_STAFF=[
 ];
 const DEFAULT_SETTINGS={
   "brand": "دلیزا",
-  "subtitle": "منوی دلیزا با فونت اصلی، تصاویر نهایی و کیک تولد",
+  "subtitle": "منوی دلیزا با ارسال واتساپ/پیامک و هزینه ارسال",
   "phone": "۰۹۰۲۲۱۲۲۲۸۶",
   "whatsapp": "09022122286",
   "sms": "09022122286",
+  "deliveryFee": 90000,
+  "orderContactMode": "whatsapp_sms",
   "address": "تهران، ایران",
   "instagram": "@delliza.bakery",
   "instagramUrl": "https://ig.me/m/delliza.bakery",
-  "menuVersion": "delliza_contact_buttons_2026_07_18_01"
+  "menuVersion": "delliza_delivery_fee_whatsapp_sms_2026_07_18_01"
 };

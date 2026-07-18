@@ -1,6 +1,6 @@
 (function () {
   let products = [];
-  const instagramUrl = "https://www.instagram.com/Delliza.bakery";
+  const whatsappUrl = "https://wa.me/989022122286?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%A7%D8%B2%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%AF%D9%84%DB%8C%D8%B2%D8%A7%20%D9%BE%DB%8C%D8%A7%D9%85%20%D9%85%DB%8C%E2%80%8C%D8%AF%D9%87%D9%85.";
 
   const state = {
     category: "همه",
@@ -99,7 +99,7 @@
         </div>
         <div class="product-actions">
           <button class="btn btn-small btn-dark" type="button" data-view-product="${safeText(product.id)}">جزئیات</button>
-          <a class="btn btn-small btn-light" href="${instagramUrl}" target="_blank" rel="noopener">سفارش</a>
+          <a class="btn btn-small btn-light" href="${whatsappUrl}" target="_blank" rel="noopener">سفارش</a>
         </div>
       </div>
     </article>`;
@@ -148,7 +148,7 @@
             <span>${safeText(product.weight)}</span>
             <strong>${productPriceText(product)}</strong>
           </div>
-          <a class="btn btn-primary" href="${instagramUrl}" target="_blank" rel="noopener">سفارش از اینستاگرام</a>
+          <a class="btn btn-primary" href="${whatsappUrl}" target="_blank" rel="noopener">سفارش از واتساپ</a>
         </div>
       </div>`;
 

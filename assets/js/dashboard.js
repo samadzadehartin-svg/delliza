@@ -187,7 +187,7 @@ function dashboardOrderTable(list) {
       <td>${orderItemsMini(o)}</td>
       <td><b>${money(o.total || 0)}</b></td>
       <td><select class="field dashboard-status" onchange="changeDashboardOrder(${Number(o.id)},this.value)">${dashboardStatuses().map((status) => `<option ${status === (o.status || 'در انتظار تماس') ? 'selected' : ''}>${status}</option>`).join('')}</select></td>
-      <td><div class="actions"><button class="btn" onclick="viewDashboardOrder(${Number(o.id)})">جزئیات</button><button class="soft" onclick="openInstagramForOrder(${Number(o.id)})">اینستاگرام</button></div></td>
+      <td><div class="actions"><button class="btn" onclick="viewDashboardOrder(${Number(o.id)})">جزئیات</button><button class="soft" onclick="openWhatsAppForOrder(${Number(o.id)})">واتساپ</button><button class="soft" onclick="openSmsForOrder(${Number(o.id)})">پیامک</button></div></td>
     </tr>`).join('') || '<tr><td colspan="6"><div class="dashboard-empty">سفارشی با این فیلتر پیدا نشد.</div></td></tr>'}
   </tbody></table>`;
 }
@@ -208,7 +208,7 @@ function viewDashboardOrder(id) {
     modal.className = 'modal';
     document.body.appendChild(modal);
   }
-  modal.innerHTML = `<div class="modal-card card pad"><div class="row sticky-head"><div><span class="badge green">${esc(order.status || 'در انتظار تماس')}</span><h2>سفارش ${esc(orderCode(order))}</h2></div><button class="soft" onclick="document.getElementById('orderModal').classList.remove('on')">بستن</button></div>${orderDetailsHtml(order)}<div class="actions" style="margin-top:14px"><button class="btn" onclick="copyOrderDetails(${Number(order.id)})">کپی جزئیات</button><button class="soft" onclick="openInstagramForOrder(${Number(order.id)})">باز کردن اینستاگرام</button><button class="soft" onclick="document.getElementById('orderModal').classList.remove('on')">بستن</button></div></div>`;
+  modal.innerHTML = `<div class="modal-card card pad"><div class="row sticky-head"><div><span class="badge green">${esc(order.status || 'در انتظار تماس')}</span><h2>سفارش ${esc(orderCode(order))}</h2></div><button class="soft" onclick="document.getElementById('orderModal').classList.remove('on')">بستن</button></div>${orderDetailsHtml(order)}<div class="actions" style="margin-top:14px"><button class="btn" onclick="copyOrderDetails(${Number(order.id)})">کپی جزئیات</button><button class="soft" onclick="openWhatsAppForOrder(${Number(order.id)})">ارسال واتساپ</button><button class="soft" onclick="openSmsForOrder(${Number(order.id)})">ارسال پیامک</button><button class="soft" onclick="document.getElementById('orderModal').classList.remove('on')">بستن</button></div></div>`;
   modal.classList.add('on');
 }
 

@@ -85,3 +85,4 @@ button.dashboard-kpi:hover{transform:translateY(-2px);border-color:rgba(127,18,3
 .dark .contact-icon--whatsapp{background:#092d20;color:#7ee5ad;border-color:rgba(126,229,173,.25)}
 .dark .contact-icon--sms{background:#2d2109;color:#ffd37d;border-color:rgba(255,211,125,.25)}
 @media(max-width:700px){.quick-contact{right:12px;bottom:88px}.footer-contact-actions{width:100%}.contact-icon{min-height:42px;padding:9px 12px}.quick-contact .contact-icon{width:50px;height:50px}}
+.invoice-summary{display:grid;gap:8px}.invoice-summary .row{border-bottom:1px dashed var(--b);padding-bottom:7px}.invoice-summary .row:last-child{border-bottom:0;padding-bottom:0}

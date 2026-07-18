@@ -3,6 +3,7 @@ const DATA_VERSION_KEY = 'data_version';
 const CONTACT_PHONE_LOCAL = '09022122286';
 const CONTACT_PHONE_INTL = '989022122286';
 const CONTACT_MESSAGE = 'سلام، برای سفارش از سایت دلیزا پیام می‌دهم.';
+const DELIVERY_FEE = 90000;
 const $ = (id) => document.getElementById(id);
 
 function faNum(value) {
@@ -220,6 +221,23 @@ function orderItems(order) {
   });
 }
 
+
+function orderSubtotal(order) {
+  return orderItems(order).reduce((sum, item) => sum + Number(item.lineTotal || 0), 0);
+}
+
+function orderDeliveryFee(order) {
+  if (order && Object.prototype.hasOwnProperty.call(order, 'deliveryFee')) return Number(order.deliveryFee || 0);
+  return 0;
+}
+
+function orderFinalTotal(order) {
+  const storedTotal = Number(order?.total || 0);
+  const subtotal = orderSubtotal(order);
+  const deliveryFee = orderDeliveryFee(order);
+  return storedTotal || subtotal + deliveryFee;
+}
+
 function orderItemLineText(item) {
   const qty = faNum(item.qty || 1);
   const price = Number(item.lineTotal || 0) > 0 ? money(item.lineTotal) : (item.priceText || 'قیمت توافقی');
@@ -227,6 +245,9 @@ function orderItemLineText(item) {
 }
 
 function orderDetailsText(order) {
+  const subtotal = Number(order?.subtotal || 0) || orderSubtotal(order);
+  const deliveryFee = orderDeliveryFee(order);
+  const total = orderFinalTotal(order);
   const lines = [
     'سفارش جدید دلیزا',
     `کد سفارش: ${orderCode(order)}`,
@@ -237,7 +258,9 @@ function orderDetailsText(order) {
     'محصولات:'
   ];
   orderItems(order).forEach((item) => lines.push('- ' + orderItemLineText(item)));
-  lines.push('', `جمع سفارش: ${money(order?.total || 0)}`);
+  lines.push('', `جمع محصولات: ${money(subtotal)}`);
+  lines.push(`هزینه ارسال: ${money(deliveryFee)}`);
+  lines.push(`جمع کل فاکتور: ${money(total)}`);
   if (order?.note) lines.push(`توضیحات: ${order.note}`);
   lines.push(`زمان ثبت: ${order?.createdAt ? new Date(order.createdAt).toLocaleString('fa-IR') : '—'}`);
   return lines.join('\n');
@@ -251,6 +274,9 @@ function orderItemsMini(order) {
 
 function orderDetailsHtml(order) {
   const items = orderItems(order);
+  const subtotal = Number(order?.subtotal || 0) || orderSubtotal(order);
+  const deliveryFee = orderDeliveryFee(order);
+  const total = orderFinalTotal(order);
   return `<div class="order-details">
     <div class="grid g2">
       <div class="card pad"><b>کد سفارش</b><p>${esc(orderCode(order))}</p></div>
@@ -262,7 +288,11 @@ function orderDetailsHtml(order) {
     <div class="table-wrap"><table><thead><tr><th>محصول</th><th>تعداد</th><th>قیمت واحد</th><th>جمع</th></tr></thead><tbody>
       ${items.map((item) => `<tr><td><b>${esc(item.name)}</b><br><small>${esc(item.categoryTitle || '')}</small></td><td>${faNum(item.qty || 1)}</td><td>${esc(item.priceText || money(item.unitPrice || 0))}</td><td>${Number(item.lineTotal || 0) > 0 ? money(item.lineTotal) : '—'}</td></tr>`).join('') || '<tr><td colspan="4">محصولی ثبت نشده است.</td></tr>'}
     </tbody></table></div>
-    <div class="card pad" style="margin-top:12px"><b>جمع کل:</b> <span class="price">${money(order?.total || 0)}</span></div>
+    <div class="card pad invoice-summary" style="margin-top:12px">
+      <div class="row"><span>جمع محصولات:</span><b>${money(subtotal)}</b></div>
+      <div class="row"><span>هزینه ارسال:</span><b>${money(deliveryFee)}</b></div>
+      <div class="row"><b>جمع کل فاکتور:</b><span class="price">${money(total)}</span></div>
+    </div>
     <div class="card pad" style="margin-top:12px"><b>توضیحات:</b><p>${esc(order?.note || '—')}</p></div>
     <textarea class="field" rows="8" readonly style="margin-top:12px;direction:rtl">${esc(orderDetailsText(order))}</textarea>
   </div>`;
@@ -286,9 +316,7 @@ function copyOrderDetails(id) {
 }
 
 function openInstagramForOrder(id) {
-  const order = orders().find((x) => Number(x.id) === Number(id));
-  if (order) copyTextToClipboard(orderDetailsText(order));
-  window.open(instagramProfileUrl(), '_blank', 'noopener');
+  openWhatsAppForOrder(id);
 }
 
 function openWhatsAppForOrder(id) {

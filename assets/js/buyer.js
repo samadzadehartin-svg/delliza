@@ -79,14 +79,27 @@ function openProduct(id){
 
 function renderCartDock(){ const n=cart.reduce((s,x)=>s+x.qty,0); const d=$('cartDock'); if(!d)return; d.classList.toggle('on',n>0); d.innerHTML=`<b>${faNum(n)} آیتم سفارش</b><button class="btn" onclick="openCart()">تکمیل سفارش</button>`; }
 function openCart(){ const m=$('cartModal'); m.innerHTML=`<div class="modal-card card pad"><div class="row sticky-head"><h2>سبد سفارش</h2><button class="soft" onclick="$('cartModal').classList.remove('on')">بستن</button></div><div id="cartBox"></div></div>`; m.classList.add('on'); renderCart(); }
-function renderCart(){ const box=$('cartBox'); if(!box)return; const rows=cart.map(it=>{const p=findProduct(it.id); return p?`<div class="card pad row wrap"><div><b>${p.name}</b><p class="small">${productCartPriceText(p)} × <input class="field" style="width:90px" type="number" min="${Number(p.minOrder)||1}" value="${it.qty}" onchange="qtyCart(${it.id},this.value)"></p></div><b class="price">${productNumericPrice(p)>0?money(productNumericPrice(p)*it.qty):productPriceText(p)}</b><button class="danger" onclick="removeCart(${it.id})">حذف</button></div>`:''}).join(''); const total=cart.reduce((s,it)=>{const p=findProduct(it.id); return s+(p?productNumericPrice(p)*it.qty:0)},0); box.innerHTML=(rows||'<p>سبد سفارش خالی است.</p>')+`<div class="card pad"><h3>ثبت اطلاعات مشتری</h3><div class="grid g2"><input id="customerName" class="field" placeholder="نام مشتری"><input id="customerPhone" class="field" placeholder="شماره تماس"><input id="customerCity" class="field" placeholder="شهر/آدرس"><textarea id="customerNote" class="field" placeholder="توضیحات سفارش"></textarea></div><div class="row"><b class="price">جمع: ${money(total)}</b><button class="btn" onclick="submitOrder()">ثبت سفارش</button></div></div>`; }
+function renderCart(){
+  const box=$('cartBox');
+  if(!box)return;
+  const rows=cart.map(it=>{
+    const p=findProduct(it.id);
+    return p?`<div class="card pad row wrap"><div><b>${p.name}</b><p class="small">${productCartPriceText(p)} × <input class="field" style="width:90px" type="number" min="${Number(p.minOrder)||1}" value="${it.qty}" onchange="qtyCart(${it.id},this.value)"></p></div><b class="price">${productNumericPrice(p)>0?money(productNumericPrice(p)*it.qty):productPriceText(p)}</b><button class="danger" onclick="removeCart(${it.id})">حذف</button></div>`:'';
+  }).join('');
+  const subtotal=cart.reduce((s,it)=>{const p=findProduct(it.id); return s+(p?productNumericPrice(p)*it.qty:0)},0);
+  const deliveryFee=cart.length?DELIVERY_FEE:0;
+  const total=subtotal+deliveryFee;
+  box.innerHTML=(rows||'<p>سبد سفارش خالی است.</p>')+`<div class="card pad"><h3>ثبت اطلاعات مشتری</h3><div class="grid g2"><input id="customerName" class="field" placeholder="نام مشتری"><input id="customerPhone" class="field" placeholder="شماره تماس"><input id="customerCity" class="field" placeholder="شهر/آدرس"><textarea id="customerNote" class="field" placeholder="توضیحات سفارش"></textarea></div><div class="card pad invoice-summary" style="margin:12px 0;background:var(--soft)"><div class="row"><span>جمع محصولات:</span><b>${money(subtotal)}</b></div><div class="row"><span>هزینه ارسال:</span><b>${money(deliveryFee)}</b></div><div class="row"><b>جمع کل فاکتور:</b><span class="price">${money(total)}</span></div></div><div class="row"><button class="btn" onclick="submitOrder()">ثبت سفارش</button></div></div>`;
+}
 function submitOrder(){
   if(!cart.length) return alert('سبد خالی است');
   const name=$('customerName').value.trim(), phone=$('customerPhone').value.trim();
   if(!name||!phone) return alert('نام و شماره تماس را وارد کنید');
 
   const itemDetails=orderItemSnapshots(cart);
-  const total=itemDetails.reduce((sum,item)=>sum+Number(item.lineTotal||0),0);
+  const subtotal=itemDetails.reduce((sum,item)=>sum+Number(item.lineTotal||0),0);
+  const deliveryFee=DELIVERY_FEE;
+  const total=subtotal+deliveryFee;
   const id=Date.now();
   const order={
     id,
@@ -97,10 +110,12 @@ function submitOrder(){
     note:$('customerNote').value.trim(),
     items:cart.map(x=>({id:Number(x.id),qty:Number(x.qty)||1})),
     itemDetails,
+    subtotal,
+    deliveryFee,
     total,
+    contactTarget:'whatsapp_sms',
     status:'در انتظار تماس',
     source:'website',
-    instagramUrl:instagramProfileUrl(),
     createdAt:new Date().toISOString(),
     updatedAt:new Date().toISOString()
   };
@@ -116,7 +131,7 @@ function showOrderSuccess(order){
   const m=$('cartModal');
   m.innerHTML=`<div class="modal-card card pad">
     <div class="row sticky-head"><h2>سفارش ثبت شد</h2><button class="soft" onclick="$('cartModal').classList.remove('on')">بستن</button></div>
-    <div class="card pad"><p>سفارش شما با کد <b>${esc(orderCode(order))}</b> ثبت شد و جزئیات آن در پنل فروش ذخیره شد.</p><p class="small">برای ارسال جزئیات سفارش به دلیزا، یکی از گزینه‌های زیر را انتخاب کنید. متن سفارش هم کپی شده است.</p>${contactLinksHtml(orderDetailsText(order), 'order-contact-actions')}</div>
+    <div class="card pad"><p>سفارش شما با کد <b>${esc(orderCode(order))}</b> ثبت شد و جزئیات آن در پنل فروش ذخیره شد.</p><p class="small">برای ارسال جزئیات سفارش به دلیزا، یکی از گزینه‌های واتساپ یا پیامک را انتخاب کنید. متن سفارش هم کپی شده است.</p>${contactLinksHtml(orderDetailsText(order), 'order-contact-actions')}</div>
     ${orderDetailsHtml(order)}
     <div class="actions" style="margin-top:14px">
       <button class="btn" onclick="openWhatsAppForOrder(${order.id})">ارسال در واتساپ</button>

@@ -109,7 +109,6 @@ function submitOrder(){
   cart=[];
   saveCart();
   showOrderSuccess(order);
-  window.open(instagramProfileUrl(), '_blank', 'noopener');
   copyTextToClipboard(orderDetailsText(order));
 }
 
@@ -117,10 +116,11 @@ function showOrderSuccess(order){
   const m=$('cartModal');
   m.innerHTML=`<div class="modal-card card pad">
     <div class="row sticky-head"><h2>سفارش ثبت شد</h2><button class="soft" onclick="$('cartModal').classList.remove('on')">بستن</button></div>
-    <div class="card pad"><p>سفارش شما با کد <b>${esc(orderCode(order))}</b> ثبت شد و جزئیات آن در پنل فروش ذخیره شد.</p><p class="small">متن سفارش کپی شده است. تب اینستاگرام دلیزا باز می‌شود؛ کافی است متن را در دایرکت ارسال کنید.</p></div>
+    <div class="card pad"><p>سفارش شما با کد <b>${esc(orderCode(order))}</b> ثبت شد و جزئیات آن در پنل فروش ذخیره شد.</p><p class="small">برای ارسال جزئیات سفارش به دلیزا، یکی از گزینه‌های زیر را انتخاب کنید. متن سفارش هم کپی شده است.</p>${contactLinksHtml(orderDetailsText(order), 'order-contact-actions')}</div>
     ${orderDetailsHtml(order)}
     <div class="actions" style="margin-top:14px">
-      <button class="btn" onclick="openInstagramForOrder(${order.id})">ارسال در اینستاگرام دلیزا</button>
+      <button class="btn" onclick="openWhatsAppForOrder(${order.id})">ارسال در واتساپ</button>
+      <button class="soft" onclick="openSmsForOrder(${order.id})">ارسال پیامک</button>
       <button class="soft" onclick="copyOrderDetails(${order.id})">کپی جزئیات سفارش</button>
       <button class="soft" onclick="$('cartModal').classList.remove('on')">ادامه خرید</button>
     </div>

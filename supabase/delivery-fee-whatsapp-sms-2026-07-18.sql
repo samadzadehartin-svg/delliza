@@ -15,7 +15,7 @@ select
     'phone', '۰۹۰۲۲۱۲۲۲۸۶',
     'whatsapp', '09022122286',
     'sms', '09022122286',
-    'deliveryFee', 90000,
+    'deliveryFee', 0,
     'orderContactMode', 'whatsapp_sms',
     'menuVersion', 'delliza_delivery_fee_whatsapp_sms_2026_07_18_01'
   ),

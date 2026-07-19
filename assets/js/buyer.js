@@ -227,8 +227,7 @@ function cartTotals() {
     const product = findProduct(item.id);
     return sum + (product ? productNumericPrice(product) * Number(item.qty || 1) : 0);
   }, 0);
-  const deliveryFee = cart.length ? DELIVERY_FEE : 0;
-  return { subtotal, deliveryFee, total: subtotal + deliveryFee };
+  return { subtotal, deliveryFee: 0, total: subtotal };
 }
 
 function cartRow(item) {
@@ -258,7 +257,7 @@ function renderCart() {
   box.innerHTML = (rows || '<p>سبد سفارش خالی است.</p>') + `<div class="card pad">
     <h3>ثبت اطلاعات مشتری</h3>
     <div class="grid g2">
-      <input id="customerName" class="field" placeholder="نام مشتری">
+      <input id="customerName" class="field" placeholder="نام و نام خانوادگی">
       <input id="customerPhone" class="field" placeholder="شماره تماس">
       <input id="customerCity" class="field" placeholder="شهر/آدرس">
       <textarea id="customerNote" class="field" placeholder="توضیحات سفارش"></textarea>
@@ -266,7 +265,6 @@ function renderCart() {
 
     <div class="card pad invoice-summary" style="margin:12px 0;background:var(--soft)">
       <div class="row"><span>جمع محصولات:</span><b>${money(totals.subtotal)}</b></div>
-      <div class="row"><span>${SERVICE_FEE_LABEL}:</span><b>${money(totals.deliveryFee)}</b></div>
       <div class="row"><b>جمع کل فاکتور:</b><span class="price">${money(totals.total)}</span></div>
     </div>
 
@@ -279,12 +277,12 @@ function submitOrder() {
 
   const name = $('customerName').value.trim();
   const phone = $('customerPhone').value.trim();
-  if (!name || !phone) return alert('نام و شماره تماس را وارد کنید');
+  if (!name || !phone) return alert('نام و نام خانوادگی و شماره تماس را وارد کنید');
 
   const itemDetails = orderItemSnapshots(cart);
   const subtotal = itemDetails.reduce((sum, item) => sum + Number(item.lineTotal || 0), 0);
-  const deliveryFee = DELIVERY_FEE;
-  const total = subtotal + deliveryFee;
+  const deliveryFee = 0;
+  const total = subtotal;
   const id = Date.now();
 
   const order = {
@@ -299,7 +297,7 @@ function submitOrder() {
     subtotal,
     deliveryFee,
     total,
-    contactTarget: 'whatsapp_sms',
+    contactTarget: 'whatsapp',
     status: 'در انتظار تماس',
     source: 'website',
     createdAt: new Date().toISOString(),
@@ -326,7 +324,11 @@ function showOrderSuccess(order) {
 
     <div class="card pad">
       <p>سفارش شما با کد <b>${esc(orderCode(order))}</b> ثبت شد و جزئیات آن در پنل فروش ذخیره شد.</p>
-      <p class="small">برای ارسال جزئیات سفارش به دلیزا، یکی از گزینه‌های واتساپ یا پیامک را انتخاب کنید. متن سفارش هم کپی شده است.</p>
+      <div class="card pad payment-instructions">
+        <p><b>شماره کارت:</b> <span dir="ltr">6274881201467544</span></p>
+        <p><b>به نام:</b> روح اله زرگریان</p>
+        <p>لطفا فیش واریزی خود را داخل واتس آپ ارسال کنید</p>
+      </div>
       ${contactLinksHtml(orderDetailsText(order), 'order-contact-actions')}
     </div>
 
@@ -334,7 +336,6 @@ function showOrderSuccess(order) {
 
     <div class="actions" style="margin-top:14px">
       <button class="btn" onclick='openWhatsAppForOrder(${idJson})'>ارسال در واتساپ</button>
-      <button class="soft" onclick='openSmsForOrder(${idJson})'>ارسال پیامک</button>
       <button class="soft" onclick='copyOrderDetails(${idJson})'>کپی جزئیات سفارش</button>
       <button class="soft" onclick="document.getElementById('cartModal').classList.remove('on')">ادامه خرید</button>
     </div>

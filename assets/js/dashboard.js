@@ -43,7 +43,7 @@ function dashboardMetrics() {
     lowStock: productList.filter((p) => Number(p.stock || 0) <= 5).length,
     orders: orderList.length,
     pending: orderList.filter((o) => !o.status || o.status === 'در انتظار تماس').length,
-    sales: orderList.reduce((sum, order) => sum + Number(order.total || 0), 0)
+    sales: orderList.reduce((sum, order) => sum + orderFinalTotal(order), 0)
   };
 }
 
@@ -132,7 +132,7 @@ function renderDashboardOverview() {
           ${recent.length ? recent.map((o) => `
             <button class="dashboard-order-card" onclick="viewDashboardOrder(${Number(o.id)})">
               <span><b>${esc(orderCode(o))}</b><small>${esc(o.name || 'مشتری')}</small></span>
-              <span><b>${money(o.total || 0)}</b><small>${esc(o.status || 'در انتظار تماس')}</small></span>
+              <span><b>${money(orderFinalTotal(o))}</b><small>${esc(o.status || 'در انتظار تماس')}</small></span>
             </button>`).join('') : '<div class="dashboard-empty">هنوز سفارشی ثبت نشده است.</div>'}
         </div>
       </div>
@@ -185,9 +185,9 @@ function dashboardOrderTable(list) {
       <td><b dir="ltr">${esc(orderCode(o))}</b><br><small>${o.createdAt ? new Date(o.createdAt).toLocaleString('fa-IR') : '—'}</small></td>
       <td><b>${esc(o.name || '—')}</b><br><a href="tel:${esc(o.phone || '')}" dir="ltr">${esc(o.phone || '—')}</a><br><small>${esc(o.city || '')}</small></td>
       <td>${orderItemsMini(o)}</td>
-      <td><b>${money(o.total || 0)}</b></td>
+      <td><b>${money(orderFinalTotal(o))}</b></td>
       <td><select class="field dashboard-status" onchange="changeDashboardOrder(${Number(o.id)},this.value)">${dashboardStatuses().map((status) => `<option ${status === (o.status || 'در انتظار تماس') ? 'selected' : ''}>${status}</option>`).join('')}</select></td>
-      <td><div class="actions"><button class="btn" onclick="viewDashboardOrder(${Number(o.id)})">جزئیات</button><button class="soft" onclick="openWhatsAppForOrder(${Number(o.id)})">واتساپ</button><button class="soft" onclick="openSmsForOrder(${Number(o.id)})">پیامک</button></div></td>
+      <td><div class="actions"><button class="btn" onclick="viewDashboardOrder(${Number(o.id)})">جزئیات</button><button class="soft" onclick="openWhatsAppForOrder(${Number(o.id)})">واتساپ</button></div></td>
     </tr>`).join('') || '<tr><td colspan="6"><div class="dashboard-empty">سفارشی با این فیلتر پیدا نشد.</div></td></tr>'}
   </tbody></table>`;
 }
@@ -208,7 +208,7 @@ function viewDashboardOrder(id) {
     modal.className = 'modal';
     document.body.appendChild(modal);
   }
-  modal.innerHTML = `<div class="modal-card card pad"><div class="row sticky-head"><div><span class="badge green">${esc(order.status || 'در انتظار تماس')}</span><h2>سفارش ${esc(orderCode(order))}</h2></div><button class="soft" onclick="document.getElementById('orderModal').classList.remove('on')">بستن</button></div>${orderDetailsHtml(order)}<div class="actions" style="margin-top:14px"><button class="btn" onclick="copyOrderDetails(${Number(order.id)})">کپی جزئیات</button><button class="soft" onclick="openWhatsAppForOrder(${Number(order.id)})">ارسال واتساپ</button><button class="soft" onclick="openSmsForOrder(${Number(order.id)})">ارسال پیامک</button><button class="soft" onclick="document.getElementById('orderModal').classList.remove('on')">بستن</button></div></div>`;
+  modal.innerHTML = `<div class="modal-card card pad"><div class="row sticky-head"><div><span class="badge green">${esc(order.status || 'در انتظار تماس')}</span><h2>سفارش ${esc(orderCode(order))}</h2></div><button class="soft" onclick="document.getElementById('orderModal').classList.remove('on')">بستن</button></div>${orderDetailsHtml(order)}<div class="actions" style="margin-top:14px"><button class="btn" onclick="copyOrderDetails(${Number(order.id)})">کپی جزئیات</button><button class="soft" onclick="openWhatsAppForOrder(${Number(order.id)})">ارسال واتساپ</button><button class="soft" onclick="document.getElementById('orderModal').classList.remove('on')">بستن</button></div></div>`;
   modal.classList.add('on');
 }
 

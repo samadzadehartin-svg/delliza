@@ -1,4 +1,4 @@
-const DATA_VERSION='delliza_packaging_fee_label_2026_07_18_01';
+const DATA_VERSION='delliza_no_packaging_fee_2026_07_18_01';
 const DEFAULT_IMG='../assets/images/product-default.svg';
 const DEFAULT_CATEGORIES=[
   {
@@ -756,17 +756,20 @@ const DEFAULT_SETTINGS={
   "subtitle": "",
   "phone": "۰۹۰۲۲۱۲۲۲۸۶",
   "whatsapp": "09022122286",
-  "sms": "09022122286",
-  "deliveryFee": 90000,
-  "orderContactMode": "whatsapp_sms",
+  "sms": "",
+  "deliveryFee": 0,
+  "orderContactMode": "whatsapp",
+  "paymentCardNumber": "6274881201467544",
+  "paymentCardOwner": "روح اله زرگریان",
+  "paymentInstruction": "لطفا فیش واریزی خود را داخل واتس آپ ارسال کنید",
   "heroImages": [
     "../assets/images/fresh-products/assigned-2026-07-18/donut-plain.jpg",
     "../assets/images/fresh-products/assigned-2026-07-18/donut-creamfill.jpg",
-    "../assets/images/fresh-products/assigned-2026-07-18/croissant-creamfill-chocolate-nuts.jpg",
+    "../assets/images/fresh-products/assigned-2026-07-18/croissant-cream-chocolate-nuts.jpg",
     "../assets/images/fresh-products/assigned-2026-07-18/birthday-cake.jpg"
   ],
   "address": "تهران، ایران",
   "instagram": "@delliza.bakery",
   "instagramUrl": "https://ig.me/m/delliza.bakery",
-  "menuVersion": "delliza_packaging_fee_label_2026_07_18_01"
+  "menuVersion": "delliza_whatsapp_payment_info_2026_07_18_01"
 };

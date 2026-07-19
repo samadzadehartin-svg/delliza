@@ -6,8 +6,8 @@ const DATA_VERSION_KEY = 'data_version';
 const CONTACT_PHONE_LOCAL = '09022122286';
 const CONTACT_PHONE_INTL = '989022122286';
 const CONTACT_MESSAGE = 'سلام، برای سفارش از سایت دلیزا پیام می‌دهم.';
-const DELIVERY_FEE = 90000;
-const SERVICE_FEE_LABEL = 'هزینه بسته‌بندی';
+const DELIVERY_FEE = 0;
+const SERVICE_FEE_LABEL = ''; // هزینه بسته‌بندی حذف شده است
 const $ = (id) => document.getElementById(id);
 
 // -----------------------------------------------------------------------------
@@ -213,26 +213,16 @@ function whatsappUrl(message = CONTACT_MESSAGE) {
   return `https://wa.me/${CONTACT_PHONE_INTL}?text=${encodeURIComponent(message || CONTACT_MESSAGE)}`;
 }
 
-function smsUrl(message = CONTACT_MESSAGE) {
-  return `sms:${CONTACT_PHONE_LOCAL}?body=${encodeURIComponent(message || CONTACT_MESSAGE)}`;
-}
-
 function contactLinksHtml(message = CONTACT_MESSAGE, extraClass = '') {
   const wa = whatsappUrl(message);
-  const sms = smsUrl(message);
 
   return `<div class="contact-actions ${extraClass}" aria-label="ارتباط با دلیزا">
     <a class="contact-icon contact-icon--whatsapp" href="${wa}" target="_blank" rel="noopener" aria-label="ارسال پیام در واتساپ به ${CONTACT_PHONE_LOCAL}">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.88 9.88 0 0 0-8.54 14.86L2.2 22l5.28-1.24A9.96 9.96 0 1 0 12.04 2Zm0 1.9a8.06 8.06 0 1 1 0 16.12 8.18 8.18 0 0 1-4.11-1.12l-.39-.23-2.58.61.64-2.5-.26-.41A8.06 8.06 0 0 1 12.04 3.9Zm-3.5 4.25c-.2 0-.52.07-.79.36-.27.3-1.03 1-1.03 2.43s1.06 2.83 1.2 3.03c.15.2 2.06 3.26 5.1 4.44 2.52.98 3.04.78 3.58.74.55-.05 1.76-.72 2-1.42.25-.7.25-1.3.18-1.43-.07-.13-.27-.2-.57-.35-.3-.15-1.76-.86-2.03-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57Z" fill="currentColor"/></svg>
       <span>واتساپ</span>
     </a>
-    <a class="contact-icon contact-icon--sms" href="${sms}" aria-label="ارسال پیامک به ${CONTACT_PHONE_LOCAL}">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 5A2.5 2.5 0 0 0 2 7.5v7A2.5 2.5 0 0 0 4.5 17H7v3.25c0 .62.73.95 1.2.55L12.73 17h6.77A2.5 2.5 0 0 0 22 14.5v-7A2.5 2.5 0 0 0 19.5 5h-15Zm0 2h15c.28 0 .5.22.5.5v7c0 .28-.22.5-.5.5h-7.5l-3 2.5V15H4.5a.5.5 0 0 1-.5-.5v-7c0-.28.22-.5.5-.5Zm2 2.25h11v1.5h-11v-1.5Zm0 3h7.5v1.5H6.5v-1.5Z" fill="currentColor"/></svg>
-      <span>پیامک</span>
-    </a>
   </div>`;
 }
-
 // -----------------------------------------------------------------------------
 // Orders
 // -----------------------------------------------------------------------------
@@ -271,15 +261,15 @@ function orderSubtotal(order) {
 }
 
 function orderDeliveryFee(order) {
-  if (order && Object.prototype.hasOwnProperty.call(order, 'deliveryFee')) return Number(order.deliveryFee || 0);
+  // هزینه بسته‌بندی/ارسال حذف شده است؛ سفارش‌های جدید و نمایش فاکتور بدون هزینه اضافه محاسبه می‌شوند.
   return 0;
 }
 
 function orderFinalTotal(order) {
-  const storedTotal = Number(order?.total || 0);
   const subtotal = orderSubtotal(order);
   const deliveryFee = orderDeliveryFee(order);
-  return storedTotal || subtotal + deliveryFee;
+  const calculated = subtotal + deliveryFee;
+  return calculated || Number(order?.total || 0);
 }
 
 function orderItemLineText(item) {
@@ -295,7 +285,7 @@ function orderDetailsText(order) {
   const lines = [
     'سفارش جدید دلیزا',
     `کد سفارش: ${orderCode(order)}`,
-    `نام مشتری: ${order?.name || '—'}`,
+    `نام و نام خانوادگی: ${order?.name || '—'}`,
     `شماره تماس: ${order?.phone || '—'}`,
     `آدرس/شهر: ${order?.city || '—'}`,
     '',
@@ -304,7 +294,6 @@ function orderDetailsText(order) {
 
   orderItems(order).forEach((item) => lines.push(`- ${orderItemLineText(item)}`));
   lines.push('', `جمع محصولات: ${money(subtotal)}`);
-  lines.push(`${SERVICE_FEE_LABEL}: ${money(deliveryFee)}`);
   lines.push(`جمع کل فاکتور: ${money(total)}`);
   if (order?.note) lines.push(`توضیحات: ${order.note}`);
   lines.push(`زمان ثبت: ${order?.createdAt ? new Date(order.createdAt).toLocaleString('fa-IR') : '—'}`);
@@ -333,7 +322,7 @@ function orderDetailsHtml(order) {
     <div class="grid g2">
       <div class="card pad"><b>کد سفارش</b><p>${esc(orderCode(order))}</p></div>
       <div class="card pad"><b>زمان ثبت</b><p>${order?.createdAt ? new Date(order.createdAt).toLocaleString('fa-IR') : '—'}</p></div>
-      <div class="card pad"><b>مشتری</b><p>${esc(order?.name || '—')}<br><small>${esc(order?.phone || '—')}</small></p></div>
+      <div class="card pad"><b>نام و نام خانوادگی</b><p>${esc(order?.name || '—')}<br><small>${esc(order?.phone || '—')}</small></p></div>
       <div class="card pad"><b>آدرس/شهر</b><p>${esc(order?.city || '—')}</p></div>
     </div>
 
@@ -349,7 +338,6 @@ function orderDetailsHtml(order) {
 
     <div class="card pad invoice-summary" style="margin-top:12px">
       <div class="row"><span>جمع محصولات:</span><b>${money(subtotal)}</b></div>
-      <div class="row"><span>${SERVICE_FEE_LABEL}:</span><b>${money(deliveryFee)}</b></div>
       <div class="row"><b>جمع کل فاکتور:</b><span class="price">${money(total)}</span></div>
     </div>
 
@@ -380,14 +368,6 @@ function openWhatsAppForOrder(id) {
   const text = orderDetailsText(order);
   copyTextToClipboard(text);
   window.open(whatsappUrl(text), '_blank', 'noopener');
-}
-
-function openSmsForOrder(id) {
-  const order = orders().find((item) => String(item.id) === String(id));
-  if (!order) return;
-  const text = orderDetailsText(order);
-  copyTextToClipboard(text);
-  window.location.href = smsUrl(text);
 }
 
 // Backward-compatible alias for old onclick attributes.

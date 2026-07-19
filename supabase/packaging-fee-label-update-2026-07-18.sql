@@ -12,12 +12,12 @@ values (
   'settings',
   jsonb_build_object(
     'subtitle', '',
-    'deliveryFee', 90000,
-    'serviceFeeLabel', 'هزینه بسته‌بندی',
+    'deliveryFee', 0,
+    'serviceFeeLabel', '',
     'orderContactMode', 'whatsapp_sms',
     'whatsapp', '09022122286',
     'sms', '09022122286',
-    'menuVersion', 'delliza_packaging_fee_label_2026_07_18_01'
+    'menuVersion', 'delliza_no_packaging_fee_2026_07_18_01'
   ),
   now()
 )
